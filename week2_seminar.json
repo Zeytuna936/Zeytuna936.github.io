@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data":{
+      "url": "https://raw.githubusercontent.com/Zeytuna936/Zeytuna936.github.io/refs/heads/main/ONS%20Stats.csv",
+      "format": {
+        "type": "dsv",
+        "delimiter": ";"
+        }
+    },
+    "mark": {
+      "type": "line"
+    },
+    "title": {
+      "text": "Vice spending",
+      "subtitle": ["Spending on Alcohol, Tobacco, and Narcotics, Source: ONS"]
+    },
+    "encoding":{
+      "x": {
+        "field": "Date",
+        "type": "temporal"
+      },
+      "y": {
+        "field": "Value",
+        "type": "quantitative"
+      },
+      "color": {
+        "field":"Series"
+      }
+    }
+  }
+  
