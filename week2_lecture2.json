@@ -6,11 +6,11 @@
     "subtitle": "CPI, % | Source: Destatis through ECO API",
     "fontSize": "18",
     "subtitleFontSize": "14",
-    "color": "#d42929",
-    "subtitleColor": "#0d7958"
+    "color": "#020201",
+    "subtitleColor": "#41424c"
   },
-  "height": "350",
-  "width": "600",
+  "height": "300",
+  "width": "300",
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -28,8 +28,8 @@
   },
   "mark": {
     "type": "line",
-    "color": "#0c6930",
-    "strokeWidth": "4"
+    "color": "#242d99",
+    "strokeWidth": "3"
   },
   "encoding": {
     "x": {

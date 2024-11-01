@@ -4,13 +4,13 @@
     "text": "GDP growth",
     "anchor": "start",
     "subtitle": "Rate, % | Source: TURKSTAT through ECO API",
-    "fontSize": "22",
-    "subtitleFontSize": "16",
-    "color": "#f5078a",
-    "subtitleColor": "#000000"
+    "fontSize": "18",
+    "subtitleFontSize": "14",
+    "color": "#070707",
+    "subtitleColor": "#40454e"
   },
-  "height": "250",
-  "width": "500",
+  "height": "300",
+  "width": "300",
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -28,8 +28,8 @@
   },
   "mark": {
     "type": "line",
-    "color": "#dfd051fa",
-    "strokeWidth": "5"
+    "color": "#de0e0ed3",
+    "strokeWidth": "3"
   },
   "encoding": {
     "x": {
