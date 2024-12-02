@@ -1,0 +1,86 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 300,
+    "data": {
+      "values": [
+        {"Cost": 500, "People": 260},
+        {"Cost": 1000, "People": 220},
+        {"Cost": 1500, "People": 210},
+        {"Cost": 2000, "People": 153},
+        {"Cost": 2500, "People": 130},
+        {"Cost": 3000, "People": 85},
+        {"Cost": 3500, "People": 90},
+        {"Cost": 4000, "People": 60},
+        {"Cost": 4500, "People": 45},
+        {"Cost": 5000, "People": 40},
+        {"Cost": 5500, "People": 38},
+        {"Cost": 6000, "People": 30},
+        {"Cost": 6500, "People": 25},
+        {"Cost": 7000, "People": 28},
+        {"Cost": 7500, "People": 20},
+        {"Cost": 8000, "People": 26},
+        {"Cost": 8500, "People": 22},
+        {"Cost": 9000, "People": 21},
+        {"Cost": 9500, "People": 10},
+        {"Cost": 10000, "People": 9},
+        {"Cost": 10500, "People": 14},
+        {"Cost": 11000, "People": 20},
+        {"Cost": 11500, "People": 5},
+        {"Cost": 12000, "People": 24},
+        {"Cost": 12500, "People": 10},
+        {"Cost": 13000, "People": 8},
+        {"Cost": 13500, "People": 4},
+        {"Cost": 14000, "People": 4},
+        {"Cost": 14500, "People": 3},
+        {"Cost": 15000, "People": 2},
+        {"Cost": 15500, "People": 30}
+         ]
+    },
+    "mark": {
+      "type": "bar",
+      "color": "#cf4064"
+    },
+   "encoding": {
+      "x": {
+        "field": "Cost",
+        "bin": {
+          "step": 500,
+          "maxbins": 10  
+        },
+        "title": "RING COST",
+        "scale": {
+          "domain": [1000, 15000]
+        },
+        "axis": {
+          "labelAngle": 0,
+          "labelFontSize": 12,
+          "titleFontWeight": "normal",
+          "labelExpr": "datum.value >= 1000 ? '$' + (datum.value / 1000) + 'k' : '$' + datum.value",
+          "titleFontSize": 14
+        }
+      },
+      "y": {
+        "field": "People",
+        "type": "quantitative",
+        "title": "PEOPLE",
+        "axis": {
+          "labelFontSize": 12,
+          "titleFontWeight": "normal",
+          "titleFontSize": 14
+        }
+      }
+    },
+     "config": {
+      "axis": {
+        "titleFont": "Arial",
+        "labelFont": "Arial"
+      },
+      "title": {
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "font": "Arial"
+      }
+    },
+    "title": "Most people spend $500 to $3,000 on engagement rings"
+  }

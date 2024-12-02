@@ -1,0 +1,79 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 300,
+    "padding": 10,
+  
+    "data": {
+      "values": [
+        {"Destination": "Argentina", "Change": 1200},
+        {"Destination": "Brazil", "Change": 400},
+        {"Destination": "Canada", "Change": 300},
+        {"Destination": "Colombia", "Change": 200},
+        {"Destination": "Dominican Republic", "Change": 100},
+        {"Destination": "Jamaica", "Change": 100},
+        {"Destination": "Mexico", "Change": 50},
+        {"Destination": "Peru", "Change": 500},
+        {"Destination": "United States", "Change": 300},
+        {"Destination": "Uruguay", "Change": 1000}
+      ]
+    },
+  
+    "mark": {
+      "type": "bar",
+      "cornerRadiusEnd": 4,
+      "tooltip": true
+    },
+    "encoding": {
+      "x": {
+        "field": "Destination",
+        "type": "nominal",
+        "axis": {
+          "title": "Top Destinations (2023)",
+          "labelAngle": -45,
+          "labelFont": "Arial",
+          "labelFontSize": 12,
+          "titleFont": "Arial",
+          "titleFontSize": 14
+        },
+        "sort": "-y"
+      },
+      "y": {
+        "field": "Change",
+        "type": "quantitative",
+        "axis": {
+          "title": "Percentage Change (2022 to 2023)",
+          "titleFont": "Arial",
+          "titleFontSize": 14,
+          "labelFont": "Arial",
+          "labelFontSize": 12
+        }
+      },
+      "color": {
+        "field": "Change",
+        "type": "quantitative",
+        "scale": {
+          "scheme": "Blues"
+        },
+        "legend": {
+          "title": "Change (%)",
+          "labelFont": "Arial",
+          "labelFontSize": 12,
+          "titleFont": "Arial",
+          "titleFontSize": 14
+        }
+      }
+    },
+    "config": {
+      "style": {
+        "cell": {
+          "stroke": "transparent"
+        }
+      },
+      "axis": {
+        "grid": true,
+        "gridColor": "#e0e0e0",
+        "gridDash": [3, 3]
+      }
+    }
+  }

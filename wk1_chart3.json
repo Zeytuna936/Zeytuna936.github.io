@@ -17,12 +17,13 @@
         {"fold":["Kenya", "Congo_DR", "UK", "Japan"], "as": ["country", "GDP"]}
         ],
           
-    "height": 120,
-    "width": 120,   
+    "height": 150,
+    "width": 150,   
     
     "mark": {   
             "type":"line",
-            "strokeWidth":2},    
+            "strokeWidth":2},
+            "tooltip": true,  
     
     "encoding": {
             "x": {

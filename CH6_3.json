@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Zeytuna936/Zeytuna936.github.io/refs/heads/main/MI3G.json",
+    "format": {"property": "years"}
+  },
+  "width": 200,
+  "height": 100,
+  "title": {
+    "text": "Net capital stock (£bn): S.1: IPP: Ind CA Food/Bevs/Tobacco: CP",
+    "anchor": "start"
+  },
+  "transform": [{"calculate": "datum.value / 100", "as": "scaled_value"}],
+  "mark": {"type": "line"},
+  "encoding": {
+    "x": {"field": "date", "type": "temporal", "title": ""},
+    "y": {
+      "field": "scaled_value",
+      "type": "quantitative",
+      "title": "",
+      "axis": {
+        "title": null,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 5,
+        "format": ".1%"
+      }
+    }
+  }
+}
+

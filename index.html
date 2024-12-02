@@ -67,6 +67,7 @@
 
                 </p>
         </div>
+       
         <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
     <section>
@@ -116,12 +117,63 @@
             </div>
             <figure id="Location8"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
+            <section>
+                <div class="chart-description">
+                        <h2> CC4: Replication- Recreation and Improvement of the Chart</h2>
+                        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                                        The bar chart published by the New York Times demonstrates how mych Americans spend on engagement rings. 
+                                    </p>
+                                </div>
+                                <img src="screenshot.png" alt="The New York Times Statistics" style="width: 350px;">
+                                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                                    Replicated version of the chart:
+                                </p>
+                                <figure id="Location9"></figure>
+                                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                                    Improved version of the chart where I changed the color and metrics of Y-axis and X-axis:
+                                </p>
+                                <figure id="Location10"></figure>
+                        
+                            </section>
+                 </div>
+                    <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+            
+                    <section>
+                        <div class="chart-description">
+                            <h2> CC5: Scraper. Implementing a data scraper  </h2>
+                            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                              https://colab.research.google.com/drive/1GT_DCxKxVitwetNdN_bnbifqZmY4zImq?usp=sharing 
+                              Since tourism is one of the popular topics, I have chosen to analyze the Americas based on international tourist arrivals. 
+                            </p>
+                        </div>
+                        <figure id="Location11"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+
+                        <section>
+                            <div class="chart-description">
+                                <h2> CC6: Loops. Building a dashboard </h2>
+                                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                                  https://colab.research.google.com/drive/1jgvqHduneGnxojbuLorl-xBIra3b5Iqx?usp=sharing  
+                                  Data is retrieved from ONS.  
+                                </p>
+                            </div>
+                            <figure id="Location12"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+                            <figure id="Location13"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+                            <figure id="Location14"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+                            <figure id="Location15"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+                            <figure id="Location16"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+                            <figure id="Location17"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+                            <figure id="Location18"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+                            <figure id="Location19"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+                            <figure id="Location20"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    
+    
+
     
             
     <script>
         // This is a comment in JavaScript - it's a different language to HTML and CSS
 
-        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable    
+         let figure_1_spec= "wk1_chart3.json"
          let figure_2_spec= "wk1_chart3.json"                                                                                                     // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
          let figure_3_spec= "wk1_chart4.json" 
          let figure_4_spec= "week2_new.json"
@@ -129,7 +181,19 @@
          let figure_6_spec= "week2_seminar.json"
          let figure_7_spec= "wk3_ch7.json"
          let figure_8_spec= "wk3_ch8.json"
-        vegaEmbed('#Location1', figure_1_spec) 
+         let figure_9_spec= "Recreated_draft.json"
+         let figure_10_spec= "Improved.json"
+         let figure_11_spec= "Tourism_ranking.json"
+         let figure_12_spec= "CH6_1.json"
+         let figure_13_spec= "CH6_2.json"
+         let figure_14_spec= "CH6_3.json"
+         let figure_15_spec= "CH6_4.json"
+         let figure_16_spec= "CH6_5.json"
+         let figure_17_spec= "CH6_6.json"
+         let figure_18_spec= "CH6_7.json"
+         let figure_19_spec= "CH6_8.json"
+         let figure_20_spec= "CH6_9.json"
+        vegaEmbed("#Location1", figure_1_spec) 
         // We're using the vegaEmbed function to put a graph in the element with id figure_1
         // Do you want to add more graphs?
         // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
@@ -144,6 +208,18 @@ vegaEmbed ("#Location5", figure_5_spec)
 vegaEmbed ("#Location6", figure_6_spec)
 vegaEmbed ("#Location7", figure_7_spec)
 vegaEmbed ("#Location8", figure_8_spec)
+vegaEmbed ("#Location9", figure_9_spec)
+vegaEmbed ("#Location10", figure_10_spec)
+vegaEmbed ("#Location11", figure_11_spec)
+vegaEmbed ("#Location12", figure_12_spec)
+vegaEmbed ("#Location13", figure_13_spec)
+vegaEmbed ("#Location14", figure_14_spec)
+vegaEmbed ("#Location15", figure_15_spec)
+vegaEmbed ("#Location16", figure_16_spec)
+vegaEmbed ("#Location17", figure_17_spec)
+vegaEmbed ("#Location18", figure_18_spec)
+vegaEmbed ("#Location19", figure_19_spec)
+vegaEmbed ("#Location20", figure_20_spec)
 
     </script>
 
