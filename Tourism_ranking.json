@@ -1,79 +1,95 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 300,
-    "height": 300,
-    "padding": 10,
-  
-    "data": {
-      "values": [
-        {"Destination": "Argentina", "Change": 1200},
-        {"Destination": "Brazil", "Change": 400},
-        {"Destination": "Canada", "Change": 300},
-        {"Destination": "Colombia", "Change": 200},
-        {"Destination": "Dominican Republic", "Change": 100},
-        {"Destination": "Jamaica", "Change": 100},
-        {"Destination": "Mexico", "Change": 50},
-        {"Destination": "Peru", "Change": 500},
-        {"Destination": "United States", "Change": 300},
-        {"Destination": "Uruguay", "Change": 1000}
-      ]
-    },
-  
-    "mark": {
-      "type": "bar",
-      "cornerRadiusEnd": 4,
-      "tooltip": true
-    },
-    "encoding": {
-      "x": {
-        "field": "Destination",
-        "type": "nominal",
-        "axis": {
-          "title": "Top Destinations (2023)",
-          "labelAngle": -45,
-          "labelFont": "Arial",
-          "labelFontSize": 12,
-          "titleFont": "Arial",
-          "titleFontSize": 14
-        },
-        "sort": "-y"
+  "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}},
+  "data": {"name": "data-7a8dc93a9dd988a7af3d31ac739bec21"},
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Destination", "type": "nominal"},
+    "y": {"field": "Change (2022 to 2023) (%)", "type": "quantitative"}
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
+  "datasets": {
+    "data-7a8dc93a9dd988a7af3d31ac739bec21": [
+      {
+        "Rank": 1,
+        "Destination": "United States",
+        "International tourist arrivals (2023)": "50.8 million",
+        "International tourist arrivals (2022)": "22.2 million",
+        "Change (2022 to 2023) (%)": 128.8,
+        "Change (2021 to 2022) (%)": 15.6
       },
-      "y": {
-        "field": "Change",
-        "type": "quantitative",
-        "axis": {
-          "title": "Percentage Change (2022 to 2023)",
-          "titleFont": "Arial",
-          "titleFontSize": 14,
-          "labelFont": "Arial",
-          "labelFontSize": 12
-        }
+      {
+        "Rank": 2,
+        "Destination": "Mexico",
+        "International tourist arrivals (2023)": "38.3 million",
+        "International tourist arrivals (2022)": "31.8 million",
+        "Change (2022 to 2023) (%)": 20.4,
+        "Change (2021 to 2022) (%)": 31.4
       },
-      "color": {
-        "field": "Change",
-        "type": "quantitative",
-        "scale": {
-          "scheme": "Blues"
-        },
-        "legend": {
-          "title": "Change (%)",
-          "labelFont": "Arial",
-          "labelFontSize": 12,
-          "titleFont": "Arial",
-          "titleFontSize": 14
-        }
+      {
+        "Rank": 3,
+        "Destination": "Canada",
+        "International tourist arrivals (2023)": "12.8 million",
+        "International tourist arrivals (2022)": "3.0 million",
+        "Change (2022 to 2023) (%)": 326.6,
+        "Change (2021 to 2022) (%)": 3.4
+      },
+      {
+        "Rank": 4,
+        "Destination": "Dominican Republic",
+        "International tourist arrivals (2023)": "6.9 million",
+        "International tourist arrivals (2022)": "4.9 million",
+        "Change (2022 to 2023) (%)": 40.8,
+        "Change (2021 to 2022) (%)": 104.1
+      },
+      {
+        "Rank": 5,
+        "Destination": "Colombia",
+        "International tourist arrivals (2023)": "4.5 million",
+        "International tourist arrivals (2022)": "2.1 million",
+        "Change (2022 to 2023) (%)": 114.2,
+        "Change (2021 to 2022) (%)": 74.9
+      },
+      {
+        "Rank": 6,
+        "Destination": "Argentina",
+        "International tourist arrivals (2023)": "3.8 million",
+        "International tourist arrivals (2022)": "0.3 million",
+        "Change (2022 to 2023) (%)": 1196.6,
+        "Change (2021 to 2022) (%)": 85.6
+      },
+      {
+        "Rank": 7,
+        "Destination": "Brazil",
+        "International tourist arrivals (2023)": "3.6 million",
+        "International tourist arrivals (2022)": "0.7 million",
+        "Change (2022 to 2023) (%)": 386.5,
+        "Change (2021 to 2022) (%)": 65.2
+      },
+      {
+        "Rank": 8,
+        "Destination": "Jamaica",
+        "International tourist arrivals (2023)": "2.4 million",
+        "International tourist arrivals (2022)": "1.4 million",
+        "Change (2022 to 2023) (%)": 71.4,
+        "Change (2021 to 2022) (%)": 66.3
+      },
+      {
+        "Rank": 9,
+        "Destination": "Uruguay",
+        "International tourist arrivals (2023)": "2.4 million",
+        "International tourist arrivals (2022)": "0.2 million",
+        "Change (2022 to 2023) (%)": 962.4,
+        "Change (2021 to 2022) (%)": 74.9
+      },
+      {
+        "Rank": 10,
+        "Destination": "Peru",
+        "International tourist arrivals (2023)": "2.0 million",
+        "International tourist arrivals (2022)": "0.4 million",
+        "Change (2022 to 2023) (%)": 452.2,
+        "Change (2021 to 2022) (%)": 20.1
       }
-    },
-    "config": {
-      "style": {
-        "cell": {
-          "stroke": "transparent"
-        }
-      },
-      "axis": {
-        "grid": true,
-        "gridColor": "#e0e0e0",
-        "gridDash": [3, 3]
-      }
-    }
+    ]
   }
+}
+    

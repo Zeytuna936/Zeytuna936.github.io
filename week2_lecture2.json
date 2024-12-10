@@ -29,7 +29,7 @@
   "mark": {
     "type": "line",
     "color": "#242d99",
-    "strokeWidth": "3"
+    "strokeWidth": "2"
   },
   "encoding": {
     "x": {

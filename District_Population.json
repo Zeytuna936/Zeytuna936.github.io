@@ -1,0 +1,85 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 300,
+    "title": {
+      "text": "Istanbul - A Choropleth Map",
+      "subtitle": ["Districts- City Population"],
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 12,       
+      "subtitleFont": "Algerian",       
+      "subtitleColor": "limegreen",     
+      "fontSize": 18,                
+      "font": "italic",
+      "anchor": "middle",
+      "color": "seagreen"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/ozanyerli/istanbul-districts-geojson/refs/heads/main/istanbul-districts.json",
+      "format": {"property": "features"}
+    },
+  
+    
+    "transform":[{
+      "lookup": "properties.name",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/Zeytuna936/Zeytuna936.github.io/refs/heads/main/Istanbul%20population%201.csv",
+            "format": {"type": "dsv", "delimiter": ";"}
+          },
+          "key": "District",
+          "fields": ["District", "Population"]
+        }
+    },
+    {"calculate": "replace(datum.Population, ',', '')", "as": "Population"}
+    ],
+  
+    "layer": [
+      {
+        "transform": [
+          {
+            "calculate": "replace(datum.Population, 'null', 'Missing')",
+            "as": "label"
+          }
+        ],
+        "mark": {
+          "type": "geoshape",
+          "stroke": "black",
+          "fill": "slategray",
+          "strokeWidth": 0.7,
+          "tooltip": {
+            "expr": "datum['properties.name'] + ': Missing data'"
+          }
+        },
+        "encoding": {
+          "tooltip": [
+          {"title": "District", "field": "properties.name"}, 
+          {"title": "Population", "field": "label"}
+        ]
+        }
+      },
+      {
+        "mark": {
+          "type": "geoshape",
+          "stroke": "black",
+          "strokeWidth": 0.7
+        },
+        "encoding": {
+          "color": {
+            "field": "Population",
+            "type": "quantitative"
+          },
+          "tooltip": [
+          {"title": "District", "field": "properties.name"}, 
+          {"title": "Population", "field": "Population"}
+        ]
+        }
+      }
+    ],
+    "projection": {"type": "mercator"}
+  
+  }
+  
+  
+  
+  

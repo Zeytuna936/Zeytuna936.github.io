@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 300,
+    "title": {
+    "text": "Istanbul - base map",
+    "subtitle": ["Largest city in Türkiye"],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 12,       
+    "subtitleFont": "Algerian",       
+    "subtitleColor": "hotpink",     
+    "fontSize": 18,                
+    "font": "italic",             
+    "color": "deeppink",               
+    "anchor": "middle"
+  },
+    "data": {
+      "url": "https://raw.githubusercontent.com/ozanyerli/istanbul-districts-geojson/refs/heads/main/istanbul-districts.json",
+      "format": {"property": "features"}
+    },
+    "projection": {"type": "mercator"},
+    "mark": {
+      "type": "geoshape",
+      "fill": "pink",
+      "stroke": "black",
+      "strokeWidth": 0.5
+    },
+    "encoding": {"tooltip": {"field": "properties.name"}}
+  }
+  
+  
