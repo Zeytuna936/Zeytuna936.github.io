@@ -6,38 +6,50 @@
     "url": "https://raw.githubusercontent.com/Zeytuna936/Zeytuna936.github.io/refs/heads/main/Book123.csv",
     "format": {"type": "dsv", "delimiter": ";"}
   },
-  "mark": {"type": "bar", "color": "#2d76b1"},
-  "encoding": {
-    "x": {
-      "field": "Cost",
-      "type": "quantitative",
-      "bin": {"step": 500, "maxbins": 10},
-      "title": "Ring Cost",
-      "scale": {"domain": [1000, 15000]},
-      "axis": {
-        "labelAngle": 0,
-        "labelFontSize": 12,
-        "titleFontWeight": "normal",
-        "labelExpr": "datum.value >= 1000 ? '$' + (datum.value / 1000) + 'k' : '$' + datum.value",
-        "titleFontSize": 14,
-        "titleAnchor": "end"
-      }
+    "mark": {"type": "bar"},
+    "encoding": {
+      "x": {
+        "field": "Cost",
+        "type": "quantitative",
+        "bin": {"step": 500, "maxbins": 10},
+        "title": "Ring Cost",
+        "scale": {"domain": [1000, 15000]},
+        "axis": {
+          "labelAngle": 0,
+          "labelFontSize": 12,
+          "titleFontWeight": "normal",
+          "labelExpr": "datum.value >= 1000 ? '$' + (datum.value / 1000) + 'k' : '$' + datum.value",
+          "titleFontSize": 14,
+          "titleAnchor": "end"
+        }
+      },
+      "y": {
+        "field": "People",
+        "type": "quantitative",
+        "title": "People",
+        "axis": {
+          "labelFontSize": 12,
+          "titleFontWeight": "normal",
+          "titleFontSize": 14,
+          "titleAnchor": "end"
+        }
+      },
+      "color": {
+        "field": "Cost",
+        "type": "quantitative",
+        "scale": {
+          "scheme": "orangered"
+        },
+        "legend": null
+      },
+      "tooltip": [
+        {"field": "Cost", "type": "quantitative", "title": "Cost"},
+        {"field": "People", "type": "quantitative", "title": "People"}
+      ]
     },
-    "y": {
-      "field": "People",
-      "type": "quantitative",
-      "title": "People",
-      "axis": {
-        "labelFontSize": 12,
-        "titleFontWeight": "normal",
-        "titleFontSize": 14,
-        "titleAnchor": "end"
-      }
-    }
-  },
-  "config": {
-    "axis": {"titleFont": "times", "labelFont": "times"},
-    "title": {"fontSize": 16, "fontWeight": "bold", "font": "times"}
-  },
-  "title": "Most people spend $500 to $3,000 on engagement rings"
-}
+    "config": {
+      "axis": {"titleFont": "times", "labelFont": "times"},
+      "title": {"fontSize": 16, "fontWeight": "bold", "font": "times"}
+    },
+    "title": "Most people spend $500 to $3,000 on engagement rings"
+  }
