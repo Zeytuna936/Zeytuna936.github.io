@@ -1,70 +1,64 @@
-﻿Country;GDP;Net Migration;Year;;
-Bosnia and Herzegovina;8.5;32.8;2003;;
-Bosnia and Herzegovina;10.16;31.5;2004;;
-Bosnia and Herzegovina;11.22;31.8;2005;;
-Bosnia and Herzegovina;12.86;31.1;2006;;
-Bosnia and Herzegovina;15.78;29;2007;;
-Bosnia and Herzegovina;19.11;23.4;2008;;
-Bosnia and Herzegovina;17.61;24.1;2009;;
-Bosnia and Herzegovina;17.18;27.3;2010;;
-Bosnia and Herzegovina;18.64;27.6;2011;;
-Bosnia and Herzegovina;17.23;28;2012;;
-Bosnia and Herzegovina;18.18;27.5;2013;;
-Bosnia and Herzegovina;18.56;27.5;2014;;
-Bosnia and Herzegovina;16.4;27.7;2015;;
-Bosnia and Herzegovina;17.12;25.4;2016;;
-Bosnia and Herzegovina;18.33;20.5;2017;;
-Bosnia and Herzegovina;20.48;18.4;2018;;
-Bosnia and Herzegovina;20.48;15.7;2019;;
-Bosnia and Herzegovina;20.23;15.9;2020;;
-Bosnia and Herzegovina;23.67;14.9;2021;;
-Bosnia and Herzegovina;24.53;12.7;2022;;
-Bosnia and Herzegovina;27.05;10.7;2023;;
-Serbia;22.48;15.2;2003;;
-Serbia;26.14;18.5;2004;;
-Serbia;27.68;20.9;2005;;
-Serbia;32.48;20.9;2006;;
-Serbia;43.17;18.1;2007;;
-Serbia;52.19;13.7;2008;;
-Serbia;45.16;16.1;2009;;
-Serbia;41.82;19.2;2010;;
-Serbia;49.26;20.3;2011;;
-Serbia;43.31;24;2012;;
-Serbia;48.39;22.2;2013;;
-Serbia;47.06;19.2;2014;;
-Serbia;39.66;17.7;2015;;
-Serbia;40.69;15.3;2016;;
-Serbia;44.18;13.5;2017;;
-Serbia;50.64;12.7;2018;;
-Serbia;51.51;10.4;2019;;
-Serbia;53.36;9;2020;;
-Serbia;63.1;9.8;2021;;
-Serbia;63.56;8.4;2022;;
-Serbia;75.19;8.3;2023;;
-Croatia;35.26;13.9;2003;;
-Croatia;41.86;13.7;2004;;
-Croatia;45.03;12.6;2005;;
-Croatia;49.6;11.1;2006;;
-Croatia;59.32;9.9;2007;;
-Croatia;68.53;8.5;2008;;
-Croatia;62.09;9.2;2009;;
-Croatia;58.84;11.6;2010;;
-Croatia;62.77;13.7;2011;;
-Croatia;57.41;15.9;2012;;
-Croatia;59.59;17.3;2013;;
-Croatia;59.49;17.3;2014;;
-Croatia;51.01;16.2;2015;;
-Croatia;52.74;13.1;2016;;
-Croatia;56.32;11.1;2017;;
-Croatia;61.86;8.4;2018;;
-Croatia;61.87;6.6;2019;;
-Croatia;58.22;7.5;2020;;
-Croatia;69.6;7.6;2021;;
-Croatia;72;7;2022;;
-Croatia;82.69;6.1;2023;;
-;;;;;
-;;;;;
-;;;;;
-;;;;;
-;;;;;
-;;;;;
+﻿Country;GDP;Net Migration;Year
+Bosnia and Herzegovina;8.5;32.8;2003
+Bosnia and Herzegovina;10.16;31.5;2004
+Bosnia and Herzegovina;11.22;31.8;2005
+Bosnia and Herzegovina;12.86;31.1;2006
+Bosnia and Herzegovina;15.78;29;2007
+Bosnia and Herzegovina;19.11;23.4;2008
+Bosnia and Herzegovina;17.61;24.1;2009
+Bosnia and Herzegovina;17.18;27.3;2010
+Bosnia and Herzegovina;18.64;27.6;2011
+Bosnia and Herzegovina;17.23;28;2012
+Bosnia and Herzegovina;18.18;27.5;2013
+Bosnia and Herzegovina;18.56;27.5;2014
+Bosnia and Herzegovina;16.4;27.7;2015
+Bosnia and Herzegovina;17.12;25.4;2016
+Bosnia and Herzegovina;18.33;20.5;2017
+Bosnia and Herzegovina;20.48;18.4;2018
+Bosnia and Herzegovina;20.48;15.7;2019
+Bosnia and Herzegovina;20.23;15.9;2020
+Bosnia and Herzegovina;23.67;14.9;2021
+Bosnia and Herzegovina;24.53;12.7;2022
+Bosnia and Herzegovina;27.05;10.7;2023
+Serbia;22.48;15.2;2003
+Serbia;26.14;18.5;2004
+Serbia;27.68;20.9;2005
+Serbia;32.48;20.9;2006
+Serbia;43.17;18.1;2007
+Serbia;52.19;13.7;2008
+Serbia;45.16;16.1;2009
+Serbia;41.82;19.2;2010
+Serbia;49.26;20.3;2011
+Serbia;43.31;24;2012
+Serbia;48.39;22.2;2013
+Serbia;47.06;19.2;2014
+Serbia;39.66;17.7;2015
+Serbia;40.69;15.3;2016
+Serbia;44.18;13.5;2017
+Serbia;50.64;12.7;2018
+Serbia;51.51;10.4;2019
+Serbia;53.36;9;2020
+Serbia;63.1;9.8;2021
+Serbia;63.56;8.4;2022
+Serbia;75.19;8.3;2023
+Croatia;35.26;13.9;2003
+Croatia;41.86;13.7;2004
+Croatia;45.03;12.6;2005
+Croatia;49.6;11.1;2006
+Croatia;59.32;9.9;2007
+Croatia;68.53;8.5;2008
+Croatia;62.09;9.2;2009
+Croatia;58.84;11.6;2010
+Croatia;62.77;13.7;2011
+Croatia;57.41;15.9;2012
+Croatia;59.59;17.3;2013
+Croatia;59.49;17.3;2014
+Croatia;51.01;16.2;2015
+Croatia;52.74;13.1;2016
+Croatia;56.32;11.1;2017
+Croatia;61.86;8.4;2018
+Croatia;61.87;6.6;2019
+Croatia;58.22;7.5;2020
+Croatia;69.6;7.6;2021
+Croatia;72;7;2022
+Croatia;82.69;6.1;2023
