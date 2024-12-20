@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {"view": {"strokeOpacity": 0}},
+    "title": {
+      "text": "Unemployment Rate and Intentional Female Homicides in Germany",
+      "subtitle": [
+        "Unemployment, total (% of total labor force). Source: World Bank Data",
+        "Intentional homicides, female (per 100,000 female). Source: World Bank Data"
+      ],
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 12,
+      "anchor": "middle",
+      "fontSize": 16,
+      "offset": 20
+    },
+  "description": "A scatterplot showing horsepower and miles per gallons for various cars.",
+  "data": {
+      "url": "https://raw.githubusercontent.com/Zeytuna936/Zeytuna936.github.io/refs/heads/main/cc9.csv",
+      "format": {"type": "dsv", "delimiter": ";"}
+    },
+  "mark": {"type": "circle", "color": "olivedrab"},
+  "encoding": {
+      "x": {
+        "field": "Unemployment Rate",
+        "type": "quantitative",
+        "title": "Unemployment Rate",
+        "scale": {"domain": [0, 12]},
+        "axis": {"labelExpr": "format(datum.value, ',') + '%'"}
+      },
+      "y": {
+        "field": "Intentional Female Homicides",
+        "type": "quantitative",
+        "title": "Intentional Female Homicides, (per 100,000 female)",
+        "scale": {"domain": [0, 2]}
+      },
+      "tooltip": [
+        {"field": "Years", "type": "quantitative", "title": "Year"},
+        {
+          "field": "Unemployment Rate",
+          "type": "quantitative",
+          "title": "Unemployment Rate (%)"
+        },
+        {
+          "field": "Intentional Female Homicides",
+          "type": "quantitative",
+          "title": "Intentional homicides, per 100,000 female"
+      }
+      ]
+    },
+  }

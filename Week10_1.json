@@ -1,0 +1,134 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Comparing GDP Across 3 Former Yugoslav Countries",
+    "subtitle": ["Source: WorldBank"],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 12,
+    "color": "black"
+  },
+  "width": 300,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Zeytuna936/Zeytuna936.github.io/refs/heads/main/Book1.csv",
+    "format": {"type": "dsv", "delimiter": ";"}
+  },
+  "selection": {
+    "highlight": {
+      "type": "multi",
+      "on": "mouseover",
+      "fields": ["Country"],
+      "empty": "none",
+      "bind": "scales"
+    },
+    "hover": {
+      "type": "point",
+      "fields": ["Year"],
+      "nearest": true,
+      "on": "pointerover",
+      "clear": "pointerout"
+    }
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "Year",  
+      "type": "temporal",
+      "title": "Year",
+      "axis": {
+        "grid": false   
+      }
+    },
+    "y": {
+      "field": "GDP",
+      "type": "quantitative",
+      "title": "GDP (in Billion USD)",
+      "axis": {
+        "labelFormat": ".0f",
+        "grid": false  
+      }
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "legend": {"title": "Country"},
+      "scale": {
+        "scheme": "oranges"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "GDP",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": ["Year"],
+            "nearest": true,
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ],
+      "mark": "point",
+      "encoding": {
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    },
+    {
+      "transform": [{"filter": {"param": "hover", "empty": false}}],
+      "layer": [
+        {
+          "mark": {"type": "rule", "color": "black"},
+          "encoding": {
+            "x": {"type": "temporal", "field": "Year", "aggregate": "min"}
+          }
+        },
+        {
+          "encoding": {
+            "text": {"field": "GDP", "type": "quantitative"},
+            "x": {"type": "temporal", "field": "Year"},
+            "y": {"type": "quantitative", "field": "GDP"}
+          },
+          "layer": [
+            {
+              "mark": {
+                "type": "text",
+                "stroke": "white",
+                "strokeWidth": 2,
+                "align": "left"
+              }
+            },
+            {
+              "mark": {"type": "text", "align": "left"},
+              "encoding": {
+                "color": {"type": "nominal", "field": "Country"}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

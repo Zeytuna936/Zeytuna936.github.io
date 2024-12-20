@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Unemployment Rate Dynamics in Three Former Yugoslav Countries",
+    "subtitle": [
+      "Source: WorldBank"
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 12,
+    "color": "black"
+  },
+  "width": 300,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Zeytuna936/Zeytuna936.github.io/refs/heads/main/Book1.csv",
+    "format": {"type": "dsv", "delimiter": ";"}
+  },
+  "mark": "area",
+  "params": [
+    {
+      "name": "country",
+      "select": {
+        "type": "point",
+        "fields": ["Country"]
+      },
+      "bind": "legend"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "timeUnit": "year",
+      "field": "Year",
+      "axis": {
+        "title": "Year",
+        "domain": false,
+        "grid": false
+      }
+    },
+    "y": {
+      "field": "UnemploymentRate",
+      "type": "quantitative",
+      "axis": {
+        "title": "Unemployment Rate (% of total labor force)",
+        "grid": false
+      }
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "scale": {
+        "scheme": "paired"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "Year",
+        "type": "temporal",
+        "title": "Year"
+      },
+      {
+        "field": "UnemploymentRate",
+        "type": "quantitative",
+        "title": "Unemployment Rate (%)"
+      },
+      {
+        "field": "Country",
+        "type": "nominal",
+        "title": "Country"
+      }
+    ]
+  }
+}
