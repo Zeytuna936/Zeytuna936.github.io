@@ -1,0 +1,387 @@
+{
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "data": {"name": "data-790b4e6e0b8773e3e7a2bb49bee584ce"},
+  "mark": {"type": "bar"},
+  "encoding": {
+    "color": {"field": "cpi_name", "title": "Product", "type": "nominal"},
+    "tooltip": [
+      {"field": "cpi_name", "type": "nominal"},
+      {"field": "price", "type": "quantitative"}
+    ],
+    "x": {"field": "cpi_name", "title": "Product", "type": "nominal"},
+    "y": {
+      "aggregate": "mean",
+      "field": "price",
+      "title": "Median Price (£)",
+      "type": "quantitative"
+    }
+  },
+  "height": 300,
+  "title": "Average Prices by Product",
+  "width": 300,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-790b4e6e0b8773e3e7a2bb49bee584ce": [
+      {
+        "year_month": "2023-06",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.9
+      },
+      {
+        "year_month": "2023-06",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4.125
+      },
+      {
+        "year_month": "2023-06",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 4
+      },
+      {
+        "year_month": "2023-06",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.05
+      },
+      {
+        "year_month": "2023-07",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.9
+      },
+      {
+        "year_month": "2023-07",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4.25
+      },
+      {
+        "year_month": "2023-07",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.85
+      },
+      {
+        "year_month": "2023-07",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.75
+      },
+      {
+        "year_month": "2023-08",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.8
+      },
+      {
+        "year_month": "2023-08",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4
+      },
+      {
+        "year_month": "2023-08",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.5
+      },
+      {
+        "year_month": "2023-08",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.35
+      },
+      {
+        "year_month": "2023-09",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.75
+      },
+      {
+        "year_month": "2023-09",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4
+      },
+      {
+        "year_month": "2023-09",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.85
+      },
+      {
+        "year_month": "2023-09",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.35
+      },
+      {
+        "year_month": "2023-10",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.8
+      },
+      {
+        "year_month": "2023-10",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4
+      },
+      {
+        "year_month": "2023-10",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 4
+      },
+      {
+        "year_month": "2023-10",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.3
+      },
+      {
+        "year_month": "2023-11",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.9
+      },
+      {
+        "year_month": "2023-11",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4
+      },
+      {
+        "year_month": "2023-11",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 4
+      },
+      {
+        "year_month": "2023-11",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.35
+      },
+      {
+        "year_month": "2023-12",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.9
+      },
+      {
+        "year_month": "2023-12",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4.3
+      },
+      {
+        "year_month": "2023-12",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 4
+      },
+      {
+        "year_month": "2023-12",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.35
+      },
+      {
+        "year_month": "2024-01",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.9
+      },
+      {
+        "year_month": "2024-01",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4.3
+      },
+      {
+        "year_month": "2024-01",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 4
+      },
+      {
+        "year_month": "2024-01",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.3
+      },
+      {
+        "year_month": "2024-02",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.9
+      },
+      {
+        "year_month": "2024-02",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4.3
+      },
+      {
+        "year_month": "2024-02",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.96
+      },
+      {
+        "year_month": "2024-02",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.3
+      },
+      {
+        "year_month": "2024-03",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 3
+      },
+      {
+        "year_month": "2024-03",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4.3
+      },
+      {
+        "year_month": "2024-03",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.75
+      },
+      {
+        "year_month": "2024-03",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.44
+      },
+      {
+        "year_month": "2024-04",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 3
+      },
+      {
+        "year_month": "2024-04",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4.3
+      },
+      {
+        "year_month": "2024-04",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.95
+      },
+      {
+        "year_month": "2024-04",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.5
+      },
+      {
+        "year_month": "2024-05",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.95
+      },
+      {
+        "year_month": "2024-05",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4.25
+      },
+      {
+        "year_month": "2024-05",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.99
+      },
+      {
+        "year_month": "2024-05",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.5
+      },
+      {
+        "year_month": "2024-06",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.89
+      },
+      {
+        "year_month": "2024-06",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4.1
+      },
+      {
+        "year_month": "2024-06",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.85
+      },
+      {
+        "year_month": "2024-06",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.3
+      },
+      {
+        "year_month": "2024-07",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.85
+      },
+      {
+        "year_month": "2024-07",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 4
+      },
+      {
+        "year_month": "2024-07",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.75
+      },
+      {
+        "year_month": "2024-07",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3
+      },
+      {
+        "year_month": "2024-08",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.8
+      },
+      {
+        "year_month": "2024-08",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 3.99
+      },
+      {
+        "year_month": "2024-08",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.75
+      },
+      {
+        "year_month": "2024-08",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3
+      },
+      {
+        "year_month": "2024-09",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.85
+      },
+      {
+        "year_month": "2024-09",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 3.9
+      },
+      {
+        "year_month": "2024-09",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.75
+      },
+      {
+        "year_month": "2024-09",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.35
+      },
+      {
+        "year_month": "2024-10",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.95
+      },
+      {
+        "year_month": "2024-10",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 3.6
+      },
+      {
+        "year_month": "2024-10",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.49
+      },
+      {
+        "year_month": "2024-10",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.35
+      },
+      {
+        "year_month": "2024-11",
+        "cpi_name": "chicken kiev 2 pack 240-325g",
+        "price": 2.975
+      },
+      {
+        "year_month": "2024-11",
+        "cpi_name": "fresh boneless chicken breast",
+        "price": 3.97
+      },
+      {
+        "year_month": "2024-11",
+        "cpi_name": "fresh/chilled chicken  per kg",
+        "price": 3.5
+      },
+      {
+        "year_month": "2024-11",
+        "cpi_name": "froz chicken nuggets 220-600g",
+        "price": 3.35
+      }
+    ]
+  }
+}
