@@ -34,17 +34,21 @@
         "scale": {"domain": [0, 2]}
       },
       "tooltip": [
-        {"field": "Years", "type": "quantitative", "title": "Year"},
-        {
-          "field": "Unemployment Rate",
-          "type": "quantitative",
-          "title": "Unemployment Rate (%)"
-        },
-        {
-          "field": "Intentional Female Homicides",
-          "type": "quantitative",
-          "title": "Intentional homicides, per 100,000 female"
+      {
+        "field": "Years",
+        "type": "quantitative",
+        "title": "Year"
+      },
+      {
+        "field": "Unemployment Rate",
+        "type": "quantitative",
+        "title": "Unemployment Rate (%)"
+      },
+      {
+        "field": "Intentional Female Homicides",
+        "type": "quantitative",
+        "title": "Intentional homicides, per 100,000 female"
       }
-      ]
-    },
+    ]
   }
+}
