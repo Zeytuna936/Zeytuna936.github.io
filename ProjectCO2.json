@@ -1,0 +1,154 @@
+{
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "data": {"name": "data-995e6ae7ccdb708708da5345406af7a3"},
+  "mark": {"type": "bar"},
+  "background": "antiquewhite",
+  "encoding": {
+    "color": {"field": "Country Name", "type": "nominal"},
+    "tooltip": [
+      {"field": "Country Name", "type": "nominal"},
+      {"field": "Year", "type": "nominal"},
+      {"field": "CO2 Emissions (kt)", "type": "nominal"}
+    ],
+    "x": {"field": "Year", "title": "Year", "type": "ordinal"},
+    "y": {
+      "field": "CO2 Emissions (kt)",
+      "title": "CO2 Emissions (kt)",
+      "type": "quantitative"
+    }
+  },
+  "height": 300,
+  "title": "CO2 Emissions (kt) for Selected Countries",
+  "width": 300,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-995e6ae7ccdb708708da5345406af7a3": [
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "1990",
+        "CO2 Emissions (kt)": ".."
+      },
+      {"Country Name": "Croatia", "Year": "1990", "CO2 Emissions (kt)": ".."},
+      {
+        "Country Name": "Montenegro",
+        "Year": "1990",
+        "CO2 Emissions (kt)": ".."
+      },
+      {"Country Name": "Serbia", "Year": "1990", "CO2 Emissions (kt)": ".."},
+      {"Country Name": "Slovenia", "Year": "1990", "CO2 Emissions (kt)": ".."},
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "1995",
+        "CO2 Emissions (kt)": "3428.645"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "1995",
+        "CO2 Emissions (kt)": "16985.544"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "1995",
+        "CO2 Emissions (kt)": ".."
+      },
+      {"Country Name": "Serbia", "Year": "1995", "CO2 Emissions (kt)": ".."},
+      {
+        "Country Name": "Slovenia",
+        "Year": "1995",
+        "CO2 Emissions (kt)": "14403.976"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2000",
+        "CO2 Emissions (kt)": "13787.92"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2000",
+        "CO2 Emissions (kt)": "19339.758"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2000",
+        "CO2 Emissions (kt)": ".."
+      },
+      {"Country Name": "Serbia", "Year": "2000", "CO2 Emissions (kt)": ".."},
+      {
+        "Country Name": "Slovenia",
+        "Year": "2000",
+        "CO2 Emissions (kt)": "14396.642"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2005",
+        "CO2 Emissions (kt)": "16204.473"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2005",
+        "CO2 Emissions (kt)": "22592.387"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2005",
+        "CO2 Emissions (kt)": "2057.187"
+      },
+      {"Country Name": "Serbia", "Year": "2005", "CO2 Emissions (kt)": ".."},
+      {
+        "Country Name": "Slovenia",
+        "Year": "2005",
+        "CO2 Emissions (kt)": "15867.109"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2010",
+        "CO2 Emissions (kt)": "21275.934"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2010",
+        "CO2 Emissions (kt)": "20172.167"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2010",
+        "CO2 Emissions (kt)": "2581.568"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2010",
+        "CO2 Emissions (kt)": "45954.844"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2010",
+        "CO2 Emissions (kt)": "15335.394"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2014",
+        "CO2 Emissions (kt)": "22233.021"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2014",
+        "CO2 Emissions (kt)": "16842.531"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2014",
+        "CO2 Emissions (kt)": "2211.201"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2014",
+        "CO2 Emissions (kt)": "37667.424"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2014",
+        "CO2 Emissions (kt)": "12812.498"
+      }
+    ]
+  }
+}

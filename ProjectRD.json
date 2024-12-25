@@ -1,0 +1,157 @@
+{
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "data": {"name": "data-cd4c72a44ba9ccb3c579a15d45e8bc03"},
+  "mark": {"type": "circle", "size": 100},
+  "background": "antiquewhite",
+  "encoding": {
+    "color": {
+      "field": "Country Name",
+      "legend": {"title": "Country"},
+      "type": "nominal"
+    },
+    "tooltip": [
+      {"field": "Country Name", "title": "Country Name", "type": "nominal"},
+      {"field": "Year", "title": "Year", "type": "ordinal"},
+      {
+        "field": "R&D Expenditure (% of GDP)",
+        "format": ".2f",
+        "title": "R&D Expenditure (% of GDP)",
+        "type": "quantitative"
+      }
+    ],
+    "x": {"field": "Year", "title": "Year", "type": "ordinal"},
+    "y": {
+      "field": "R&D Expenditure (% of GDP)",
+      "title": "R&D Expenditure (% of GDP)",
+      "type": "quantitative"
+    }
+  },
+  "height": 300,
+  "title": "Scatter Plot: R&D Expenditure (% of GDP) for Selected Countries",
+  "width": 300,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-cd4c72a44ba9ccb3c579a15d45e8bc03": [
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "1990",
+        "R&D Expenditure (% of GDP)": ".."
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "1990",
+        "R&D Expenditure (% of GDP)": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "1990",
+        "R&D Expenditure (% of GDP)": ".."
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "1990",
+        "R&D Expenditure (% of GDP)": ".."
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "1990",
+        "R&D Expenditure (% of GDP)": ".."
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "1990",
+        "R&D Expenditure (% of GDP)": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2000",
+        "R&D Expenditure (% of GDP)": ".."
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2000",
+        "R&D Expenditure (% of GDP)": "1.04250001907349"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2000",
+        "R&D Expenditure (% of GDP)": ".."
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2000",
+        "R&D Expenditure (% of GDP)": "0.418879985809326"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2000",
+        "R&D Expenditure (% of GDP)": "0.854240000247955"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2000",
+        "R&D Expenditure (% of GDP)": "1.35982000827789"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2015",
+        "R&D Expenditure (% of GDP)": "0.21603000164032"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2015",
+        "R&D Expenditure (% of GDP)": "0.828159987926483"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2015",
+        "R&D Expenditure (% of GDP)": "0.374000012874603"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2015",
+        "R&D Expenditure (% of GDP)": "0.444119989871979"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2015",
+        "R&D Expenditure (% of GDP)": "0.810899972915649"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2015",
+        "R&D Expenditure (% of GDP)": "2.19565010070801"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2020",
+        "R&D Expenditure (% of GDP)": "0.203250005841255"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2020",
+        "R&D Expenditure (% of GDP)": "1.24260997772217"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2020",
+        "R&D Expenditure (% of GDP)": ".."
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2020",
+        "R&D Expenditure (% of GDP)": "0.372640013694763"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2020",
+        "R&D Expenditure (% of GDP)": "0.90557998418808"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2020",
+        "R&D Expenditure (% of GDP)": "2.14265990257263"
+      }
+    ]
+  }
+}

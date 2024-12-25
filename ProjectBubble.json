@@ -1,0 +1,78 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Zeytuna936/Zeytuna936.github.io/refs/heads/main/bubble%20updated.csv",
+    "format": {"type": "dsv", "delimiter": ";"}
+  },
+  "title": {
+    "text": "Analyzing Institutional Indicators in Former Yugoslavian Countries",
+    "subtitle": ["Size of points based on World Press Freedom Index", "Source: WorldBank"],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "orangered"
+  },
+  "mark": {"type": "circle", "opacity": 0.8},
+  "height": 300,
+  "width": 300,
+  "encoding": {
+    "x": {
+      "field": "Rule of Law Index",
+      "type": "quantitative",
+      "axis": {"grid": false},
+      "title": "Rule of Law Index Score"
+    },
+    "y": {
+      "field": "Corruption Perceptions Index Table",
+      "type": "quantitative",
+      "axis": {"grid": false},
+      "title": "Corruption Perceptions Index (higher value - less corrupt)"
+    },
+    "size": {
+      "field": "World Press Freedom Index",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 80], 
+        "range": [10000, 100]
+      },
+      "legend": null
+    },
+    "color": {
+      "field": "Corruption Perceptions Index Table",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "reds",
+        "domain": [10, 60],
+        "reverse": true
+      }
+    },
+    "tooltip": [
+      {"field": "Countries", "type": "nominal", "title": "Country"},
+      {
+        "field": "Rule of Law Index",
+        "type": "quantitative",
+        "title": "Rule of Law Index"
+      },
+      {
+        "field": "Corruption Perceptions Index Table",
+        "type": "quantitative",
+        "title": "Corruption Perceptions Index"
+      },
+      {
+        "field": "World Press Freedom Index",
+        "type": "quantitative",
+        "title": "World Press Freedom Index"
+      }
+    ]
+  },
+  "config": {
+    "background": "antiquewhite",
+    "legend": {
+      "titleFontSize": 12,
+      "labelFontSize": 10,
+      "symbolSize": 100,
+      "padding": 10
+    }
+  }
+}
+

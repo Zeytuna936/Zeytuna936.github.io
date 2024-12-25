@@ -4,8 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
+
 <body>
     <p>My Project Page</p>
+
+
+    <div class="chart-description">
+        <figure id="Location1"></figure> 
+    </div>
+    <div class="chart-description">
+        <figure id="Location2"></figure>
+    </div>
+    <div class="chart-description">
+        <figure id="Location3"></figure>
+    </div>
+    <div class="chart-description">
+        <figure id="Location4"></figure>
+    </div>
+    <div class="chart-description">
+        <figure id="Location5"></figure>
+    </div>
+    <div class="chart-description">
+        <figure id="Location6"></figure>
+    </div>
+
+    <script>
+        let figure_1_spec = "ProjectGDP.json";
+        let figure_2_spec = "ProjectBarChart.json";
+        let figure_3_spec = "ProjectRD.json";
+        let figure_4_spec = "ProjectHealth.json";
+        let figure_5_spec = "ProjectCO2.json";
+        let figure_6_spec = "ProjectBubble.json";
+        vegaEmbed('#Location1', figure_1_spec);
+        vegaEmbed('#Location2', figure_2_spec);
+        vegaEmbed('#Location3', figure_3_spec);
+        vegaEmbed('#Location4', figure_4_spec);
+        vegaEmbed('#Location5', figure_5_spec);
+        vegaEmbed('#Location6', figure_6_spec);
+    </script>
 </body>
 </html>
+
+
+

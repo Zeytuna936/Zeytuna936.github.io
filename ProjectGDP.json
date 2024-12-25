@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+  "title": {
+      "text": "GDP of former Yugooslavian Countries from 1991 to 2023",
+      "subtitle": ["GDP in billions (current US$)","Source: WorldBank"],
+      "fontSize": 18,
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"},
+
+   
+   "data": {
+    "url": "https://raw.githubusercontent.com/Zeytuna936/Zeytuna936.github.io/refs/heads/main/gdp%20over%20years.csv",
+    "format": {"type": "dsv", "delimiter": ";"}
+  },
+  "params": [
+    {
+      "name": "hover",
+      "select": {"type": "point", "on": "mouseover", "clear": "mouseout"}
+    }
+  ],
+ "mark": {
+    "type": "line",
+    "point": {"size": 50, "filled": true, "opacity": 0.7}
+  },
+  "encoding": {
+    "x": {
+      "field": "Years",
+      "type": "temporal",
+      "title": "Years"
+    },
+    "y": {
+      "field": "GDP (current US$)",
+      "type": "quantitative",
+      "title": "GDP (Current US$)"
+    },
+    "color": {
+      "field": "Countries",
+      "type": "nominal",
+      "title": "Country",
+      "scale": {
+        "domain": [
+          "Bosnia and Herzegovina",
+          "Croatia",
+          "Montenegro",
+          "North Macedonia",
+          "Serbia",
+          "Slovenia"
+        ],
+        "range": [
+          "blue",
+          "orange",
+          "brown",
+          "green",
+          "purple",
+          "red"
+        ]
+      },
+      "legend": {
+        "title": "Countries",
+        "orient": "top",
+        "labelFontSize": 12 
+      }
+    },
+    "opacity": {
+      "condition": {"param": "hover", "value": 1},
+      "value": 0.3
+    },
+    "tooltip": [
+      {"field": "Years", "type": "temporal", "title": "Year"},
+      {"field": "Countries", "type": "nominal", "title": "Country"},
+      {"field": "GDP (current US$)", "type": "quantitative", "title": "GDP (US$)"}
+    ]
+  },
+  "width": 300,
+  "height": 300,
+  "config": {
+    "background": "antiquewhite",
+    "axis": {
+      "grid": false
+    },
+    "legend": {
+      "orient": "top",
+      "titleFontSize": 14
+    }
+  }
+}
+

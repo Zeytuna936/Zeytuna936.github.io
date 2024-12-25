@@ -1,0 +1,105 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Interactive bar chart for Unemployment Rate, Inflation, and FDI by country, filtered by year.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Zeytuna936/Zeytuna936.github.io/main/barchart.csv",
+    "format": {"type": "dsv", "delimiter": ";"}
+  },
+  "title": {
+    "text": "Economic Indicators of Former Yugoslavian Countries",
+    "subtitle": [
+      "Each country has three bars: Unemployment Rate, Inflation, and FDI.",
+      "Choose a year from the dropdown to filter the data."
+    ],
+    "anchor": "start",
+    "color": "black",
+    "subtitleColor": "gray",
+    "subtitleFontSize": 12,
+    "subtitleFontStyle": "italic"
+  },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2007,
+      "bind": {
+        "input": "select",
+        "options": [
+          2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015,
+          2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023
+        ],
+        "name": "Select Year: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.Year == selectedYear"},
+    {
+      "fold": ["Unemployment Rate", "Inflation", "FDI"],
+      "as": ["Measure", "Value"]
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Country",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "grid": false,
+        "domainColor": "black",
+        "labelColor": "black",
+        "titleColor": "black"
+      }
+    },
+    "xOffset": {"field": "Measure", "sort": ["Unemployment Rate", "Inflation", "FDI"]},
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "Value",
+      "axis": {
+        "grid": false,
+        "domainColor": "black",
+        "labelColor": "black",
+        "titleColor": "black"
+      }
+    },
+    "color": {
+      "field": "Measure",
+      "type": "nominal",
+      "title": "Indicator",
+      "scale": {
+        "domain": ["Unemployment Rate", "Inflation", "FDI"],
+        "range": ["crimson", "mediumseagreen", "royalblue"]
+      },
+      "legend": {
+        "orient": "bottom",
+        "labelColor": "black",
+        "titleColor": "black"
+      }
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "Measure", "type": "nominal", "title": "Measure"},
+      {"field": "Value", "type": "quantitative", "title": "Value"}
+    ]
+  },
+  "mark": {
+    "type": "bar",
+    "cursor": "pointer",
+    "size": 25
+  },
+  "width": 300,
+  "height": 300,
+  "config": {
+    "background": "antiquewhite",
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "labelColor": "black",
+      "titleColor": "black"
+    },
+    "legend": {
+      "labelColor": "black",
+      "titleColor": "black"
+    }
+  }
+}
+
