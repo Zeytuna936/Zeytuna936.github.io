@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   
   "title": {
-      "text": "GDP of former Yugooslavian Countries from 1991 to 2023",
+      "text": "GDP of former Yugoslavian Countries from 1991 to 2023",
       "subtitle": ["GDP in billions (current US$)","Source: WorldBank"],
       "fontSize": 18,
       "subtitleFontStyle":"italic",
