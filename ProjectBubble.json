@@ -6,7 +6,7 @@
   },
   "title": {
     "text": "Analyzing Institutional Indicators in Former Yugoslavian Countries",
-    "subtitle": ["Size of points based on World Press Freedom Index", "Source: WorldBank"],
+    "subtitle": ["Size of points based on World Press Freedom Index", "Source: Wikipedia"],
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
     "anchor": "start",

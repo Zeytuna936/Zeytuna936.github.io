@@ -10,33 +10,142 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 
-<body>
-    <p>My Project Page</p>
+<style>
+    body {
+        background-color: rgb(245, 201, 200);
+        font-family: Arial, sans-serif; 
+        margin: 0;
+        padding: 0;
+    }
 
+    
+    header {
+        background-color: rgb(244, 230, 183); 
+        text-align: center; 
+        padding: 50px; 
+        border-bottom: 2px solid #ddd;
+    }
+
+    
+    h1 {
+        margin: 0;
+        padding: 10px;
+        font-size: 2.5em;
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(10, 10, 10); 
+    }
+
+    
+    h2 {
+        margin: 0;
+        padding: 10px;
+        font-size: 1.5em;
+        font-family: 'Times New Roman', Times, serif;
+        color: #3a3737; 
+    }
+
+    h3 {
+        margin: 0;
+        padding: 10px;
+        font-size: 1.5em;
+        font-family: 'Times New Roman', Times, serif;
+        color: #010101; 
+    }
+
+    h4 {
+        margin: 0;
+        padding: 10px;
+        font-size: 1.5em;
+        font-family: cursive;
+        color: #e18e8e; 
+    }
+    
+</style>
+</head>
+
+<body>
+    <header>
+        <h1>Automated Data Visualisation for Policymaking</h1>
+        <h2>Final Project on </h2>
+        <h3>Conflict Legacy: Analyzing Impact of Yugoslav Wars on Post-Conflict Development</h3>
+        <h4>by Zeytuna Sultanzade</h4>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Aim of the Project</h2>
+            <p>Armed conflicts are one of the fundamental obstacles to progress- they hinder development through weakened governance, which leads to inefficient institutions and a rise of corruption and instability, disruption to the economy, which includes an increase in unemployment and inflation, damage to supply chain, fall of investment, and displacement of capital. Severely affected by the detrimental impacts of war, citizens either continue their lives under heavy living conditions or choose to move abroad which results in displacement of skilled labor and increase global migration. 
+            <p>
+            </p>Being known as the deadliest one in Europe since WW2, the <a href="https://www.icty.org/en/about/what-former-yugoslavia/conflicts"_blank">Yugoslav Wars</a> resulted in ethnic cleansing, genocide, and psychological trauma along with the breakup of Yugoslavia. Among 6 former Yugoslavian countries, some of them were affected by the bloody wars the most (Bosnia and Herzegovina (BH), Croatia, Serbia) while some of them could get independence under peace and negotiation (Montenegro, North Macedonia (NM), Slovenia). 
+            </p>In my research, I intend to investigate to what extent the Yugoslav Wars hindered development of former Yugoslavian countries, especially the ones that experienced it the most. To analyze it, the project aims to include indicators of main factors contributing to development among these countries.  
+
+        </section>
+
+
+        <main>
+            <section>
+                <h2>Data Collection and Charts</h2>
 
     <div class="chart-description">
+        <p>Chart1/Main Highlights:<p>
+        <ul>
+            <li>The GDP of Croatia, Slovenia, and Serbia is significantly higher than the others;</li>
+            <li>Since 2000, these countries have never experienced a dramatic decrease in GDP;</li>
+            <li>From the data of GDP of all countries available on <a href="https://databank.worldbank.org/reports.aspx?source=2&series=NY.GDP.MKTP.CD&country 
+                "_blank">WorldBank,</a> only data for 6 target countries were scraped via on <a href="https://colab.research.google.com/drive/1lmhYzx_wYRgelaBbZK7f6-znE2jOH0ml?usp=sharing"_blank">Colab</a>
+                </li>
+        </ul>
         <figure id="Location1"></figure> 
     </div>
     <div class="chart-description">
+        <p>Chart2/Main Highlights:<p>
+            <ul>
+                <li>Considering the GDPs of all countries, Slovenia spends the highest amount of money on RD;</li>
+                <li>The original data from <a href=https://databank.worldbank.org/source/world-development-indicators/Series/GB.XPD.RSDV.GD.ZS"_blank">WorldBank,</a>  were scraped via <a href=https://colab.research.google.com/drive/1jSRloD9aSeebTqMVwVwef_mmbgFb8QqM?usp=sharing "_blank">Colab</a> </li>
+            </ul>
         <figure id="Location2"></figure>
     </div>
     <div class="chart-description">
+        <p>Chart3/Main Highlights:<p>
+            <ul>
+                <li>The bar chart compares economic indicators among 6 countries from 2007 to 2023;</li>
+                <li>A CSV file where only 6 countries and their indicators are shown was created;</li>
+                <li>Additional interactivity of filtering data was added by using “params” and “transform” functions
+                    </li>
+            </ul>
         <figure id="Location3"></figure>
     </div>
     <div class="chart-description">
+        <p>Chart4/Main Highlights:<p>
+            <ul>
+                <li>Slovenia has the highest life expectancy rate, followed by Croatia; </li>
+                <li>The government of BH has the highest value for the health expenditure;</li>
+                <li>The data for the heatmap was obtained from <a href="https://databank.worldbank.org/source/health-nutrition-and-population-statistics"_blank">WorldBank.</a> The Colab network, where targeted indicators and countries were scraped is available <a href="https://colab.research.google.com/drive/1lLus3hKo_wbXCNcuB1Px7Ok9wAVVXZeG?usp=sharing"_blank">here</a>
+                    </li>
+            </ul>
         <figure id="Location4"></figure>
     </div>
     <div class="chart-description">
+        <p>Chart5/Main Highlights:<p>
+            <ul>
+                <li>Serbia releases the largest amount of CO2 among the others, which can be related to its high dependence on fossil fuels and the industrial sector;</li>
+                <li>The data for all countries and indicators was accessed from <a href="https://databank.worldbank.org/source/millennium-development-goals/Series/EN.ATM.CO2E.KT"> WorldBank </a> and scraped on Colab <a href="https://colab.research.google.com/drive/1mvJcDevIoGRIEotViWpiCvdbfvjqLbFx?usp=sharing"> Colab</a> </li>
+            </ul>
         <figure id="Location5"></figure>
     </div>
     <div class="chart-description">
+        <p>Chart6/Main Highlights:<p></p>
+        <ul>
+            <li>BH and Serbia have the highest level of corruption and the lowest level of freedom index and rule of law, while Slovenia has the best indicators for state capacity;</li>
+            <li>A CSV file where statistics of on only targeted countries are shown was created</li>
+        </ul>
         <figure id="Location6"></figure>
     </div>
 
     <script>
         let figure_1_spec = "ProjectGDP.json";
-        let figure_2_spec = "ProjectBarChart.json";
-        let figure_3_spec = "ProjectRD.json";
+        let figure_2_spec = "ProjectRD.json";
+        let figure_3_spec = "ProjectBarChart.json";
         let figure_4_spec = "ProjectHealth.json";
         let figure_5_spec = "ProjectCO2.json";
         let figure_6_spec = "ProjectBubble.json";
@@ -47,6 +156,26 @@
         vegaEmbed('#Location5', figure_5_spec);
         vegaEmbed('#Location6', figure_6_spec);
     </script>
+
+<main>
+    <section>
+        <h2>Data Limitations</h2>
+        <p>The main challenge is that there is not enough data for the countries of interest, especially it was challenging to find information for BH, NM, and Montenegro. It can be very well seen in Chart 5. Moreover, the data showing indicators of the countries individually before the breakup of Yugoslavia is limited; so, although I wanted to analyze the statistics for 1990 on Chart 2, the data was not available. 
+        </p>Because I could not find data for all targeted countries and indicators for the charts 3 and 6 in more reliable sources, I used Wikipedia as a main source. However, columns of the data had different titles and subtitles, and there were unnamed tables on the same page. Consequently, when I tried to create charts on Python, it gave me values from different tables. Therefore, I chose to use Excel to clean the data. 
+        
+    </section>
+
+    <main>
+        <section>
+            <h2>Conclusion</h2>
+            <p>Based on the research, it can be concluded that Slovenia and Croatia have developed more than the others, although I was not expecting Croatia’s GDP to be higher than Slovenia considering the fact that Slovenia became an EU member in 2004 (while Croatia joined EU in 2013), is located closer to Central Europe, have almost never involved in conflicts in the region. Despite having the second highest GDP, Serbia suffers from a high level of unemployment rate compared to its 2 counterparts, Croatia and Slovenia. What did not surprise me was the result for BH because after it gained independence, the country was under destruction, political instability, and poverty- although its situation is better nowadays, compared to the 3 main aforementioned powers in the region, it is left behind. Results for North Macedonia (landlocked country) and Montenegro (reliance on tourism) were predictable before the analysis. 
+
+
+            </p>To claim the causation that the countries still have challenges due to the historical wars would sound too ambitious; however, if we are to compare 3 countries that suffered from the wars the most, we can see that the war legacy still hinders Bosnian development while Serbia (that has always been the militarily strongest and had the best relations with great powers in the East) and Croatia (that has been closer to the West) seem to overcome most of their challenges.
+            
+        </section>
+
+
 </body>
 </html>
 

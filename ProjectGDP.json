@@ -1,90 +1,387 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  
-  "title": {
-      "text": "GDP of former Yugoslavian Countries from 1991 to 2023",
-      "subtitle": ["GDP in billions (current US$)","Source: WorldBank"],
-      "fontSize": 18,
-      "subtitleFontStyle":"italic",
-      "subtitleFontSize":10,
-      "anchor": "start",
-      "color": "black"},
-
-   
-   "data": {
-    "url": "https://raw.githubusercontent.com/Zeytuna936/Zeytuna936.github.io/refs/heads/main/gdp%20over%20years.csv",
-    "format": {"type": "dsv", "delimiter": ";"}
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "data": {"name": "data-71109d911bf6df566c59ea9de8243de9"},
+  "mark": {"type": "line"},
+  "background": "antiquewhite",
+  "encoding": {
+    "color": {"field": "Country Name", "type": "nominal"},
+    "tooltip": [
+      {"field": "Country Name", "type": "nominal"},
+      {"field": "Year", "type": "ordinal"},
+      {"field": "GDP (current US$)", "type": "quantitative"}
+    ],
+    "x": {"field": "Year", "type": "ordinal"},
+    "y": {"field": "GDP (current US$)", "type": "quantitative"}
   },
+  "height": 300,
   "params": [
     {
-      "name": "hover",
-      "select": {"type": "point", "on": "mouseover", "clear": "mouseout"}
+      "name": "param_5",
+      "select": {
+        "type": "point",
+        "encodings": ["x"],
+        "nearest": true,
+        "on": "click"
+      }
     }
   ],
- "mark": {
-    "type": "line",
-    "point": {"size": 50, "filled": true, "opacity": 0.7}
-  },
-  "encoding": {
-    "x": {
-      "field": "Years",
-      "type": "temporal",
-      "title": "Years"
-    },
-    "y": {
-      "field": "GDP (current US$)",
-      "type": "quantitative",
-      "title": "GDP (Current US$)"
-    },
-    "color": {
-      "field": "Countries",
-      "type": "nominal",
-      "title": "Country",
-      "scale": {
-        "domain": [
-          "Bosnia and Herzegovina",
-          "Croatia",
-          "Montenegro",
-          "North Macedonia",
-          "Serbia",
-          "Slovenia"
-        ],
-        "range": [
-          "blue",
-          "orange",
-          "brown",
-          "green",
-          "purple",
-          "red"
-        ]
-      },
-      "legend": {
-        "title": "Countries",
-        "orient": "top",
-        "labelFontSize": 12 
-      }
-    },
-    "opacity": {
-      "condition": {"param": "hover", "value": 1},
-      "value": 0.3
-    },
-    "tooltip": [
-      {"field": "Years", "type": "temporal", "title": "Year"},
-      {"field": "Countries", "type": "nominal", "title": "Country"},
-      {"field": "GDP (current US$)", "type": "quantitative", "title": "GDP (US$)"}
-    ]
-  },
+  "title": "GDP (current US$) of Former Yugoslavian Countries",
   "width": 300,
-  "height": 300,
-  "config": {
-    "background": "antiquewhite",
-    "axis": {
-      "grid": false
-    },
-    "legend": {
-      "orient": "top",
-      "titleFontSize": 14
-    }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-71109d911bf6df566c59ea9de8243de9": [
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "1990",
+        "GDP (current US$)": "7753478260.86957"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "1990",
+        "GDP (current US$)": "25650213279.6781"
+      },
+      {"Country Name": "Montenegro", "Year": "1990", "GDP (current US$)": ".."},
+      {
+        "Country Name": "North Macedonia",
+        "Year": "1990",
+        "GDP (current US$)": "4699646643.10954"
+      },
+      {"Country Name": "Serbia", "Year": "1990", "GDP (current US$)": ".."},
+      {
+        "Country Name": "Slovenia",
+        "Year": "1990",
+        "GDP (current US$)": "19832029087.1272"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2000",
+        "GDP (current US$)": "5567772768.81188"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2000",
+        "GDP (current US$)": "22134411297.473"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2000",
+        "GDP (current US$)": "984293043.811565"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2000",
+        "GDP (current US$)": "3772859034.20508"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2000",
+        "GDP (current US$)": "7326373882.11044"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2000",
+        "GDP (current US$)": "20159190701.6789"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2014",
+        "GDP (current US$)": "18558733564.4692"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2014",
+        "GDP (current US$)": "59612144078.4133"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2014",
+        "GDP (current US$)": "4593853290.963"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2014",
+        "GDP (current US$)": "11362265252.778"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2014",
+        "GDP (current US$)": "49114321280.3466"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2014",
+        "GDP (current US$)": "49514466379.6057"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2015",
+        "GDP (current US$)": "16404348871.4437"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2015",
+        "GDP (current US$)": "51005200669.6941"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2015",
+        "GDP (current US$)": "4054730077.57718"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2015",
+        "GDP (current US$)": "10064519962.5655"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2015",
+        "GDP (current US$)": "41297410634.9586"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2015",
+        "GDP (current US$)": "42709468274.8137"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2016",
+        "GDP (current US$)": "17116926327.6247"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2016",
+        "GDP (current US$)": "52654855638.1057"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2016",
+        "GDP (current US$)": "4376930578.32395"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2016",
+        "GDP (current US$)": "10672467073.2873"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2016",
+        "GDP (current US$)": "42225495909.5633"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2016",
+        "GDP (current US$)": "44290685824.0682"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2017",
+        "GDP (current US$)": "18326373366.1105"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2017",
+        "GDP (current US$)": "56186190437.9959"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2017",
+        "GDP (current US$)": "4856599480.79882"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2017",
+        "GDP (current US$)": "11307067069.6658"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2017",
+        "GDP (current US$)": "45972834713.8077"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2017",
+        "GDP (current US$)": "48153200134.6613"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2018",
+        "GDP (current US$)": "20484053868.9246"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2018",
+        "GDP (current US$)": "61668130122.5878"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2018",
+        "GDP (current US$)": "5506942238.35668"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2018",
+        "GDP (current US$)": "12683068114.2388"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2018",
+        "GDP (current US$)": "52787520248.9242"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2018",
+        "GDP (current US$)": "53689067639.9176"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2019",
+        "GDP (current US$)": "20482608755.379"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2019",
+        "GDP (current US$)": "61467582193.6824"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2019",
+        "GDP (current US$)": "5542054181.12616"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2019",
+        "GDP (current US$)": "12606338448.547"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2019",
+        "GDP (current US$)": "53864693664.5568"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2019",
+        "GDP (current US$)": "53909922735.545"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2020",
+        "GDP (current US$)": "20226036564.4129"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2020",
+        "GDP (current US$)": "57963370885.0798"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2020",
+        "GDP (current US$)": "4769996866.00758"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2020",
+        "GDP (current US$)": "12361036913.8409"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2020",
+        "GDP (current US$)": "55874017668.998"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2020",
+        "GDP (current US$)": "53384760135.1581"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2021",
+        "GDP (current US$)": "23672712242.2149"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2021",
+        "GDP (current US$)": "69006802298.6956"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2021",
+        "GDP (current US$)": "5861427505.12493"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2021",
+        "GDP (current US$)": "14000283827.0154"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2021",
+        "GDP (current US$)": "66159884072.5308"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2021",
+        "GDP (current US$)": "61529280461.092"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2022",
+        "GDP (current US$)": "24534663636.1778"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2022",
+        "GDP (current US$)": "71198635101.9514"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2022",
+        "GDP (current US$)": "6229801580.79157"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2022",
+        "GDP (current US$)": "13932436550.0883"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2022",
+        "GDP (current US$)": "66797564758.339"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2022",
+        "GDP (current US$)": "59927702746.2843"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Year": "2023",
+        "GDP (current US$)": "27514782476.0406"
+      },
+      {
+        "Country Name": "Croatia",
+        "Year": "2023",
+        "GDP (current US$)": "84393795502.4421"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Year": "2023",
+        "GDP (current US$)": "7530593375.22034"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Year": "2023",
+        "GDP (current US$)": "15763621848.115"
+      },
+      {
+        "Country Name": "Serbia",
+        "Year": "2023",
+        "GDP (current US$)": "81342660752.3732"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Year": "2023",
+        "GDP (current US$)": "69148468417.3208"
+      }
+    ]
   }
 }
-

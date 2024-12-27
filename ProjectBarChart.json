@@ -8,8 +8,7 @@
   "title": {
     "text": "Economic Indicators of Former Yugoslavian Countries",
     "subtitle": [
-      "Each country has three bars: Unemployment Rate, Inflation, and FDI.",
-      "Choose a year from the dropdown to filter the data."
+      "Choose a year to filter the data", "Source: Wikipedia"
     ],
     "anchor": "start",
     "color": "black",
