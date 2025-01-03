@@ -33,10 +33,99 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
     <style>
-        #chartGrid {
-            display: flex;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
+
+        body, html {
+            height: 100%; /* Ensure full height for the body and html */
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        h1.big {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            color: #83c1e3;
+            margin-top: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        p a {
+            color: #83c1e3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        h3.small {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+            background-color: #83c1e3;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* Fullscreen chart section */
+        .chart-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e6f2ff;
+            flex-grow: 1; /* Ensure it takes up remaining space */
+            width: 100%; /* Full width */
+            min-height: 100%; /* Full height */
+            padding: 0 20px; /* Horizontal padding */
+        }
+
+        .chart-section h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .chart-section p {
+            font-size: 1.2rem;
+            color: #555;
+            text-align: center;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .chart-section img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer styling (optional) */
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            background-color: #e6f2ff;
+        }
     </style>
 </head>
 
@@ -46,7 +135,7 @@
         <!-- This is a header, it is the largest text on the page -->
         Zeytuna Sultanzade
     </h1>
-    <p style="margin-top: 0px; color: darkblue">
+    <p style="margin-top: 0px; color: darkblue; font-family: 'Roboto', sans-serif;">
         <!-- we're setting the margin to 0px so the header and authour name are close together -->
         Zeytuna S | <a href="https://uk.linkedin.com/in/zeytuna-sultanzade-075abb20b/">LinkedIn</a> | <a
             href="https://github.com/Zeytuna936">GitHub</a> | <a 
