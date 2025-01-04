@@ -11,16 +11,25 @@
 </head>
 
 <style>
-    body {
-        background-color: rgb(149, 194, 211);
-        font-family: Arial, sans-serif; 
-        margin: 0;
-        padding: 0;
-    }
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%; 
+            font-family: 'Roboto', sans-serif;
+            background-color: rgb(149, 194, 211);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
 
     
     header {
-        background-color: rgb(63, 107, 227); 
+        background-color: rgb(84, 122, 226); 
         text-align: center; 
         padding: 50px; 
         border-bottom: 2px solid #ddd;
@@ -32,7 +41,8 @@
         padding: 10px;
         font-size: 2.5em;
         font-family: 'Times New Roman', Times, serif;
-        color: rgb(10, 10, 10); 
+        color: rgb(14, 15, 14); 
+        text-align: center;
     }
 
     
@@ -41,7 +51,8 @@
         padding: 10px;
         font-size: 1.5em;
         font-family: 'Times New Roman', Times, serif;
-        color: #3a3737; 
+        color: rgb(6, 68, 240); 
+        text-align: center;
     }
 
     h3 {
@@ -50,6 +61,7 @@
         font-size: 1.5em;
         font-family: 'Times New Roman', Times, serif;
         color: #010101; 
+        text-align: center;
     }
 
     h4 {
@@ -57,10 +69,25 @@
         padding: 10px;
         font-size: 1.5em;
         font-family: cursive;
-        color: #aadae8; 
+        color: rgb(6, 68, 240); 
+        text-align: center;
     }
-    
+
+    .chart-description {
+    text-align: center;  
+    margin: 20px 0;      
+}
+
+figure {
+    display: block;      
+    margin: 0 auto;      
+    max-width: 100%;     
+}
+
+
+
 </style>
+
 </head>
 
 <body>
@@ -93,7 +120,7 @@
                 <h2>Data Collection and Charts</h2>
 
     <div class="chart-description">
-        <p>Chart1/Main Highlights:<p>
+        <p><strong>Chart1/Main Highlights:</strong><p>
         <ul>
             <li>The GDP of Croatia, Slovenia, and Serbia is significantly higher than the others;</li>
             <li>Since 2000, these countries have never experienced a dramatic decrease in GDP;</li>
@@ -101,50 +128,56 @@
                 "_blank">WorldBank,</a> only data for 6 target countries were scraped via on <a href="https://colab.research.google.com/drive/1lmhYzx_wYRgelaBbZK7f6-znE2jOH0ml?usp=sharing"_blank">Colab</a>
                 </li>
         </ul>
+        <br>
         <figure id="Location1"></figure> 
     </div>
     <div class="chart-description">
-        <p>Chart2/Main Highlights:<p>
+        <p><strong>Chart2/Main Highlights:</strong><p>
             <ul>
                 <li>Considering the GDPs of all countries, Slovenia spends the highest amount of money on RD;</li>
                 <li>The original data from <a href=https://databank.worldbank.org/source/world-development-indicators/Series/GB.XPD.RSDV.GD.ZS"_blank">WorldBank,</a>  were scraped via <a href=https://colab.research.google.com/drive/1jSRloD9aSeebTqMVwVwef_mmbgFb8QqM?usp=sharing "_blank">Colab</a> </li>
             </ul>
+            <br>
         <figure id="Location2"></figure>
     </div>
     <div class="chart-description">
-        <p>Chart3/Main Highlights:<p>
+        <p><strong>Chart3/Main Highlights:</strong><p>
             <ul>
                 <li>The bar chart compares economic indicators among 6 countries from 2007 to 2023;</li>
                 <li>A CSV file where only 6 countries and their indicators are shown was created;</li>
                 <li>Additional interactivity of filtering data was added by using “params” and “transform” functions
                     </li>
             </ul>
+            <br>
         <figure id="Location3"></figure>
     </div>
     <div class="chart-description">
-        <p>Chart4/Main Highlights:<p>
+        <p><strong>Chart4/Main Highlights:</strong><p>
             <ul>
                 <li>Slovenia has the highest life expectancy rate, followed by Croatia; </li>
                 <li>The government of BH has the highest value for the health expenditure;</li>
                 <li>The data for the heatmap was obtained from <a href="https://databank.worldbank.org/source/health-nutrition-and-population-statistics"_blank">WorldBank.</a> The Colab network, where targeted indicators and countries were scraped is available <a href="https://colab.research.google.com/drive/1lLus3hKo_wbXCNcuB1Px7Ok9wAVVXZeG?usp=sharing"_blank">here</a>
                     </li>
             </ul>
+            <br>
         <figure id="Location4"></figure>
     </div>
     <div class="chart-description">
-        <p>Chart5/Main Highlights:<p>
+        <p><strong>Chart5/Main Highlights:</strong><p>
             <ul>
                 <li>Serbia releases the largest amount of CO2 among the others, which can be related to its high dependence on fossil fuels and the industrial sector;</li>
                 <li>The data for all countries and indicators was accessed from <a href="https://databank.worldbank.org/source/millennium-development-goals/Series/EN.ATM.CO2E.KT"> WorldBank </a> and scraped on Colab <a href="https://colab.research.google.com/drive/1mvJcDevIoGRIEotViWpiCvdbfvjqLbFx?usp=sharing"> Colab</a> </li>
             </ul>
+            <br>
         <figure id="Location5"></figure>
     </div>
     <div class="chart-description">
-        <p>Chart6/Main Highlights:<p></p>
+        <p><strong>Chart6/Main Highlights:</strong><p></p>
         <ul>
             <li>BH and Serbia have the highest level of corruption and the lowest level of freedom index and rule of law, while Slovenia has the best indicators for state capacity;</li>
             <li>A CSV file where statistics of on only targeted countries are shown was created</li>
         </ul>
+        <br>
         <figure id="Location6"></figure>
     </div>
 
