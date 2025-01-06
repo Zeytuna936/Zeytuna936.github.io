@@ -1,1861 +1,1945 @@
 {
-    "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
-    "vconcat": [
-      {
-        "hconcat": [
-          {
-            "data": {"name": "data-3d3f8c24d8eb2cebaf0466abf23ed691"},
-            "mark": {"type": "rect"},
-            "encoding": {
-              "color": {"field": "Value", "type": "quantitative"},
-              "tooltip": [
-                {"field": "Series Name", "type": "nominal"},
-                {"field": "Year", "type": "nominal"},
-                {"field": "Value", "type": "nominal"}
-              ],
-              "x": {"field": "Year", "type": "ordinal"},
-              "y": {"field": "Series Name", "type": "nominal"}
-            },
-            "height": 150,
-            "title": "Bosnia and Herzegovina: Heatmap",
-            "width": 200
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "data": {"name": "data-e863abf6a3bfb68439ae1db2d3265e1b"},
+          "mark": {"type": "rect"},
+          "encoding": {
+            "color": {"field": "Value", "type": "quantitative"},
+            "tooltip": [
+              {"field": "Series Name", "title": "Indicator", "type": "nominal"},
+              {"field": "Year", "title": "Year", "type": "ordinal"},
+              {
+                "field": "Value",
+                "format": ".2f",
+                "title": "Value",
+                "type": "quantitative"
+              }
+            ],
+            "x": {"field": "Year", "title": "Year", "type": "ordinal"},
+            "y": {
+              "field": "Series Name",
+              "title": "Health Indicators",
+              "type": "nominal"
+            }
           },
-          {
-            "data": {"name": "data-7c4b8dea9b3cbf8562e9fd64a5402c4e"},
-            "mark": {"type": "rect"},
-            "encoding": {
-              "color": {"field": "Value", "type": "quantitative"},
-              "tooltip": [
-                {"field": "Series Name", "type": "nominal"},
-                {"field": "Year", "type": "nominal"},
-                {"field": "Value", "type": "nominal"}
-              ],
-              "x": {"field": "Year", "type": "ordinal"},
-              "y": {"field": "Series Name", "type": "nominal"}
-            },
-            "height": 150,
-            "title": "Croatia: Heatmap",
-            "width": 200
+          "height": 150,
+          "title": {
+            "text": "Bosnia and Herzegovina",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "subtitle": "A comparison across selected years and indicators"
           },
-          {
-            "data": {"name": "data-925963b2a53dc7a0ed79d0bf84422dcc"},
-            "mark": {"type": "rect"},
-            "encoding": {
-              "color": {"field": "Value", "type": "quantitative"},
-              "tooltip": [
-                {"field": "Series Name", "type": "nominal"},
-                {"field": "Year", "type": "nominal"},
-                {"field": "Value", "type": "nominal"}
-              ],
-              "x": {"field": "Year", "type": "ordinal"},
-              "y": {"field": "Series Name", "type": "nominal"}
-            },
-            "height": 150,
-            "title": "North Macedonia: Heatmap",
-            "width": 200
-          }
-        ]
-      },
-      {
-        "hconcat": [
-          {
-            "data": {"name": "data-779d932848b43ba33261de8921bd9866"},
-            "mark": {"type": "rect"},
-            "encoding": {
-              "color": {"field": "Value", "type": "quantitative"},
-              "tooltip": [
-                {"field": "Series Name", "type": "nominal"},
-                {"field": "Year", "type": "nominal"},
-                {"field": "Value", "type": "nominal"}
-              ],
-              "x": {"field": "Year", "type": "ordinal"},
-              "y": {"field": "Series Name", "type": "nominal"}
-            },
-            "height": 150,
-            "title": "Montenegro: Heatmap",
-            "width": 200
+          "width": 200
+        },
+        {
+          "data": {"name": "data-1a0e3ba6f9d6bcbc36342db5bff2c1c0"},
+          "mark": {"type": "rect"},
+          "encoding": {
+            "color": {"field": "Value", "type": "quantitative"},
+            "tooltip": [
+              {"field": "Series Name", "title": "Indicator", "type": "nominal"},
+              {"field": "Year", "title": "Year", "type": "ordinal"},
+              {
+                "field": "Value",
+                "format": ".2f",
+                "title": "Value",
+                "type": "quantitative"
+              }
+            ],
+            "x": {"field": "Year", "title": "Year", "type": "ordinal"},
+            "y": {
+              "field": "Series Name",
+              "title": "Health Indicators",
+              "type": "nominal"
+            }
           },
-          {
-            "data": {"name": "data-89e8578a2608f52e6b55e09199aa8330"},
-            "mark": {"type": "rect"},
-            "encoding": {
-              "color": {"field": "Value", "type": "quantitative"},
-              "tooltip": [
-                {"field": "Series Name", "type": "nominal"},
-                {"field": "Year", "type": "nominal"},
-                {"field": "Value", "type": "nominal"}
-              ],
-              "x": {"field": "Year", "type": "ordinal"},
-              "y": {"field": "Series Name", "type": "nominal"}
-            },
-            "height": 150,
-            "title": "Serbia: Heatmap",
-            "width": 200
+          "height": 150,
+          "title": {
+            "text": "Croatia",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "subtitle": "A comparison across selected years and indicators"
           },
-          {
-            "data": {"name": "data-dc9ddaac69a336392a06f78be57ed966"},
-            "mark": {"type": "rect"},
-            "encoding": {
-              "color": {"field": "Value", "type": "quantitative"},
-              "tooltip": [
-                {"field": "Series Name", "type": "nominal"},
-                {"field": "Year", "type": "nominal"},
-                {"field": "Value", "type": "nominal"}
-              ],
-              "x": {"field": "Year", "type": "ordinal"},
-              "y": {"field": "Series Name", "type": "nominal"}
-            },
-            "height": 150,
-            "title": "Slovenia: Heatmap",
-            "width": 200
-          }
-        ]
-      }
-    ],
-    "background": "antiquewhite",
-    "resolve": {"scale": {"color": "independent"}},
-    "title": "Health Indicators of Former Yugoslavian Countries",
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
-    "datasets": {
-      "data-3d3f8c24d8eb2cebaf0466abf23ed691": [
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
+          "width": 200
         },
         {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "1995 [YR1995]",
-          "Value": "70.284"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "1995 [YR1995]",
-          "Value": "46.1"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "1995 [YR1995]",
-          "Value": "43.2"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2000 [YR2000]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2000 [YR2000]",
-          "Value": "3.1630684915225"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2000 [YR2000]",
-          "Value": "8"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2000 [YR2000]",
-          "Value": "4.08"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2000 [YR2000]",
-          "Value": "74.496"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2000 [YR2000]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2000 [YR2000]",
-          "Value": "44.8"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2000 [YR2000]",
-          "Value": "45.4"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2005 [YR2005]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2005 [YR2005]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2005 [YR2005]",
-          "Value": "9.05"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2005 [YR2005]",
-          "Value": "4.94"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2005 [YR2005]",
-          "Value": "75.42"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2005 [YR2005]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2005 [YR2005]",
-          "Value": "44.6"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2005 [YR2005]",
-          "Value": "47.7"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2010 [YR2010]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2010 [YR2010]",
-          "Value": "2.1246786154964"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2010 [YR2010]",
-          "Value": "9.02"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2010 [YR2010]",
-          "Value": "6.14"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2010 [YR2010]",
-          "Value": "77.073"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2010 [YR2010]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2010 [YR2010]",
-          "Value": "44.7"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2010 [YR2010]",
-          "Value": "50.2"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2015 [YR2015]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2015 [YR2015]",
-          "Value": "1.93184786921491"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2015 [YR2015]",
-          "Value": "9.24"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2015 [YR2015]",
-          "Value": "6.4"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2015 [YR2015]",
-          "Value": "76.182"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2015 [YR2015]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2015 [YR2015]",
-          "Value": "44.4"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2015 [YR2015]",
-          "Value": "52.8"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2020 [YR2020]",
-          "Value": "9.7"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2020 [YR2020]",
-          "Value": "6.75"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2020 [YR2020]",
-          "Value": "76.225"
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Bosnia and Herzegovina",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
+          "data": {"name": "data-17bd5dab1ecd671a41f8fcbca13eb9d7"},
+          "mark": {"type": "rect"},
+          "encoding": {
+            "color": {"field": "Value", "type": "quantitative"},
+            "tooltip": [
+              {"field": "Series Name", "title": "Indicator", "type": "nominal"},
+              {"field": "Year", "title": "Year", "type": "ordinal"},
+              {
+                "field": "Value",
+                "format": ".2f",
+                "title": "Value",
+                "type": "quantitative"
+              }
+            ],
+            "x": {"field": "Year", "title": "Year", "type": "ordinal"},
+            "y": {
+              "field": "Series Name",
+              "title": "Health Indicators",
+              "type": "nominal"
+            }
+          },
+          "height": 150,
+          "title": {
+            "text": "North Macedonia",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "subtitle": "A comparison across selected years and indicators"
+          },
+          "width": 200
         }
-      ],
-      "data-7c4b8dea9b3cbf8562e9fd64a5402c4e": [
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "1995 [YR1995]",
-          "Value": "500"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "1995 [YR1995]",
-          "Value": "72.0843902439024"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "1995 [YR1995]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "1995 [YR1995]",
-          "Value": "47.1"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "1995 [YR1995]",
-          "Value": "49.1"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2000 [YR2000]",
-          "Value": "530"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2000 [YR2000]",
-          "Value": "3.32230935251745"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2000 [YR2000]",
-          "Value": "7.65"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2000 [YR2000]",
-          "Value": "6.51"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2000 [YR2000]",
-          "Value": "72.8078048780488"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2000 [YR2000]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2000 [YR2000]",
-          "Value": "45.9"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2000 [YR2000]",
-          "Value": "51.4"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2005 [YR2005]",
-          "Value": "830"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2005 [YR2005]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2005 [YR2005]",
-          "Value": "6.84"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2005 [YR2005]",
-          "Value": "5.81"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2005 [YR2005]",
-          "Value": "75.2446341463415"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2005 [YR2005]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2005 [YR2005]",
-          "Value": "46.2"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2005 [YR2005]",
-          "Value": "53.8"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2010 [YR2010]",
-          "Value": "1100"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2010 [YR2010]",
-          "Value": "1.68463163538551"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2010 [YR2010]",
-          "Value": "7.99"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2010 [YR2010]",
-          "Value": "6.66"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2010 [YR2010]",
-          "Value": "76.4756097560976"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2010 [YR2010]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2010 [YR2010]",
-          "Value": "47.4"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2010 [YR2010]",
-          "Value": "56.4"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2015 [YR2015]",
-          "Value": "1400"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2015 [YR2015]",
-          "Value": "2.09996455080655"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2015 [YR2015]",
-          "Value": "6.69"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2015 [YR2015]",
-          "Value": "5.56"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2015 [YR2015]",
-          "Value": "77.2756097560976"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2015 [YR2015]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2015 [YR2015]",
-          "Value": "48"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2015 [YR2015]",
-          "Value": "59.1"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2020 [YR2020]",
-          "Value": "1700"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2020 [YR2020]",
-          "Value": "7.72"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2020 [YR2020]",
-          "Value": "6.32"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2020 [YR2020]",
-          "Value": "77.7243902439024"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2020 [YR2020]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Croatia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        }
-      ],
-      "data-925963b2a53dc7a0ed79d0bf84422dcc": [
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "1995 [YR1995]",
-          "Value": "100"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "1995 [YR1995]",
-          "Value": "71.8487804878049"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "1995 [YR1995]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "1995 [YR1995]",
-          "Value": "46.1"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "1995 [YR1995]",
-          "Value": "49.4"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2000 [YR2000]",
-          "Value": "100"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2000 [YR2000]",
-          "Value": "3.09376509207013"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2000 [YR2000]",
-          "Value": "8.87"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2000 [YR2000]",
-          "Value": "4.71"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2000 [YR2000]",
-          "Value": "72.9463414634147"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2000 [YR2000]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2000 [YR2000]",
-          "Value": "44.9"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2000 [YR2000]",
-          "Value": "51.6"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2005 [YR2005]",
-          "Value": "100"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2005 [YR2005]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2005 [YR2005]",
-          "Value": "7.68"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2005 [YR2005]",
-          "Value": "4.38"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2005 [YR2005]",
-          "Value": "73.6975609756098"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2005 [YR2005]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2005 [YR2005]",
-          "Value": "44.9"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2005 [YR2005]",
-          "Value": "53.4"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2010 [YR2010]",
-          "Value": "200"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2010 [YR2010]",
-          "Value": "1.67852704060863"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2010 [YR2010]",
-          "Value": "6.71"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2010 [YR2010]",
-          "Value": "4.07"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2010 [YR2010]",
-          "Value": "74.9975609756098"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2010 [YR2010]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2010 [YR2010]",
-          "Value": "45.2"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2010 [YR2010]",
-          "Value": "55.5"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2015 [YR2015]",
-          "Value": "500"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2015 [YR2015]",
-          "Value": "1.82078803835952"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2015 [YR2015]",
-          "Value": "6.34"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2015 [YR2015]",
-          "Value": "4.12"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2015 [YR2015]",
-          "Value": "75.4024390243902"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2015 [YR2015]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2015 [YR2015]",
-          "Value": "45.2"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2015 [YR2015]",
-          "Value": "57.6"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2020 [YR2020]",
-          "Value": "500"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2020 [YR2020]",
-          "Value": "7.73"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2020 [YR2020]",
-          "Value": "4.67"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2020 [YR2020]",
-          "Value": "74.3951219512195"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2020 [YR2020]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "North Macedonia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        }
-      ],
-      "data-779d932848b43ba33261de8921bd9866": [
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "1995 [YR1995]",
-          "Value": "100"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "1995 [YR1995]",
-          "Value": "74.109"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "1995 [YR1995]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "1995 [YR1995]",
-          "Value": "46"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "1995 [YR1995]",
-          "Value": "46.6"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2000 [YR2000]",
-          "Value": "100"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2000 [YR2000]",
-          "Value": "2.9838759220505"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2000 [YR2000]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2000 [YR2000]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2000 [YR2000]",
-          "Value": "73.8184878048781"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2000 [YR2000]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2000 [YR2000]",
-          "Value": "44.9"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2000 [YR2000]",
-          "Value": "50.3"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2005 [YR2005]",
-          "Value": "100"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2005 [YR2005]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2005 [YR2005]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2005 [YR2005]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2005 [YR2005]",
-          "Value": "73.9829268292683"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2005 [YR2005]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2005 [YR2005]",
-          "Value": "44.8"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2005 [YR2005]",
-          "Value": "53.7"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2010 [YR2010]",
-          "Value": "200"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2010 [YR2010]",
-          "Value": "1.79447247417865"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2010 [YR2010]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2010 [YR2010]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2010 [YR2010]",
-          "Value": "75.990243902439"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2010 [YR2010]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2010 [YR2010]",
-          "Value": "45.1"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2010 [YR2010]",
-          "Value": "56.5"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2015 [YR2015]",
-          "Value": "500"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2015 [YR2015]",
-          "Value": "1.51041987227129"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2015 [YR2015]",
-          "Value": "9.02"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2015 [YR2015]",
-          "Value": "5.4"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2015 [YR2015]",
-          "Value": "76.4487804878049"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2015 [YR2015]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2015 [YR2015]",
-          "Value": "45.1"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2015 [YR2015]",
-          "Value": "58.9"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2020 [YR2020]",
-          "Value": "500"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2020 [YR2020]",
-          "Value": "11.42"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2020 [YR2020]",
-          "Value": "7.13"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2020 [YR2020]",
-          "Value": "75.9317073170732"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2020 [YR2020]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Montenegro",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        }
-      ],
-      "data-89e8578a2608f52e6b55e09199aa8330": [
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "1995 [YR1995]",
-          "Value": "880"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "1995 [YR1995]",
-          "Value": "71.6894878048781"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "1995 [YR1995]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "1995 [YR1995]",
-          "Value": "47.2"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "1995 [YR1995]",
-          "Value": "46.8"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2000 [YR2000]",
-          "Value": "1000"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2000 [YR2000]",
-          "Value": "2.67838859873161"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2000 [YR2000]",
-          "Value": "6.18360472"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2000 [YR2000]",
-          "Value": "4.0480175"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2000 [YR2000]",
-          "Value": "71.5829268292683"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2000 [YR2000]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2000 [YR2000]",
-          "Value": "46.1"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2000 [YR2000]",
-          "Value": "49.3"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2005 [YR2005]",
-          "Value": "1300"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2005 [YR2005]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2005 [YR2005]",
-          "Value": "8.28380585"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2005 [YR2005]",
-          "Value": "5.422544"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2005 [YR2005]",
-          "Value": "72.8341463414634"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2005 [YR2005]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2005 [YR2005]",
-          "Value": "46"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2005 [YR2005]",
-          "Value": "51.8"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2010 [YR2010]",
-          "Value": "2000"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2010 [YR2010]",
-          "Value": "1.68284096482069"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2010 [YR2010]",
-          "Value": "9.5273037"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2010 [YR2010]",
-          "Value": "5.81205225"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2010 [YR2010]",
-          "Value": "74.3365853658537"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2010 [YR2010]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2010 [YR2010]",
-          "Value": "46.2"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2010 [YR2010]",
-          "Value": "54.3"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2015 [YR2015]",
-          "Value": "2700"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2015 [YR2015]",
-          "Value": "2.59480710175472"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2015 [YR2015]",
-          "Value": "8.81319809"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2015 [YR2015]",
-          "Value": "5.08387613"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2015 [YR2015]",
-          "Value": "75.2878048780488"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2015 [YR2015]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2015 [YR2015]",
-          "Value": "46.1"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2015 [YR2015]",
-          "Value": "56.7"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2020 [YR2020]",
-          "Value": "3500"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2020 [YR2020]",
-          "Value": "8.70042133"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2020 [YR2020]",
-          "Value": "5.3023901"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2020 [YR2020]",
-          "Value": "74.4780487804878"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2020 [YR2020]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Serbia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        }
-      ],
-      "data-dc9ddaac69a336392a06f78be57ed966": [
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "1995 [YR1995]",
-          "Value": "200"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "1995 [YR1995]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "1995 [YR1995]",
-          "Value": "73.9585365853659"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "1995 [YR1995]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "1995 [YR1995]",
-          "Value": "46.1"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "1995 [YR1995]",
-          "Value": "46.8"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2000 [YR2000]",
-          "Value": "200"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2000 [YR2000]",
-          "Value": "5.37216530337833"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2000 [YR2000]",
-          "Value": "7.8"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2000 [YR2000]",
-          "Value": "5.57"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2000 [YR2000]",
-          "Value": "75.4121951219512"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2000 [YR2000]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2000 [YR2000]",
-          "Value": "45"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2000 [YR2000]",
-          "Value": "49"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2005 [YR2005]",
-          "Value": "500"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2005 [YR2005]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2005 [YR2005]",
-          "Value": "8"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2005 [YR2005]",
-          "Value": "5.77"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2005 [YR2005]",
-          "Value": "77.6121951219512"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2005 [YR2005]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2005 [YR2005]",
-          "Value": "45"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2005 [YR2005]",
-          "Value": "51.2"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2010 [YR2010]",
-          "Value": "670"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2010 [YR2010]",
-          "Value": "3.82672395217871"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2010 [YR2010]",
-          "Value": "8.57"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2010 [YR2010]",
-          "Value": "6.2"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2010 [YR2010]",
-          "Value": "79.4219512195122"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2010 [YR2010]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2010 [YR2010]",
-          "Value": "45.4"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2010 [YR2010]",
-          "Value": "53.5"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2015 [YR2015]",
-          "Value": "770"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2015 [YR2015]",
-          "Value": "4.67377465727076"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2015 [YR2015]",
-          "Value": "8.5"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2015 [YR2015]",
-          "Value": "6.06"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2015 [YR2015]",
-          "Value": "80.7756097560976"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2015 [YR2015]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2015 [YR2015]",
-          "Value": "45.4"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2015 [YR2015]",
-          "Value": "55.7"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Adults (ages 15+) living with HIV",
-          "Year": "2020 [YR2020]",
-          "Value": "850"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Current health expenditure (% of GDP)",
-          "Year": "2020 [YR2020]",
-          "Value": "9.43"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Domestic general government health expenditure (% of GDP)",
-          "Year": "2020 [YR2020]",
-          "Value": "6.85"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Life expectancy at birth, total (years)",
-          "Year": "2020 [YR2020]",
-          "Value": "80.5317073170732"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of HIV, total (% of population ages 15-49)",
-          "Year": "2020 [YR2020]",
-          "Value": "0.1"
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of hypertension (% of adults ages 30-79)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
-        },
-        {
-          "Country Name": "Slovenia",
-          "Series Name": "Prevalence of overweight (% of adults)",
-          "Year": "2020 [YR2020]",
-          "Value": ".."
+      ]
+    },
+    {
+      "hconcat": [
+        {
+          "data": {"name": "data-070dec44b6031b8694baaae8338cbd48"},
+          "mark": {"type": "rect"},
+          "encoding": {
+            "color": {"field": "Value", "type": "quantitative"},
+            "tooltip": [
+              {"field": "Series Name", "title": "Indicator", "type": "nominal"},
+              {"field": "Year", "title": "Year", "type": "ordinal"},
+              {
+                "field": "Value",
+                "format": ".2f",
+                "title": "Value",
+                "type": "quantitative"
+              }
+            ],
+            "x": {"field": "Year", "title": "Year", "type": "ordinal"},
+            "y": {
+              "field": "Series Name",
+              "title": "Health Indicators",
+              "type": "nominal"
+            }
+          },
+          "height": 150,
+          "title": {
+            "text": "Montenegro",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "subtitle": "A comparison across selected years and indicators"
+          },
+          "width": 200
+        },
+        {
+          "data": {"name": "data-4b73797a3185046a0e88e32b15920bdb"},
+          "mark": {"type": "rect"},
+          "encoding": {
+            "color": {"field": "Value", "type": "quantitative"},
+            "tooltip": [
+              {"field": "Series Name", "title": "Indicator", "type": "nominal"},
+              {"field": "Year", "title": "Year", "type": "ordinal"},
+              {
+                "field": "Value",
+                "format": ".2f",
+                "title": "Value",
+                "type": "quantitative"
+              }
+            ],
+            "x": {"field": "Year", "title": "Year", "type": "ordinal"},
+            "y": {
+              "field": "Series Name",
+              "title": "Health Indicators",
+              "type": "nominal"
+            }
+          },
+          "height": 150,
+          "title": {
+            "text": "Serbia",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "subtitle": "A comparison across selected years and indicators"
+          },
+          "width": 200
+        },
+        {
+          "data": {"name": "data-6cc747b67717d08c88d26487e59d5ed5"},
+          "mark": {"type": "rect"},
+          "encoding": {
+            "color": {"field": "Value", "type": "quantitative"},
+            "tooltip": [
+              {"field": "Series Name", "title": "Indicator", "type": "nominal"},
+              {"field": "Year", "title": "Year", "type": "ordinal"},
+              {
+                "field": "Value",
+                "format": ".2f",
+                "title": "Value",
+                "type": "quantitative"
+              }
+            ],
+            "x": {"field": "Year", "title": "Year", "type": "ordinal"},
+            "y": {
+              "field": "Series Name",
+              "title": "Health Indicators",
+              "type": "nominal"
+            }
+          },
+          "height": 150,
+          "title": {
+            "text": "Slovenia",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "subtitle": "A comparison across selected years and indicators"
+          },
+          "width": 200
         }
       ]
     }
+  ],
+  "background": "antiquewhite",
+  "resolve": {"scale": {"color": "independent"}},
+  "title": "Health Indicators of Former Yugoslavian Countries",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-e863abf6a3bfb68439ae1db2d3265e1b": [
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Adults with HIV",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Life expectancy (years)",
+        "Year": "1995",
+        "Value": "70.284"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "1995",
+        "Value": "46.1"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "1995",
+        "Value": "43.2"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Adults with HIV",
+        "Year": "2000",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2000",
+        "Value": "3.1630684915225"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2000",
+        "Value": "8"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2000",
+        "Value": "4.08"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2000",
+        "Value": "74.496"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2000",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2000",
+        "Value": "44.8"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2000",
+        "Value": "45.4"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Adults with HIV",
+        "Year": "2005",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2005",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2005",
+        "Value": "9.05"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2005",
+        "Value": "4.94"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2005",
+        "Value": "75.42"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2005",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2005",
+        "Value": "44.6"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2005",
+        "Value": "47.7"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Adults with HIV",
+        "Year": "2010",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2010",
+        "Value": "2.1246786154964"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2010",
+        "Value": "9.02"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2010",
+        "Value": "6.14"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2010",
+        "Value": "77.073"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2010",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2010",
+        "Value": "44.7"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2010",
+        "Value": "50.2"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Adults with HIV",
+        "Year": "2015",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2015",
+        "Value": "1.93184786921491"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2015",
+        "Value": "9.24"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2015",
+        "Value": "6.4"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2015",
+        "Value": "76.182"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2015",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2015",
+        "Value": "44.4"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2015",
+        "Value": "52.8"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Adults with HIV",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2020",
+        "Value": "9.7"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2020",
+        "Value": "6.75"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2020",
+        "Value": "76.225"
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Bosnia and Herzegovina",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2020",
+        "Value": ".."
+      }
+    ],
+    "data-1a0e3ba6f9d6bcbc36342db5bff2c1c0": [
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Adults with HIV",
+        "Year": "1995",
+        "Value": "500"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "1995",
+        "Value": "72.0843902439024"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "1995",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "1995",
+        "Value": "47.1"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "1995",
+        "Value": "49.1"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Adults with HIV",
+        "Year": "2000",
+        "Value": "530"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2000",
+        "Value": "3.32230935251745"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2000",
+        "Value": "7.65"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2000",
+        "Value": "6.51"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2000",
+        "Value": "72.8078048780488"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2000",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2000",
+        "Value": "45.9"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2000",
+        "Value": "51.4"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Adults with HIV",
+        "Year": "2005",
+        "Value": "830"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2005",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2005",
+        "Value": "6.84"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2005",
+        "Value": "5.81"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2005",
+        "Value": "75.2446341463415"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2005",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2005",
+        "Value": "46.2"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2005",
+        "Value": "53.8"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Adults with HIV",
+        "Year": "2010",
+        "Value": "1100"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2010",
+        "Value": "1.68463163538551"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2010",
+        "Value": "7.99"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2010",
+        "Value": "6.66"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2010",
+        "Value": "76.4756097560976"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2010",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2010",
+        "Value": "47.4"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2010",
+        "Value": "56.4"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Adults with HIV",
+        "Year": "2015",
+        "Value": "1400"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2015",
+        "Value": "2.09996455080655"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2015",
+        "Value": "6.69"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2015",
+        "Value": "5.56"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2015",
+        "Value": "77.2756097560976"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2015",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2015",
+        "Value": "48"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2015",
+        "Value": "59.1"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Adults with HIV",
+        "Year": "2020",
+        "Value": "1700"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2020",
+        "Value": "7.72"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2020",
+        "Value": "6.32"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2020",
+        "Value": "77.7243902439024"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2020",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Croatia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2020",
+        "Value": ".."
+      }
+    ],
+    "data-17bd5dab1ecd671a41f8fcbca13eb9d7": [
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Adults with HIV",
+        "Year": "1995",
+        "Value": "100"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "1995",
+        "Value": "71.8487804878049"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "1995",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "1995",
+        "Value": "46.1"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "1995",
+        "Value": "49.4"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Adults with HIV",
+        "Year": "2000",
+        "Value": "100"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2000",
+        "Value": "3.09376509207013"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2000",
+        "Value": "8.87"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2000",
+        "Value": "4.71"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2000",
+        "Value": "72.9463414634147"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2000",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2000",
+        "Value": "44.9"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2000",
+        "Value": "51.6"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Adults with HIV",
+        "Year": "2005",
+        "Value": "100"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2005",
+        "Value": ".."
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2005",
+        "Value": "7.68"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2005",
+        "Value": "4.38"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2005",
+        "Value": "73.6975609756098"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2005",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2005",
+        "Value": "44.9"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2005",
+        "Value": "53.4"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Adults with HIV",
+        "Year": "2010",
+        "Value": "200"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2010",
+        "Value": "1.67852704060863"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2010",
+        "Value": "6.71"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2010",
+        "Value": "4.07"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2010",
+        "Value": "74.9975609756098"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2010",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2010",
+        "Value": "45.2"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2010",
+        "Value": "55.5"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Adults with HIV",
+        "Year": "2015",
+        "Value": "500"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2015",
+        "Value": "1.82078803835952"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2015",
+        "Value": "6.34"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2015",
+        "Value": "4.12"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2015",
+        "Value": "75.4024390243902"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2015",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2015",
+        "Value": "45.2"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2015",
+        "Value": "57.6"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Adults with HIV",
+        "Year": "2020",
+        "Value": "500"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2020",
+        "Value": "7.73"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2020",
+        "Value": "4.67"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2020",
+        "Value": "74.3951219512195"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2020",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "North Macedonia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2020",
+        "Value": ".."
+      }
+    ],
+    "data-070dec44b6031b8694baaae8338cbd48": [
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Adults with HIV",
+        "Year": "1995",
+        "Value": "100"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Life expectancy (years)",
+        "Year": "1995",
+        "Value": "74.109"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "1995",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "1995",
+        "Value": "46"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "1995",
+        "Value": "46.6"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Adults with HIV",
+        "Year": "2000",
+        "Value": "100"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2000",
+        "Value": "2.9838759220505"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2000",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2000",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2000",
+        "Value": "73.8184878048781"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2000",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2000",
+        "Value": "44.9"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2000",
+        "Value": "50.3"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Adults with HIV",
+        "Year": "2005",
+        "Value": "100"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2005",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2005",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2005",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2005",
+        "Value": "73.9829268292683"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2005",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2005",
+        "Value": "44.8"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2005",
+        "Value": "53.7"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Adults with HIV",
+        "Year": "2010",
+        "Value": "200"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2010",
+        "Value": "1.79447247417865"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2010",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2010",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2010",
+        "Value": "75.990243902439"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2010",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2010",
+        "Value": "45.1"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2010",
+        "Value": "56.5"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Adults with HIV",
+        "Year": "2015",
+        "Value": "500"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2015",
+        "Value": "1.51041987227129"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2015",
+        "Value": "9.02"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2015",
+        "Value": "5.4"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2015",
+        "Value": "76.4487804878049"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2015",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2015",
+        "Value": "45.1"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2015",
+        "Value": "58.9"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Adults with HIV",
+        "Year": "2020",
+        "Value": "500"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2020",
+        "Value": "11.42"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2020",
+        "Value": "7.13"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2020",
+        "Value": "75.9317073170732"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2020",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Montenegro",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2020",
+        "Value": ".."
+      }
+    ],
+    "data-4b73797a3185046a0e88e32b15920bdb": [
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Adults with HIV",
+        "Year": "1995",
+        "Value": "880"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "1995",
+        "Value": "71.6894878048781"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "1995",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "1995",
+        "Value": "47.2"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "1995",
+        "Value": "46.8"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Adults with HIV",
+        "Year": "2000",
+        "Value": "1000"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2000",
+        "Value": "2.67838859873161"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2000",
+        "Value": "6.18360472"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2000",
+        "Value": "4.0480175"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2000",
+        "Value": "71.5829268292683"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2000",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2000",
+        "Value": "46.1"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2000",
+        "Value": "49.3"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Adults with HIV",
+        "Year": "2005",
+        "Value": "1300"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2005",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2005",
+        "Value": "8.28380585"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2005",
+        "Value": "5.422544"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2005",
+        "Value": "72.8341463414634"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2005",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2005",
+        "Value": "46"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2005",
+        "Value": "51.8"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Adults with HIV",
+        "Year": "2010",
+        "Value": "2000"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2010",
+        "Value": "1.68284096482069"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2010",
+        "Value": "9.5273037"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2010",
+        "Value": "5.81205225"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2010",
+        "Value": "74.3365853658537"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2010",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2010",
+        "Value": "46.2"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2010",
+        "Value": "54.3"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Adults with HIV",
+        "Year": "2015",
+        "Value": "2700"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2015",
+        "Value": "2.59480710175472"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2015",
+        "Value": "8.81319809"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2015",
+        "Value": "5.08387613"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2015",
+        "Value": "75.2878048780488"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2015",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2015",
+        "Value": "46.1"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2015",
+        "Value": "56.7"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Adults with HIV",
+        "Year": "2020",
+        "Value": "3500"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2020",
+        "Value": "8.70042133"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2020",
+        "Value": "5.3023901"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2020",
+        "Value": "74.4780487804878"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2020",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Serbia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2020",
+        "Value": ".."
+      }
+    ],
+    "data-6cc747b67717d08c88d26487e59d5ed5": [
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Adults with HIV",
+        "Year": "1995",
+        "Value": "200"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "1995",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "1995",
+        "Value": "73.9585365853659"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "1995",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "1995",
+        "Value": "46.1"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "1995",
+        "Value": "46.8"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Adults with HIV",
+        "Year": "2000",
+        "Value": "200"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2000",
+        "Value": "5.37216530337833"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2000",
+        "Value": "7.8"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2000",
+        "Value": "5.57"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2000",
+        "Value": "75.4121951219512"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2000",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2000",
+        "Value": "45"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2000",
+        "Value": "49"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Adults with HIV",
+        "Year": "2005",
+        "Value": "500"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2005",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2005",
+        "Value": "8"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2005",
+        "Value": "5.77"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2005",
+        "Value": "77.6121951219512"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2005",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2005",
+        "Value": "45"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2005",
+        "Value": "51.2"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Adults with HIV",
+        "Year": "2010",
+        "Value": "670"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2010",
+        "Value": "3.82672395217871"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2010",
+        "Value": "8.57"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2010",
+        "Value": "6.2"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2010",
+        "Value": "79.4219512195122"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2010",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2010",
+        "Value": "45.4"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2010",
+        "Value": "53.5"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Adults with HIV",
+        "Year": "2015",
+        "Value": "770"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2015",
+        "Value": "4.67377465727076"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2015",
+        "Value": "8.5"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2015",
+        "Value": "6.06"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2015",
+        "Value": "80.7756097560976"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2015",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2015",
+        "Value": "45.4"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2015",
+        "Value": "55.7"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Adults with HIV",
+        "Year": "2020",
+        "Value": "850"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Cause of death by communicable diseases",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Health expenditure (% GDP)",
+        "Year": "2020",
+        "Value": "9.43"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Gov. health expenditure (% GDP)",
+        "Year": "2020",
+        "Value": "6.85"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Life expectancy (years)",
+        "Year": "2020",
+        "Value": "80.5317073170732"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "HIV prevalence (% ages 15-49)",
+        "Year": "2020",
+        "Value": "0.1"
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Hypertension prevalence (% adults)",
+        "Year": "2020",
+        "Value": ".."
+      },
+      {
+        "Country Name": "Slovenia",
+        "Series Name": "Overweight prevalence (% adults)",
+        "Year": "2020",
+        "Value": ".."
+      }
+    ]
   }
+}
