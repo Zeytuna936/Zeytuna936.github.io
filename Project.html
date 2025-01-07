@@ -11,6 +11,20 @@
 </head>
 
 <style>
+
+section {
+            text-align: center;  
+            padding-left: 20px; 
+        }
+
+        section.aim, section[data-limitations], section.conclusion {
+            padding-left: 20px; 
+            padding: 20px;
+        }
+       
+        section h2 {
+            text-align: center;
+        } 
      * {
             margin: 0;
             padding: 0;
@@ -19,12 +33,14 @@
 
         body, html {
             height: 100%; 
+            margin: 0;
             font-family: 'Roboto', sans-serif;
             background-color: rgb(149, 194, 211);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
+            padding-left: 20px;
         }
 
     
@@ -37,45 +53,49 @@
 
     
     h1 {
-        margin: 0;
+        margin: 10px 0;
         padding: 10px;
         font-size: 2.5em;
         font-family: 'Times New Roman', Times, serif;
         color: rgb(14, 15, 14); 
         text-align: center;
+        margin-left: 20px
     }
 
     
     h2 {
-        margin: 0;
+        margin: 10px 0;
         padding: 10px;
         font-size: 1.5em;
         font-family: 'Times New Roman', Times, serif;
         color: rgb(162, 13, 13); 
         text-align: center;
+        margin-left: 20px;
     }
 
     h3 {
-        margin: 0;
+        margin: 10px 0;
         padding: 10px;
         font-size: 1.5em;
         font-family: 'Times New Roman', Times, serif;
         color: #010101; 
         text-align: center;
+        margin-left: 20px;
     }
 
     h4 {
-        margin: 0;
+        margin: 10px 0;
         padding: 10px;
         font-size: 1.5em;
         font-family: cursive;
         color: rgb(162, 13, 13); 
         text-align: center;
+        margin-left: 20px;
     }
 
     .chart-description {
-    text-align: center;  
-    margin: 20px 0;      
+        text-align: left; 
+        padding-left: 20px;     
 }
 
 figure {
@@ -84,9 +104,9 @@ figure {
     max-width: 100%;     
 }
 
-
-
 </style>
+
+
 
 </head>
 
@@ -105,7 +125,7 @@ figure {
     </header>
     
     <main>
-        <section>
+        <section class="aim">
             <h2>Aim of the Project</h2>
             <p>Armed conflicts are one of the fundamental obstacles to progress- they hinder development through weakened governance (which leads to inefficient institutions and a rise of corruption and instability) and disruption to the economy (which includes an increase in unemployment and inflation, damage to supply chain, fall of investment, and displacement of capital). Severely affected by the detrimental impacts of war, citizens either continue their lives under heavy living conditions or choose to move abroad which results in displacement of skilled labor and increase in global migration. 
             <p>
@@ -197,7 +217,7 @@ figure {
     </script>
 
 <main>
-    <section>
+    <section class="data-limitations">
         <h2>Data Limitations</h2>
         <p>The main challenge is that there is not enough data for the countries of interest, especially it was challenging to find information for BH, NM, and Montenegro. It can be very well seen in Chart 5. Moreover, individual data of these countries before the breakup of Yugoslavia is limited; so, although I wanted to analyze the statistics for 1990 on Chart 2, the data was not available. 
         </p>Because I could not find data for all targeted countries and indicators for the charts 3 and 6 from more reliable sources, I used Wikipedia as a main source. However, columns of the data had different titles and subtitles, and there were unnamed tables on the same page. Consequently, when I tried to create charts on Python, it gave me values from different tables. Therefore, I chose to use Excel to clean the data. 
@@ -205,12 +225,12 @@ figure {
     </section>
 
     <main>
-        <section>
+        <section class="conclusion">
             <h2>Conclusion</h2>
             <p>It can be concluded that the development level in Slovenia and Croatia is considerably higher than the others. Despite having the second highest GDP, Serbia suffers from a high level of unemployment rate compared to its 2 counterparts, Croatia and Slovenia. What did not surprise me was the result for BH because after it gained independence, the country was under destruction, political instability, and poverty- compared to the 3 main aforementioned powers in the region, the country is still left behind. Results for North Macedonia (being landlocked country) and Montenegro (high reliance on tourism) were predictable before the analysis. 
 
 
-            </p>To claim the causation that the countries still have challenges due to the historical wars would sound too ambitious; however, if we are to compare 3 countries that suffered from the wars the most, it is seen that war legacy still hinders Bosnian development while Serbia (which has always been the militarily strongest and had the best relations with great powers in the East) and Croatia (which has been closer to the West and have great resources for tourism) seem to overcome most of their challenges.
+            </p>To claim the causation that the countries still have challenges due to the historical wars would sound too ambitious; however, if we are to compare 3 countries that suffered from the wars the most, it is seen that war legacy still hinders Bosnian development while Serbia (which has always been the militarily strongest and had the best relations with great powers in the East) and Croatia (which has been closer to the West and have great resources for tourism) seem to overcome most of their challenges. 
 
         </section>
 
