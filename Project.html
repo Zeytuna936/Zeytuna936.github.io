@@ -22,7 +22,7 @@
       --muted: #4b5563;
       --brand: #264b8b;        /* richer deep blue */
       --accent: #59b0a5;       /* soft teal */
-      --accent-warm: #e7c7a1;  /* warm nude accent, subtle */
+      --accent-warm: #e7c7a1;  /* warm neutral accent */
       --card: #ffffff;
       --border: #e5e7eb;
       --shadow: 0 8px 24px rgba(17, 24, 39, .06);
@@ -45,6 +45,19 @@
         radial-gradient(1000px 500px at 110% 10%, rgba(38,75,139,.10), transparent 60%),
         var(--bg);
       line-height:1.65;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Animated particle canvas (subtle, behind everything) */
+    #bg-particles{
+      position: fixed; inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .35;            /* keep very subtle */
+    }
+    @media (prefers-reduced-motion: reduce){
+      #bg-particles{ display:none; }
     }
 
     /* Top navigation */
@@ -83,23 +96,20 @@
     }
 
     /* Header / hero */
-    header{
-      margin: 2rem 0 1rem;
-    }
+    header{ margin: 2rem 0 1rem; }
     .hero{
       max-width: var(--maxw); margin: 0 auto;
-      background:
-        linear-gradient(180deg, rgba(38,75,139,.045), rgba(255,255,255,0));
+      background: linear-gradient(180deg, rgba(38,75,139,.045), rgba(255,255,255,0));
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
       border-radius: var(--radius);
       padding: 2.2rem 1.5rem 1.6rem;
       position: relative;
+      overflow: hidden;
     }
     /* warm accent bar */
     .hero::before{
-      content:"";
-      position:absolute; top:0; left:0; right:0; height:8px;
+      content:""; position:absolute; top:0; left:0; right:0; height:8px;
       border-top-left-radius: var(--radius);
       border-top-right-radius: var(--radius);
       background: linear-gradient(90deg, var(--accent-warm) 0%, rgba(231,199,161,.7) 30%, rgba(89,176,165,.6) 100%);
@@ -117,23 +127,14 @@
       font-size: var(--h2);
       margin-top:.35rem;
     }
-    .tagline{
-      margin-top:.25rem; color: var(--muted);
-      font-size: var(--lead);
-    }
-    .byline{
-      margin-top:.35rem; color:#8b1a1a; font-weight:600;
-    }
+    .tagline{ margin-top:.25rem; color: var(--muted); font-size: var(--lead); }
+    .byline{ margin-top:.35rem; color:#8b1a1a; font-weight:600; }
     .links{
-      margin-top:.5rem; display:flex; gap:.85rem; flex-wrap:wrap;
-      font-weight:500;
+      margin-top:.5rem; display:flex; gap:.85rem; flex-wrap:wrap; font-weight:500;
     }
     .links a{ color: #1d4ed8; text-decoration:none; }
     .links a:hover{ text-decoration:underline; }
-    .links a:focus-visible{
-      outline: 3px solid rgba(38,75,139,.35);
-      outline-offset: 2px; border-radius: 6px;
-    }
+    .links a:focus-visible{ outline: 3px solid rgba(38,75,139,.35); outline-offset: 2px; border-radius: 6px; }
 
     /* Layout */
     .container{ max-width: var(--maxw); margin: 0 auto; padding: 0 1rem 3.5rem; display:grid; grid-template-columns: 260px 1fr; gap: 1.25rem; }
@@ -141,8 +142,7 @@
 
     /* Floating ToC */
     .toc{
-      position: sticky; top: 4.75rem;
-      align-self: start;
+      position: sticky; top: 4.75rem; align-self: start;
       background: var(--card);
       border: 1px solid var(--border);
       border-left: 4px solid var(--brand);
@@ -168,52 +168,62 @@
     }
     section.panel:hover{ transform: translateY(-1px); box-shadow: 0 10px 28px rgba(17,24,39,.08); }
     section.panel h2{
-      font-family:Lora, Georgia, serif;
-      font-size: var(--h2);
-      color: var(--ink);
-      text-align:center;
-      margin-bottom:.5rem;
-      position: relative;
+      font-family:Lora, Georgia, serif; font-size: var(--h2); color: var(--ink);
+      text-align:center; margin-bottom:.5rem; position: relative;
     }
     section.panel h2::after{
-      content:"";
-      display:block;
-      width: 64px; height: 3px; margin: .25rem auto 0;
+      content:""; display:block; width: 64px; height: 3px; margin: .25rem auto 0;
       background: linear-gradient(90deg, var(--brand), var(--accent));
-      border-radius: 2px;
-      opacity:.75;
+      border-radius: 2px; opacity:.75;
     }
     .lead-box{
       background: linear-gradient(0deg, rgba(89,176,165,.08), rgba(89,176,165,.06));
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: .9rem .95rem;
-      color: #0f2f2e;
-      margin: .5rem 0 .75rem;
+      border: 1px solid var(--border); border-radius: 12px;
+      padding: .9rem .95rem; color: #0f2f2e; margin: .5rem 0 .75rem;
     }
 
     /* Charts section */
     .chart-block{
+      position: relative;
       border:1px solid var(--border);
       border-radius: 14px;
       padding: 1rem;
       background: #fff;
-      margin: .75rem 0; /* tightened */
+      margin: .8rem auto;          /* default centered */
+      max-width: 920px;            /* centered width */
       transition: box-shadow .15s ease, transform .15s ease;
+      overflow: hidden;            /* contains the glow layers */
     }
+    /* Professional backdrop inside each card (very subtle) */
+    .chart-block::before{
+      content:"";
+      position:absolute; inset: 0;
+      background:
+        radial-gradient(520px 220px at 18% 12%, rgba(89,176,165,.10), transparent 60%),
+        radial-gradient(440px 200px at 86% 26%, rgba(38,75,139,.08), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,1) 42%);
+      pointer-events:none; z-index: 0;
+    }
+    .chart-block > *{ position: relative; z-index: 1; }
+
     .chart-block:hover{ box-shadow: var(--shadow); transform: translateY(-1px); }
     .chart-block h3{
-      font-family:Lora, Georgia, serif;
-      color:#8b1a1a;
-      font-size: var(--h3);
-      text-align:center;
-      margin-bottom:.25rem;
+      font-family:Lora, Georgia, serif; color:#8b1a1a; font-size: var(--h3);
+      text-align:center; margin-bottom:.25rem;
     }
     .chart-notes{ margin:.25rem 0 .4rem; padding-left: 1.1rem; }
     .chart-notes li{ margin:.25rem 0; }
     figure{ margin:.5rem 0; }
     figcaption{ text-align:center; font-size:.9rem; color:#6b7280; margin-top:.2rem; }
-    .viz{ width:100%; min-height:340px; } /* slightly taller for credibility */
+
+    /* Chart container sizes */
+    .viz{ width:100%; min-height:340px; }
+
+    /* EXCEPTION: Chart 4 should not be centered (keep original feel) */
+    .chart-block--left{
+      max-width: none;
+      margin-left: 0; margin-right: 0;
+    }
 
     /* Back to top */
     .backtop{
@@ -230,15 +240,10 @@
     .backtop:hover{ transform: translateY(-2px); }
 
     /* Footer */
-    footer{
-      text-align:center; color:#6b7280; padding: 2rem 1rem 3rem;
-    }
+    footer{ text-align:center; color:#6b7280; padding: 2rem 1rem 3rem; }
 
     /* Accessibility and focus */
-    a:focus-visible{
-      outline: 3px solid rgba(38,75,139,.35);
-      outline-offset: 2px; border-radius: 6px;
-    }
+    a:focus-visible{ outline: 3px solid rgba(38,75,139,.35); outline-offset: 2px; border-radius: 6px; }
 
     /* Skip link */
     .skip{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
@@ -249,7 +254,7 @@
 
     /* Print stylesheet */
     @media print {
-      .topbar, .toc, .backtop { display: none !important; }
+      #bg-particles, .topbar, .toc, .backtop { display: none !important; }
       body { background: #fff !important; }
       section.panel { box-shadow: none; border-color: #d1d5db; break-inside: avoid; }
       a::after { content: " (" attr(href) ")"; font-size: .85em; color: #6b7280; }
@@ -263,6 +268,7 @@
   </style>
 </head>
 <body>
+  <canvas id="bg-particles"></canvas>
   <a href="#content" class="skip">Skip to content</a>
 
   <!-- Top navigation -->
@@ -328,7 +334,7 @@
       <section id="charts" class="panel">
         <h2>Data Collection and Charts</h2>
 
-        <!-- Chart 1 -->
+        <!-- Chart 1 (centered) -->
         <article class="chart-block" aria-labelledby="c1h">
           <h3 id="c1h">Chart1/Main Highlights:</h3>
           <ul class="chart-notes">
@@ -342,7 +348,7 @@
           </figure>
         </article>
 
-        <!-- Chart 2 -->
+        <!-- Chart 2 (centered) -->
         <article class="chart-block" aria-labelledby="c2h">
           <h3 id="c2h">Chart2/Main Highlights:</h3>
           <ul class="chart-notes">
@@ -355,7 +361,7 @@
           </figure>
         </article>
 
-        <!-- Chart 3 -->
+        <!-- Chart 3 (centered) -->
         <article class="chart-block" aria-labelledby="c3h">
           <h3 id="c3h">Chart3/Main Highlights:</h3>
           <ul class="chart-notes">
@@ -369,8 +375,8 @@
           </figure>
         </article>
 
-        <!-- Chart 4 -->
-        <article class="chart-block" aria-labelledby="c4h">
+        <!-- Chart 4 (NOT centered; left/full width) -->
+        <article class="chart-block chart-block--left" aria-labelledby="c4h">
           <h3 id="c4h">Chart4/Main Highlights:</h3>
           <ul class="chart-notes">
             <li>Slovenia has the highest life expectancy rate, followed by Croatia; </li>
@@ -383,7 +389,7 @@
           </figure>
         </article>
 
-        <!-- Chart 5 -->
+        <!-- Chart 5 (centered) -->
         <article class="chart-block" aria-labelledby="c5h">
           <h3 id="c5h">Chart5/Main Highlights:</h3>
           <ul class="chart-notes">
@@ -396,7 +402,7 @@
           </figure>
         </article>
 
-        <!-- Chart 6 -->
+        <!-- Chart 6 (centered) -->
         <article class="chart-block" aria-labelledby="c6h">
           <h3 id="c6h">Chart6/Main Highlights:</h3>
           <ul class="chart-notes">
@@ -410,7 +416,7 @@
         </article>
       </section>
 
-      <!-- Data Limitations (rewritten for clarity & tone) -->
+      <!-- Data Limitations -->
       <section id="limitations" class="panel">
         <h2>Data Limitations</h2>
         <p>
@@ -421,7 +427,7 @@
         </p>
       </section>
 
-      <!-- Conclusion (rewritten for clarity & tone) -->
+      <!-- Conclusion -->
       <section id="conclusion" class="panel">
         <h2>Conclusion</h2>
         <p>
@@ -442,11 +448,17 @@
 
   <!-- Vega Theme + Embeds -->
   <script>
-    // Professional Vega/Vega-Lite theme to align charts with page typography/colors
+    // Institutional Vega/Vega-Lite theme
     const vegaTheme = {
       config: {
+        background: "#fcfdff", // subtle chart view tint
         font: "Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif",
-        axis: { labelColor: "#1f2a37", titleColor: "#1f2a37", gridColor: "#e5e7eb", tickColor: "#cbd5e1" },
+        axis: {
+          labelColor: "#1f2a37",
+          titleColor: "#1f2a37",
+          gridColor: "#e5e7eb",
+          tickColor: "#cbd5e1"
+        },
         header: { labelColor: "#1f2a37", titleColor: "#1f2a37" },
         legend: { labelColor: "#374151", titleColor: "#1f2a37" },
         title: { color: "#1f2a37", font: "Lora, Georgia, serif", fontWeight: 600 },
@@ -497,6 +509,107 @@
     };
     window.addEventListener('scroll', toggleBackTop, { passive: true });
     toggleBackTop();
+  </script>
+
+  <script>
+    // Lightweight animated background particles (no frameworks)
+    (function(){
+      const canvas = document.getElementById('bg-particles');
+      if (!canvas) return;
+
+      const ctx = canvas.getContext('2d', { alpha: true });
+      let width, height, particles, animationId;
+      const DPR = Math.min(window.devicePixelRatio || 1, 2);
+      const COUNT = 60;          // keep modest for performance
+      const SPEED = 0.08;        // slow drift
+      const LINKS_DIST = 140;    // link distance in px
+      const COLORS = ['#264b8b', '#59b0a5', '#e7c7a1'];
+
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return; // respect accessibility
+
+      function resize(){
+        width = canvas.clientWidth = window.innerWidth;
+        height = canvas.clientHeight = window.innerHeight;
+        canvas.width = Math.floor(width * DPR);
+        canvas.height = Math.floor(height * DPR);
+        ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      }
+
+      function rand(min, max){ return Math.random() * (max - min) + min; }
+
+      function createParticles(){
+        particles = new Array(COUNT).fill(0).map(() => ({
+          x: rand(0, width),
+          y: rand(0, height),
+          vx: rand(-SPEED, SPEED),
+          vy: rand(-SPEED, SPEED),
+          r: rand(1.2, 2.2),
+          c: COLORS[(Math.random() * COLORS.length) | 0]
+        }));
+      }
+
+      function step(){
+        ctx.clearRect(0,0,width,height);
+
+        // connect nearby particles with faint lines
+        for (let i=0;i<particles.length;i++){
+          const p = particles[i];
+          p.x += p.vx; p.y += p.vy;
+
+          // wrap-around
+          if (p.x < -20) p.x = width + 20; else if (p.x > width + 20) p.x = -20;
+          if (p.y < -20) p.y = height + 20; else if (p.y > height + 20) p.y = -20;
+
+          // draw point
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+          ctx.fillStyle = p.c;
+          ctx.globalAlpha = 0.25;
+          ctx.fill();
+        }
+
+        ctx.globalAlpha = 0.12;
+        ctx.lineWidth = 1;
+
+        for (let i=0;i<particles.length;i++){
+          for (let j=i+1;j<particles.length;j++){
+            const p = particles[i], q = particles[j];
+            const dx = p.x - q.x, dy = p.y - q.y;
+            const d2 = dx*dx + dy*dy;
+            if (d2 < LINKS_DIST*LINKS_DIST){
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              // gradient per line
+              const grad = ctx.createLinearGradient(p.x, p.y, q.x, q.y);
+              grad.addColorStop(0, p.c);
+              grad.addColorStop(1, q.c);
+              ctx.strokeStyle = grad;
+              ctx.stroke();
+            }
+          }
+        }
+
+        ctx.globalAlpha = 1;
+        animationId = requestAnimationFrame(step);
+      }
+
+      function start(){
+        resize();
+        createParticles();
+        cancelAnimationFrame(animationId);
+        step();
+      }
+
+      window.addEventListener('resize', () => {
+        resize();
+        // keep particles in bounds after resize
+        createParticles();
+      }, { passive: true });
+
+      start();
+    })();
   </script>
 </body>
 </html>
