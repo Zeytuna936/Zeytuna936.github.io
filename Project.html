@@ -1,333 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Libre+Baskerville&family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automated Data Visualisation for Policymaking — Final Project</title>
+  <meta name="description" content="Conflict Legacy: Impact of the Yugoslav Wars on post-conflict development. Final project by Zeytuna Sultanzade." />
 
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: rgb(149, 194, 211);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 20px;
-}
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet">
 
-header {
-    background-color: #70dada;
-    text-align: center;
-    padding: 60px;
-    border-bottom: 3px solid #dd8787;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
+  <!-- Vega -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-h1 {
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 3em;
-    font-family: 'Libre Baskerville', serif;
-    color: rgb(14, 15, 14);
-    text-align: center;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
+  <style>
+    :root{
+      /* Professional, neutral palette */
+      --bg: #f6f8fb;
+      --ink: #1f2a37;
+      --muted: #4b5563;
+      --brand: #274c77;     /* deep blue */
+      --accent: #5ab1a6;    /* soft teal */
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 8px 24px rgba(17, 24, 39, .06);
+      --radius: 16px;
+      --maxw: 1120px;
 
-h2, h3, h4 {
-    margin: 10px 0;
-    padding: 10px;
-    font-family: 'Libre Baskerville', serif;
-    color: rgb(162, 13, 13);
-    text-align: center;
-}
-
-h3 {
-    font-size: 1.8em;
-    color: #0000004f;
-}
-
-h4 {
-    font-family: cursive;
-    color: rgb(162, 13, 13);
-}
-
-p, ul {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1em;
-}
-
-.main-content {
-    width: 100%;
-    max-width: 1200px;
-    background-color: rgb(70, 190, 207);
-    padding: 20px;
-    margin: 0 auto;
-    border-radius: 15px;
-}
-
-.chart-description {
-    text-align: left;
-    padding-left: 20px;
-    margin-bottom: 30px;
-}
-
-figure {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    text-align: center;
-}
-
-.chart-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-}
-
-.chart-item {
-    flex: 1 1 300px; 
-    max-width: 500px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-a {
-    color: #007BFF;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #0056b3;
-}
-
-.aim, .data-limitations, .conclusion {
-    background-color: #ffffff;
-    padding: 40px;
-    width: 100vw; 
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; 
-    display: flex;
-    justify-content: center;
-    text-align: left; 
-}
-
-.aim h2, .data-limitations h2, .conclusion h2 {
-    color: rgb(14, 15, 14);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.data-limitations h2, .conclusion h2 {
-    color: rgb(14, 15, 14);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-@media screen and (max-width: 768px) {
-    body {
-        padding-left: 10px;
-        padding-right: 10px;
+      --h1: clamp(2rem, 3.8vw, 3rem);
+      --h2: clamp(1.25rem, 2.2vw, 1.6rem);
+      --h3: 1.125rem;
+      --lead: 1.05rem;
     }
 
-    nav a {
-        font-size: 1em;
-        padding: 8px 10px;
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    html, body{ height:100%; scroll-behavior:smooth; }
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      color: var(--muted);
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(90,177,166,.12), transparent 60%),
+                  radial-gradient(1000px 500px at 110% 10%, rgba(39,76,119,.10), transparent 60%),
+                  var(--bg);
+      line-height:1.65;
     }
 
-    header {
-        padding: 40px;
+    /* Top navigation */
+    .topbar{
+      position: sticky; top:0; z-index:50;
+      backdrop-filter: saturate(140%) blur(8px);
+      background: rgba(255,255,255,.7);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner{
+      max-width: var(--maxw); margin: 0 auto;
+      display:flex; align-items:center; justify-content:space-between;
+      padding: .75rem 1rem;
+    }
+    .brand{
+      display:flex; gap:.6rem; align-items:center; color: var(--brand); font-weight:600;
+    }
+    .brand-dot{ width:10px; height:10px; border-radius:50%; background: var(--accent); box-shadow:0 0 0 3px rgba(90,177,166,.2); }
+    .nav{
+      display:flex; gap:1rem; flex-wrap:wrap;
+    }
+    .nav a{
+      color: var(--ink); text-decoration:none; font-size:.95rem; padding:.35rem .5rem; border-radius:10px;
+    }
+    .nav a:hover{ background: rgba(39,76,119,.08); }
+
+    /* Header / hero */
+    header{
+      margin: 2rem 0 1rem;
+    }
+    .hero{
+      max-width: var(--maxw); margin: 0 auto;
+      background: linear-gradient(180deg, rgba(39,76,119,.04), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 2.2rem 1.5rem;
+    }
+    .title{
+      font-family: Lora, Georgia, serif;
+      color: var(--ink);
+      font-size: var(--h1);
+      letter-spacing:.2px;
+    }
+    .subtitle{
+      font-family: Lora, Georgia, serif;
+      color: var(--brand);
+      font-weight:600;
+      font-size: var(--h2);
+      margin-top:.35rem;
+    }
+    .tagline{
+      margin-top:.25rem; color: var(--muted);
+      font-size: var(--lead);
+    }
+    .byline{
+      margin-top:.35rem; color:#8b1a1a; font-weight:600;
+    }
+    .links{
+      margin-top:.5rem; display:flex; gap:.85rem; flex-wrap:wrap;
+      font-weight:500;
+    }
+    .links a{ color: #0b5ed7; text-decoration:none; }
+    .links a:hover{ text-decoration:underline; }
+
+    /* Layout */
+    .container{ max-width: var(--maxw); margin: 0 auto; padding: 0 1rem 3rem; display:grid; grid-template-columns: 260px 1fr; gap: 1.25rem; }
+    @media (max-width: 980px){ .container{ grid-template-columns: 1fr; } }
+
+    /* Floating ToC */
+    .toc{
+      position: sticky; top: 4.75rem;
+      align-self: start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 1rem;
+    }
+    .toc h3{ font-family:Lora, Georgia, serif; color: var(--ink); font-size: 1.05rem; margin-bottom:.35rem; }
+    .toc ul{ list-style:none; }
+    .toc a{ display:block; padding:.4rem .5rem; border-radius:.5rem; text-decoration:none; color: var(--muted); font-size:.95rem; }
+    .toc a:hover{ background: rgba(39,76,119,.05); }
+    .toc a[aria-current="true"]{ background: rgba(39,76,119,.08); color: var(--ink); font-weight:600; }
+
+    /* Sections / cards */
+    section.panel{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    section.panel:hover{ transform: translateY(-1px); box-shadow: 0 10px 28px rgba(17,24,39,.08); }
+    section.panel h2{
+      font-family:Lora, Georgia, serif;
+      font-size: var(--h2);
+      color: var(--ink);
+      text-align:center;
+      margin-bottom:.5rem;
+    }
+    .lead-box{
+      background: linear-gradient(0deg, rgba(90,177,166,.08), rgba(90,177,166,.06));
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: .9rem .95rem;
+      color: #0f2f2e;
+      margin: .5rem 0 .75rem;
     }
 
-    h1 {
-        font-size: 2em;
+    /* Charts section */
+    .chart-block{
+      border:1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+      background: #fff;
+      margin: .85rem 0;
+      transition: box-shadow .15s ease, transform .15s ease;
+    }
+    .chart-block:hover{ box-shadow: var(--shadow); transform: translateY(-1px); }
+    .chart-block h3{
+      font-family:Lora, Georgia, serif;
+      color:#8b1a1a;
+      font-size: var(--h3);
+      text-align:center;
+      margin-bottom:.25rem;
+    }
+    .chart-notes{ margin:.35rem 0 .5rem; padding-left: 1.1rem; }
+    .chart-notes li{ margin:.25rem 0; }
+    figure{ margin:.5rem 0; }
+    figcaption{ text-align:center; font-size:.9rem; color:#6b7280; margin-top:.25rem; }
+    .viz{ width:100%; min-height:280px; }
+
+    /* Footer */
+    footer{
+      text-align:center; color:#6b7280; padding: 2rem 1rem 3rem;
     }
 
-    h2, h3, h4 {
-        font-size: 1.2em;
-    }
+    /* Skip link */
+    .skip{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .skip:focus{ position:fixed; left:1rem; top:1rem; background:#111827; color:white; padding:.5rem .75rem; border-radius:.5rem; z-index:999; }
 
-    .aim, .data-limitations, .conclusion {
-        padding: 20px;
-    }
-}
-
-.section {
-    margin-bottom: 20px; 
-    padding: 15px;
-    border: 1px solid #ccc; 
-    max-width: 1200px; 
-    width: 100%;
-}
-
-h2 {
-    font-size: 1.5em;
-    color: #333;
-}
-
-p {
-    font-size: 1em;
-    color: #666;
-}
-
-  
-    </style>
-
-
+    /* Anchor offset */
+    :target{ scroll-margin-top: 6.5rem; }
+  </style>
 </head>
-
 <body>
-    <header>
-        <h1>Automated Data Visualisation for Policymaking</h1>
-        <h2>Final Project on </h2>
-        <h3>Conflict Legacy: Analyzing Impact of Yugoslav Wars on Post-Conflict Development</h3>
-        <h4>by Zeytuna Sultanzade</h4>
-                <p style="margin-top: 0px; color: darkblue; font-family: 'Roboto', sans-serif;">
-                    <!-- we're setting the margin to 0px so the header and authour name are close together -->
-                    <a href="https://uk.linkedin.com/in/zeytuna-sultanzade-075abb20b/">LinkedIn</a> | <a
-                        href="https://github.com/Zeytuna936">GitHub</a> | <a 
-                        href="https://zeytuna936.github.io">Portfolio</a>
-                </p>
-    </header>
-    
-    <main>
-        <section class="aim">
-            <h2>Aim of the Project</h2>
-            <div class="section"> 
-            <p>Armed conflicts are one of the fundamental obstacles to progress- they hinder development through weakened governance (which leads to inefficient institutions and a rise of corruption and instability) and disruption to the economy (which includes an increase in unemployment and inflation, damage to supply chain, fall of investment, and displacement of capital). Severely affected by the detrimental impacts of war, citizens either continue their lives under heavy living conditions or choose to move abroad which results in displacement of skilled labor and increase in global migration. 
-            </p>Being known as the deadliest one in Europe since WW2, the <a href="https://www.icty.org/en/about/what-former-yugoslavia/conflicts"_blank">Yugoslav Wars</a> resulted in ethnic cleansing, genocide, and psychological trauma along with the breakup of Yugoslavia. Among 6 former Yugoslavian countries, some of them were affected by the bloody wars the most (Bosnia and Herzegovina (BH), Croatia, Serbia) while some of them could get independence under peace and negotiation (Montenegro, North Macedonia (NM), Slovenia). 
-            </p>In my research, I intend to investigate to what extent the Yugoslav Wars hindered development of former Yugoslavian countries, especially the ones that experienced it the most. To analyze it, the project aims to include indicators of main factors contributing to development among these countries.  
+  <a href="#content" class="skip">Skip to content</a>
+
+  <!-- Top navigation -->
+  <div class="topbar" role="navigation" aria-label="Primary">
+    <div class="topbar-inner">
+      <div class="brand"><span class="brand-dot"></span> Policy Data Showcase</div>
+      <nav class="nav">
+        <a href="#aim">Aim</a>
+        <a href="#charts">Charts</a>
+        <a href="#limitations">Data Limitations</a>
+        <a href="#conclusion">Conclusion</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="hero">
+      <h1 class="title">Automated Data Visualisation for Policymaking</h1>
+      <p class="subtitle">Final Project</p>
+      <p class="tagline">Conflict Legacy: Analyzing Impact of Yugoslav Wars on Post-Conflict Development</p>
+      <p class="byline">by Zeytuna Sultanzade</p>
+      <p class="links" aria-label="Profile links">
+        <a href="https://uk.linkedin.com/in/zeytuna-sultanzade-075abb20b/" target="_blank" rel="noopener">LinkedIn</a> ·
+        <a href="https://github.com/Zeytuna936" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://zeytuna936.github.io" target="_blank" rel="noopener">Portfolio</a>
+      </p>
+    </div>
+  </header>
+
+  <!-- Main layout -->
+  <div class="container">
+    <!-- ToC -->
+    <aside class="toc" role="navigation" aria-label="Contents">
+      <h3>Contents</h3>
+      <ul>
+        <li><a href="#aim" data-spy> Aim of the Project</a></li>
+        <li><a href="#charts" data-spy> Data Collection & Charts</a></li>
+        <li><a href="#limitations" data-spy> Data Limitations</a></li>
+        <li><a href="#conclusion" data-spy> Conclusion</a></li>
+      </ul>
+    </aside>
+
+    <!-- Content -->
+    <main id="content">
+      <!-- Aim -->
+      <section id="aim" class="panel">
+        <h2>Aim of the Project</h2>
+        <p>
+          Armed conflicts are one of the fundamental obstacles to progress- they hinder development through weakened governance (which leads to inefficient institutions and a rise of corruption and instability) and disruption to the economy (which includes an increase in unemployment and inflation, damage to supply chain, fall of investment, and displacement of capital). Severely affected by the detrimental impacts of war, citizens either continue their lives under heavy living conditions or choose to move abroad which results in displacement of skilled labor and increase in global migration.
+        </p>
+        <div class="lead-box">
+          Being known as the deadliest one in Europe since WW2, the
+          <a href="https://www.icty.org/en/about/what-former-yugoslavia/conflicts" target="_blank" rel="noopener">Yugoslav Wars</a>
+          resulted in ethnic cleansing, genocide, and psychological trauma along with the breakup of Yugoslavia. Among 6 former Yugoslavian countries, some of them were affected by the bloody wars the most (Bosnia and Herzegovina (BH), Croatia, Serbia) while some of them could get independence under peace and negotiation (Montenegro, North Macedonia (NM), Slovenia).
         </div>
-        </section>
+        <p>
+          In my research, I intend to investigate to what extent the Yugoslav Wars hindered development of former Yugoslavian countries, especially the ones that experienced it the most. To analyze it, the project aims to include indicators of main factors contributing to development among these countries.
+        </p>
+      </section>
 
+      <!-- Charts -->
+      <section id="charts" class="panel">
+        <h2>Data Collection and Charts</h2>
 
-        <main>
-            <section>
-                <h2>Data Collection and Charts</h2>
-
-<div class="chart-container">
-    <div class="chart-item">
-    <div class="chart-description">
-        <p><strong>Chart1/Main Highlights:</strong><p>
-        <ul>
+        <!-- Chart 1 -->
+        <article class="chart-block" aria-labelledby="c1h">
+          <h3 id="c1h">Chart1/Main Highlights:</h3>
+          <ul class="chart-notes">
             <li>The GDP of Croatia, Slovenia, and Serbia is significantly higher than the others;</li>
             <li>Since 2000, these countries have never experienced a dramatic decrease in GDP;</li>
-            <li>From the data of GDP of all countries available on <a href="https://databank.worldbank.org/reports.aspx?source=2&series=NY.GDP.MKTP.CD&country 
-                "_blank">WorldBank,</a> only data for 6 target countries were scraped via on <a href="https://colab.research.google.com/drive/1lmhYzx_wYRgelaBbZK7f6-znE2jOH0ml?usp=sharing"_blank">Colab</a>
-                </li>
-        </ul>
-        <br>
-        <figure id="Location1"></figure> 
-        <p><strong>Chart2/Main Highlights:</strong><p>
-            <ul>
-                <li>Considering the GDPs of all countries, Slovenia spends the highest amount of money on RD;</li>
-                <li>The original data from <a href=https://databank.worldbank.org/source/world-development-indicators/Series/GB.XPD.RSDV.GD.ZS"_blank">WorldBank,</a>  were scraped via <a href=https://colab.research.google.com/drive/1jSRloD9aSeebTqMVwVwef_mmbgFb8QqM?usp=sharing "_blank">Colab</a> </li>
-            </ul>
-            <br>
-        <figure id="Location2"></figure>
-    </div>
-    <br>
-    <div class="chart-description">
-        <p><strong>Chart3/Main Highlights:</strong><p>
-            <ul>
-                <li>The bar chart compares economic indicators among 6 countries from 2007 to 2023;</li>
-                <li>A CSV file where only 6 countries and their indicators are shown was created;</li>
-                <li>Additional interactivity of filtering data was added by using “params” and “transform” functions
-                    </li>
-            </ul>
-            <br>
-        <figure id="Location3"></figure>
-    </div>
-    <br>
-    <div class="chart-description">
-        <p><strong>Chart4/Main Highlights:</strong><p>
-            <ul>
-                <li>Slovenia has the highest life expectancy rate, followed by Croatia; </li>
-                <li>Around 10% of GDP of these countries is spent on health expenditure;</li>
-                <li>The data for the heatmap was obtained from <a href="https://databank.worldbank.org/source/health-nutrition-and-population-statistics"_blank">WorldBank.</a> The Colab network, where targeted indicators and countries were scraped is available <a href="https://colab.research.google.com/drive/1lLus3hKo_wbXCNcuB1Px7Ok9wAVVXZeG?usp=sharing"_blank">here</a>
-                    </li>
-            </ul>
-            <br>
-        <figure id="Location4"></figure>
-    </div>
-    <br>
-    <div class="chart-description">
-        <p><strong>Chart5/Main Highlights:</strong><p>
-            <ul>
-                <li>Serbia releases the largest amount of CO2 among the others, which can be related to its high dependence on fossil fuels and the industrial sector;</li>
-                <li>The data for all countries and indicators was accessed from <a href="https://databank.worldbank.org/source/millennium-development-goals/Series/EN.ATM.CO2E.KT"> WorldBank </a> and scraped on <a href="https://colab.research.google.com/drive/1mvJcDevIoGRIEotViWpiCvdbfvjqLbFx?usp=sharing"> Colab</a> </li>
-            </ul>
-            <br>
-        <figure id="Location5"></figure>
-    </div>
-    <br>
-    <div class="chart-description">
-        <p><strong>Chart6/Main Highlights:</strong><p></p>
-        <ul>
+            <li>From the data of GDP of all countries available on <a href="https://databank.worldbank.org/reports.aspx?source=2&series=NY.GDP.MKTP.CD&country" target="_blank" rel="noopener">WorldBank,</a> only data for 6 target countries were scraped via on <a href="https://colab.research.google.com/drive/1lmhYzx_wYRgelaBbZK7f6-znE2jOH0ml?usp=sharing" target="_blank" rel="noopener">Colab</a></li>
+          </ul>
+          <figure>
+            <div id="Location1" class="viz" role="img" aria-label="Vega chart: GDP over time"></div>
+            <figcaption>GDP trends among former Yugoslav countries.</figcaption>
+          </figure>
+        </article>
+
+        <!-- Chart 2 -->
+        <article class="chart-block" aria-labelledby="c2h">
+          <h3 id="c2h">Chart2/Main Highlights:</h3>
+          <ul class="chart-notes">
+            <li>Considering the GDPs of all countries, Slovenia spends the highest amount of money on RD;</li>
+            <li>The original data from <a href="https://databank.worldbank.org/source/world-development-indicators/Series/GB.XPD.RSDV.GD.ZS" target="_blank" rel="noopener">WorldBank,</a>  were scraped via <a href="https://colab.research.google.com/drive/1jSRloD9aSeebTqMVwVwef_mmbgFb8QqM?usp=sharing" target="_blank" rel="noopener">Colab</a></li>
+          </ul>
+          <figure>
+            <div id="Location2" class="viz" role="img" aria-label="Vega chart: R and D expenditure"></div>
+            <figcaption>R&amp;D intensity among countries.</figcaption>
+          </figure>
+        </article>
+
+        <!-- Chart 3 -->
+        <article class="chart-block" aria-labelledby="c3h">
+          <h3 id="c3h">Chart3/Main Highlights:</h3>
+          <ul class="chart-notes">
+            <li>The bar chart compares economic indicators among 6 countries from 2007 to 2023;</li>
+            <li>A CSV file where only 6 countries and their indicators are shown was created;</li>
+            <li>Additional interactivity of filtering data was added by using “params” and “transform” functions</li>
+          </ul>
+          <figure>
+            <div id="Location3" class="viz" role="img" aria-label="Vega chart: comparative indicators"></div>
+            <figcaption>Interactive comparison of key indicators.</figcaption>
+          </figure>
+        </article>
+
+        <!-- Chart 4 -->
+        <article class="chart-block" aria-labelledby="c4h">
+          <h3 id="c4h">Chart4/Main Highlights:</h3>
+          <ul class="chart-notes">
+            <li>Slovenia has the highest life expectancy rate, followed by Croatia; </li>
+            <li>Around 10% of GDP of these countries is spent on health expenditure;</li>
+            <li>The data for the heatmap was obtained from <a href="https://databank.worldbank.org/source/health-nutrition-and-population-statistics" target="_blank" rel="noopener">WorldBank.</a> The Colab network, where targeted indicators and countries were scraped is available <a href="https://colab.research.google.com/drive/1lLus3hKo_wbXCNcuB1Px7Ok9wAVVXZeG?usp=sharing" target="_blank" rel="noopener">here</a></li>
+          </ul>
+          <figure>
+            <div id="Location4" class="viz" role="img" aria-label="Vega chart: health and life expectancy"></div>
+            <figcaption>Heatmap of health indicators.</figcaption>
+          </figure>
+        </article>
+
+        <!-- Chart 5 -->
+        <article class="chart-block" aria-labelledby="c5h">
+          <h3 id="c5h">Chart5/Main Highlights:</h3>
+          <ul class="chart-notes">
+            <li>Serbia releases the largest amount of CO2 among the others, which can be related to its high dependence on fossil fuels and the industrial sector;</li>
+            <li>The data for all countries and indicators was accessed from <a href="https://databank.worldbank.org/source/millennium-development-goals/Series/EN.ATM.CO2E.KT" target="_blank" rel="noopener"> WorldBank </a> and scraped on <a href="https://colab.research.google.com/drive/1mvJcDevIoGRIEotViWpiCvdbfvjqLbFx?usp=sharing" target="_blank" rel="noopener"> Colab</a></li>
+          </ul>
+          <figure>
+            <div id="Location5" class="viz" role="img" aria-label="Vega chart: CO2 emissions"></div>
+            <figcaption>CO₂ emissions across countries.</figcaption>
+          </figure>
+        </article>
+
+        <!-- Chart 6 -->
+        <article class="chart-block" aria-labelledby="c6h">
+          <h3 id="c6h">Chart6/Main Highlights:</h3>
+          <ul class="chart-notes">
             <li>BH and Serbia have the highest level of corruption and the lowest level of freedom index and rule of law, while Slovenia has the best indicators for state capacity;</li>
             <li>A CSV file where statistics of on only targeted countries are shown was created</li>
-        </ul>
-        <br>
-        <figure id="Location6"></figure>
-    </div>
+          </ul>
+          <figure>
+            <div id="Location6" class="viz" role="img" aria-label="Vega chart: governance & state capacity"></div>
+            <figcaption>Bubble chart of governance indicators.</figcaption>
+          </figure>
+        </article>
+      </section>
 
-    <script>
-        let figure_1_spec = "ProjectGDP.json";
-        let figure_2_spec = "ProjectRD.json";
-        let figure_3_spec = "ProjectBarChart.json";
-        let figure_4_spec = "ProjectHealth.json";
-        let figure_5_spec = "ProjectCO2.json";
-        let figure_6_spec = "ProjectBubble.json";
-        vegaEmbed('#Location1', figure_1_spec);
-        vegaEmbed('#Location2', figure_2_spec);
-        vegaEmbed('#Location3', figure_3_spec);
-        vegaEmbed('#Location4', figure_4_spec);
-        vegaEmbed('#Location5', figure_5_spec);
-        vegaEmbed('#Location6', figure_6_spec);
-    </script>
-
-<main>
-    <section class="data-limitations">
+      <!-- Data Limitations (rewritten for clarity & tone) -->
+      <section id="limitations" class="panel">
         <h2>Data Limitations</h2>
-        <div class="section">
-        <p>The main challenge is that there is not enough data for the countries of interest, especially it was challenging to find information for BH, NM, and Montenegro. It can be very well seen in Chart 5. Moreover, individual data of these countries before the breakup of Yugoslavia is limited; so, although I wanted to analyze the statistics for 1990 on Chart 2, the data was not available. 
-        </p>Because I could not find data for all targeted countries and indicators for the charts 3 and 6 from more reliable sources, I used Wikipedia as a main source. However, columns of the data had different titles and subtitles, and there were unnamed tables on the same page. Consequently, when I tried to create charts on Python, it gave me values from different tables. Therefore, I chose to use Excel to clean the data. 
-    </div>
-    </section>
+        <p>
+          Coverage across the six countries is uneven—particularly for Bosnia and Herzegovina (BH), North Macedonia (NM), and Montenegro—and this is most evident in the emissions series (Chart 5). Historical, country-level series preceding the breakup of Yugoslavia are also limited; for example, 1990 values could not be included for Chart 2 due to missing data.
+        </p>
+        <p>
+          For Charts 3 and 6, consistent and fully aligned indicators for all target countries were not available from higher-confidence sources, so Wikipedia tables were used to fill gaps. Because the page contained multiple tables with varying headers and some unnamed sections, initial Python parsing returned mixed ranges. To ensure consistency, all fields were standardized and cleaned in Excel before visualization.
+        </p>
+      </section>
 
-    <main>
-        <section class="conclusion">
-            <h2>Conclusion</h2>
-            <div class="section">
-            <p>It can be concluded that the development level in Slovenia and Croatia is considerably higher than the others. Despite having the second highest GDP, Serbia suffers from a high level of unemployment rate compared to its 2 counterparts, Croatia and Slovenia. What did not surprise me was the result for BH because after it gained independence, the country was under destruction, political instability, and poverty- compared to the 3 main aforementioned powers in the region, the country is still left behind. Results for North Macedonia (being landlocked country) and Montenegro (high reliance on tourism) were predictable before the analysis. 
-            </p>To claim the causation that the countries still have challenges due to the historical wars would sound too ambitious; however, if we are to compare 3 countries that suffered from the wars the most, it is seen that war legacy still hinders Bosnian development while Serbia (which has always been the militarily strongest and had the best relations with great powers in the East) and Croatia (which has been closer to the West and have great resources for tourism) seem to overcome most of their challenges. 
-        </div>
-        </section>
+      <!-- Conclusion (rewritten for clarity & tone) -->
+      <section id="conclusion" class="panel">
+        <h2>Conclusion</h2>
+        <p>
+          Slovenia and Croatia display stronger development outcomes relative to peers. Despite having the second-highest GDP, Serbia faces persistently higher unemployment than Croatia and Slovenia. Bosnia and Herzegovina’s weaker performance is consistent with the depth of wartime destruction and subsequent political fragmentation. Outcomes in North Macedonia (a landlocked economy) and Montenegro (with high reliance on tourism) align with structural characteristics observed prior to analysis.
+        </p>
+        <p>
+          A strict causal attribution to conflict legacy alone would be too strong. However, among the three most affected states, the imprint appears most persistent in BH, while Serbia (with historically greater military capacity and eastern alignments) and Croatia (closer western integration and significant tourism assets) seem to have mitigated a larger share of legacy constraints.
+        </p>
+      </section>
+    </main>
+  </div>
 
+  <footer>
+    © <span id="year"></span> Zeytuna Sultanzade • Built with Vega-Lite
+  </footer>
 
+  <script>
+    // Embed charts (toolbar actions disabled for a cleaner look)
+    vegaEmbed('#Location1', 'ProjectGDP.json', {actions:false});
+    vegaEmbed('#Location2', 'ProjectRD.json', {actions:false});
+    vegaEmbed('#Location3', 'ProjectBarChart.json', {actions:false});
+    vegaEmbed('#Location4', 'ProjectHealth.json', {actions:false});
+    vegaEmbed('#Location5', 'ProjectCO2.json', {actions:false});
+    vegaEmbed('#Location6', 'ProjectBubble.json', {actions:false});
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // TOC active link highlighting
+    const spyLinks = Array.from(document.querySelectorAll('[data-spy]'));
+    const sections = spyLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = '#' + entry.target.id;
+        const link = spyLinks.find(a => a.getAttribute('href') === id);
+        if (link){
+          if (entry.isIntersecting) {
+            spyLinks.forEach(a => a.removeAttribute('aria-current'));
+            link.setAttribute('aria-current','true');
+          }
+        }
+      });
+    }, { rootMargin: '-50% 0px -40% 0px', threshold: 0 });
+
+    sections.forEach(sec => observer.observe(sec));
+  </script>
 </body>
 </html>
-
-
-
