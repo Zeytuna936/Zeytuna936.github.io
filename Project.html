@@ -33,8 +33,6 @@
       --h2: clamp(1.25rem, 2.2vw, 1.6rem);
       --h3: 1.125rem;
       --lead: 1.05rem;
-      --panel-pad: clamp(1rem, 2.2vw, 1.5rem);
-      --panel-gap: clamp(.8rem, 1.6vw, 1rem);
     }
 
     *{ box-sizing:border-box; margin:0; padding:0; }
@@ -48,19 +46,15 @@
         var(--bg);
       line-height:1.65;
       position: relative;
-      overflow-x: hidden; /* prevent any accidental horizontal scroll */
+      overflow-x: hidden;
     }
-
-    /* Make embedded charts fully fluid */
-    .vega-embed, .vega-embed > * { max-width: 100% !important; }
-    svg, canvas, img { max-width: 100%; height: auto; display: block; }
 
     /* Animated particle canvas (subtle, behind everything) */
     #bg-particles{
       position: fixed; inset: 0;
       z-index: -1;
       pointer-events: none;
-      opacity: .28; /* very subtle */
+      opacity: .35;            /* keep very subtle */
     }
     @media (prefers-reduced-motion: reduce){
       #bg-particles{ display:none; }
@@ -102,14 +96,14 @@
     }
 
     /* Header / hero */
-    header{ margin: clamp(1.2rem, 2vw, 2rem) 0 clamp(.6rem, 1.6vw, 1rem); }
+    header{ margin: 2rem 0 1rem; }
     .hero{
       max-width: var(--maxw); margin: 0 auto;
       background: linear-gradient(180deg, rgba(38,75,139,.045), rgba(255,255,255,0));
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
       border-radius: var(--radius);
-      padding: clamp(1.25rem, 2.4vw, 2.2rem) 1rem clamp(1rem, 1.8vw, 1.6rem);
+      padding: 2.2rem 1.5rem 1.6rem;
       position: relative;
       overflow: hidden;
     }
@@ -143,15 +137,8 @@
     .links a:focus-visible{ outline: 3px solid rgba(38,75,139,.35); outline-offset: 2px; border-radius: 6px; }
 
     /* Layout */
-    .container{
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 clamp(.75rem, 2vw, 1rem) clamp(2rem, 4vw, 3.5rem);
-      display:grid; grid-template-columns: minmax(220px,260px) 1fr; gap: var(--panel-gap);
-    }
-    @media (max-width: 980px){
-      .container{ grid-template-columns: 1fr; padding-bottom: clamp(1.5rem, 4vw, 2.5rem); }
-    }
+    .container{ max-width: var(--maxw); margin: 0 auto; padding: 0 1rem 3.5rem; display:grid; grid-template-columns: 260px 1fr; gap: 1.25rem; }
+    @media (max-width: 980px){ .container{ grid-template-columns: 1fr; } }
 
     /* Floating ToC */
     .toc{
@@ -175,8 +162,8 @@
       border:1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: var(--panel-pad);
-      margin-bottom: var(--panel-gap);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
       transition: transform .15s ease, box-shadow .15s ease;
     }
     section.panel:hover{ transform: translateY(-1px); box-shadow: 0 10px 28px rgba(17,24,39,.08); }
@@ -200,49 +187,26 @@
       position: relative;
       border:1px solid var(--border);
       border-radius: 14px;
-      padding: clamp(.85rem, 1.6vw, 1rem);
+      padding: 1rem;
       background: #fff;
       margin: .8rem auto;          /* default centered */
       max-width: 920px;            /* centered width */
       transition: box-shadow .15s ease, transform .15s ease;
-      overflow: hidden;            /* contains animated layers */
-      isolation: isolate;          /* keep z-index sane inside */
+      overflow: hidden;            /* contains the glow layers */
     }
-    /* Professional animated backdrop inside each card (very subtle) */
-    .chart-bg{
-      position:absolute; inset: 0; z-index: 0; pointer-events:none;
-      opacity:.25;
+    /* Professional backdrop inside each card (very subtle) */
+    .chart-block::before{
+      content:"";
+      position:absolute; inset: 0;
       background:
-        radial-gradient(520px 220px at 18% 12%, rgba(89,176,165,.12), transparent 60%),
-        radial-gradient(440px 200px at 86% 26%, rgba(38,75,139,.10), transparent 60%),
-        /* faint grid */
-        linear-gradient(transparent 97%, rgba(38,75,139,.12) 98%),
-        linear-gradient(90deg, transparent 97%, rgba(38,75,139,.12) 98%);
-      background-size:
-        100% 100%,
-        100% 100%,
-        22px 22px,
-        22px 22px;
-      animation: drift 22s linear infinite, gridShift 18s linear infinite;
+        radial-gradient(520px 220px at 18% 12%, rgba(89,176,165,.10), transparent 60%),
+        radial-gradient(440px 200px at 86% 26%, rgba(38,75,139,.08), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,1) 42%);
+      pointer-events:none; z-index: 0;
     }
-    /* Subtle drifting motion */
-    @keyframes drift {
-      0%   { transform: translate3d(0,0,0) scale(1); }
-      50%  { transform: translate3d(-2%, -3%, 0) scale(1.02); }
-      100% { transform: translate3d(0,0,0) scale(1); }
-    }
-    /* Slight grid parallax */
-    @keyframes gridShift {
-      0%   { background-position: 0 0, 0 0, 0 0, 0 0; }
-      100% { background-position: 0 0, 0 0, 22px 0, 0 22px; }
-    }
-    @media (prefers-reduced-motion: reduce){
-      .chart-bg{ animation: none; }
-    }
-
     .chart-block > *{ position: relative; z-index: 1; }
-    .chart-block:hover{ box-shadow: var(--shadow); transform: translateY(-1px); }
 
+    .chart-block:hover{ box-shadow: var(--shadow); transform: translateY(-1px); }
     .chart-block h3{
       font-family:Lora, Georgia, serif; color:#8b1a1a; font-size: var(--h3);
       text-align:center; margin-bottom:.25rem;
@@ -253,7 +217,7 @@
     figcaption{ text-align:center; font-size:.9rem; color:#6b7280; margin-top:.2rem; }
 
     /* Chart container sizes */
-    .viz{ width:100%; min-height: clamp(280px, 42vw, 380px); }
+    .viz{ width:100%; min-height:340px; }
 
     /* EXCEPTION: Chart 4 should not be centered (keep original feel) */
     .chart-block--left{
@@ -372,7 +336,6 @@
 
         <!-- Chart 1 (centered) -->
         <article class="chart-block" aria-labelledby="c1h">
-          <div class="chart-bg" aria-hidden="true"></div>
           <h3 id="c1h">Chart1/Main Highlights:</h3>
           <ul class="chart-notes">
             <li>The GDP of Croatia, Slovenia, and Serbia is significantly higher than the others;</li>
@@ -387,7 +350,6 @@
 
         <!-- Chart 2 (centered) -->
         <article class="chart-block" aria-labelledby="c2h">
-          <div class="chart-bg" aria-hidden="true"></div>
           <h3 id="c2h">Chart2/Main Highlights:</h3>
           <ul class="chart-notes">
             <li>Considering the GDPs of all countries, Slovenia spends the highest amount of money on RD;</li>
@@ -401,7 +363,6 @@
 
         <!-- Chart 3 (centered) -->
         <article class="chart-block" aria-labelledby="c3h">
-          <div class="chart-bg" aria-hidden="true"></div>
           <h3 id="c3h">Chart3/Main Highlights:</h3>
           <ul class="chart-notes">
             <li>The bar chart compares economic indicators among 6 countries from 2007 to 2023;</li>
@@ -414,9 +375,8 @@
           </figure>
         </article>
 
-        <!-- Chart 4 (reverted to previous simple, left/full width; no animated background) -->
+        <!-- Chart 4 (NOT centered; left/full width) -->
         <article class="chart-block chart-block--left" aria-labelledby="c4h">
-          <!-- no .chart-bg here to keep it plain like before -->
           <h3 id="c4h">Chart4/Main Highlights:</h3>
           <ul class="chart-notes">
             <li>Slovenia has the highest life expectancy rate, followed by Croatia; </li>
@@ -431,7 +391,6 @@
 
         <!-- Chart 5 (centered) -->
         <article class="chart-block" aria-labelledby="c5h">
-          <div class="chart-bg" aria-hidden="true"></div>
           <h3 id="c5h">Chart5/Main Highlights:</h3>
           <ul class="chart-notes">
             <li>Serbia releases the largest amount of CO2 among the others, which can be related to its high dependence on fossil fuels and the industrial sector;</li>
@@ -445,7 +404,6 @@
 
         <!-- Chart 6 (centered) -->
         <article class="chart-block" aria-labelledby="c6h">
-          <div class="chart-bg" aria-hidden="true"></div>
           <h3 id="c6h">Chart6/Main Highlights:</h3>
           <ul class="chart-notes">
             <li>BH and Serbia have the highest level of corruption and the lowest level of freedom index and rule of law, while Slovenia has the best indicators for state capacity;</li>
@@ -493,7 +451,7 @@
     // Institutional Vega/Vega-Lite theme
     const vegaTheme = {
       config: {
-        background: "#fcfdff", // subtle chart view tint for legibility over animated bg
+        background: "#fcfdff", // subtle chart view tint
         font: "Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif",
         axis: {
           labelColor: "#1f2a37",
@@ -646,7 +604,8 @@
 
       window.addEventListener('resize', () => {
         resize();
-        createParticles(); // keep particles in bounds after resize
+        // keep particles in bounds after resize
+        createParticles();
       }, { passive: true });
 
       start();
