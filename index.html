@@ -1,376 +1,881 @@
-<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
-<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
-<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
-<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
-
-<!-- Take a look around and make your own copy to adapt for your own use. -->
-
-<!-- This is a comment -->
-<!-- Comments are not displayed in the browser -->
-<!-- They can be used to leave notes in the code -->
-
 <!DOCTYPE html>
-<html> 
-    <!-- HTML is heirarchial: tags like this define elements on the page. 
-    Each tag does something different. For example:
-        - The <html> tag defines the whole document.
-        - The <h1> tag defines a large heading
-        - The <p> tag defines a paragraph
-        - Tags appear as an opening <div> and closing </div> pair
-    -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Analytical portfolio by Zeytuna Sultanzade: data visualisation, applied research and policy analysis using Vega-Lite and Python." />
+  <title>Zeytuna Sultanzade | Data, Policy & Strategy Portfolio</title>
 
-<head>    
-    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Franklin:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
-    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
-    <link rel="stylesheet" type="text/css" href="Example3.css">
-    <title>My Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-    <!-- This is a link to the vega-lite which we're using to make graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    :root {
+      --navy: #0f2740;
+      --navy-2: #183b5b;
+      --ink: #172230;
+      --muted: #5e6670;
+      --warm-bg: #ece7dc;
+      --panel: #faf7f0;
+      --panel-2: #f4efe5;
+      --line: #d9d0c2;
+      --gold: #ad8a57;
+      --gold-soft: #d7c29d;
+      --white: #fffdf8;
+      --shadow: 0 12px 34px rgba(31, 37, 43, 0.08);
+      --radius: 18px;
+      --maxw: 1480px;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        body, html {
-            height: 100%; 
-            font-family: 'Roboto', sans-serif;
-            background-color: #f9f9f9;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
+    body {
+      margin: 0;
+      min-width: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(15, 39, 64, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 39, 64, 0.025) 1px, transparent 1px),
+        var(--warm-bg);
+      background-size: 32px 32px;
+      line-height: 1.62;
+      overflow-x: hidden;
+    }
 
-        h1.big {
-            font-size: 3rem;
-            font-weight: bold;
-            text-align: center;
-            color: #70dada;
-            margin-top: 20px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
+    a {
+      color: inherit;
+    }
 
-        p {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #333;
-        }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 247, 240, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
 
-        p a {
-            color: #70dada;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .topbar-inner {
+      width: min(calc(100% - 32px), var(--maxw));
+      margin: 0 auto;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-        p a:hover {
-            text-decoration: underline;
-        }
+    .wordmark {
+      font-family: "Libre Franklin", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--navy);
+      white-space: nowrap;
+    }
 
-        h3.small {
-            font-size: 1.5rem;
-            text-align: center;
-            margin-top: 20px;
-            color: white;
-            background-color: #70dada;
-            padding: 10px;
-            border-radius: 8px;
-        }
+    .topnav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
 
-        
-        .chart-section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #e6f2ff;
-            flex-grow: 1;  
-            width: 100%; 
-            min-height: 100%; 
-            padding: 0 20px; 
-        }
+    .topnav::-webkit-scrollbar {
+      display: none;
+    }
 
-        .chart-section h2 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
+    .topnav a {
+      text-decoration: none;
+      color: #46505a;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.55rem 0.7rem;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
 
-        .chart-section p {
-            font-size: 1.2rem;
-            color: #555;
-            text-align: center;
-            max-width: 800px;
-            margin-bottom: 20px;
-        }
+    .topnav a:hover {
+      color: var(--navy);
+      background: var(--panel-2);
+    }
 
-        .chart-section img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .hero {
+      width: min(calc(100% - 32px), var(--maxw));
+      margin: 32px auto 22px;
+      border-radius: 24px;
+      overflow: hidden;
+      background:
+        radial-gradient(900px 420px at 85% -10%, rgba(215, 194, 157, 0.25), transparent 64%),
+        linear-gradient(135deg, #0e263e 0%, #173a58 60%, #1b415f 100%);
+      color: white;
+      box-shadow: 0 18px 46px rgba(15, 39, 64, 0.18);
+    }
 
-       
-        footer {
-            width: 100%;
-            text-align: center;
-            padding: 20px 0;
-            background-color: #e6f2ff;
-        }
-    </style>
+    .hero-inner {
+      padding: clamp(34px, 6vw, 74px);
+      max-width: 1050px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #dcc9a6;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-family: "Libre Franklin", sans-serif;
+      font-size: clamp(2.4rem, 5.7vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-lead {
+      margin: 24px 0 0;
+      max-width: 780px;
+      font-size: clamp(1rem, 1.45vw, 1.23rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.84);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 28px 0 0;
+    }
+
+    .hero-tags span {
+      border: 1px solid rgba(255,255,255,0.19);
+      background: rgba(255,255,255,0.07);
+      border-radius: 999px;
+      padding: 0.48rem 0.78rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.91);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .button-primary {
+      background: #f5ead7;
+      color: var(--navy);
+      border-color: #f5ead7;
+    }
+
+    .button-secondary {
+      background: rgba(255,255,255,0.06);
+      color: white;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .page {
+      width: min(calc(100% - 32px), var(--maxw));
+      margin: 0 auto;
+      padding-bottom: 56px;
+    }
+
+    .overview {
+      display: grid;
+      grid-template-columns: 1.25fr repeat(3, minmax(0, 0.75fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .overview-main,
+    .overview-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .overview-main {
+      padding: 26px 28px;
+    }
+
+    .overview-card {
+      padding: 22px;
+    }
+
+    .kicker {
+      display: block;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .overview h2,
+    .section-head h2 {
+      margin: 0;
+      font-family: "Libre Franklin", sans-serif;
+      color: var(--navy);
+    }
+
+    .overview-main h2 {
+      font-size: clamp(1.45rem, 2.4vw, 2rem);
+      line-height: 1.2;
+    }
+
+    .overview-main p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .overview-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .overview-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .section {
+      margin: 18px 0 0;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      padding: 24px 26px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.48), rgba(255,255,255,0));
+    }
+
+    .cc {
+      min-width: 58px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: var(--navy);
+      color: #f3e6cf;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.25rem, 2.1vw, 1.8rem);
+      line-height: 1.25;
+    }
+
+    .section-head p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      max-width: 900px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      padding: 18px;
+    }
+
+    .content-grid.single {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .chart-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 18px;
+      background: var(--white);
+    }
+
+    .chart-card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      color: var(--navy);
+    }
+
+    .chart-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0 0 14px;
+    }
+
+    .chart-card a {
+      color: var(--navy-2);
+      font-weight: 600;
+    }
+
+    figure {
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      padding: 12px;
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid #e4ddd2;
+      background: #fbf8f1;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .vega-embed,
+    .vega-embed > div {
+      max-width: 100%;
+    }
+
+    .vega-embed svg,
+    .vega-embed canvas {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      padding: 18px;
+    }
+
+    .dashboard-grid .chart-card {
+      padding: 14px;
+    }
+
+    .reference-image {
+      display: block;
+      width: min(100%, 560px);
+      height: auto;
+      margin: 6px auto 16px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 26px rgba(31, 37, 43, 0.08);
+    }
+
+    .final-project {
+      margin-top: 22px;
+      padding: 26px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #142f49, #1f4b6d);
+      color: white;
+      box-shadow: 0 18px 42px rgba(15,39,64,0.16);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+    }
+
+    .final-project h2 {
+      margin: 0;
+      font-family: "Libre Franklin", sans-serif;
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+    }
+
+    .final-project p {
+      margin: 9px 0 0;
+      color: rgba(255,255,255,0.78);
+      max-width: 850px;
+    }
+
+    .final-project .button {
+      flex: 0 0 auto;
+    }
+
+    footer {
+      width: min(calc(100% - 32px), var(--maxw));
+      margin: 0 auto;
+      padding: 28px 0 42px;
+      color: #6c706f;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid rgba(120, 108, 89, 0.25);
+    }
+
+    @media (max-width: 1050px) {
+      .overview {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .overview-main {
+        grid-column: 1 / -1;
+      }
+
+      .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner {
+        width: min(calc(100% - 20px), var(--maxw));
+        min-height: 58px;
+      }
+
+      .wordmark {
+        font-size: 0.88rem;
+      }
+
+      .hero,
+      .page,
+      footer {
+        width: min(calc(100% - 20px), var(--maxw));
+      }
+
+      .hero {
+        margin-top: 14px;
+        border-radius: 18px;
+      }
+
+      .hero-inner {
+        padding: 30px 22px 34px;
+      }
+
+      .overview {
+        grid-template-columns: 1fr;
+      }
+
+      .overview-main {
+        grid-column: auto;
+      }
+
+      .content-grid,
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+        padding: 12px;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px 18px;
+      }
+
+      .cc {
+        width: max-content;
+      }
+
+      .chart-card {
+        padding: 14px;
+      }
+
+      figure {
+        padding: 8px;
+      }
+
+      .final-project {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 22px;
+      }
+
+      footer {
+        flex-direction: column;
+        padding-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .topnav a:not(.project-nav) {
+        display: none;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
-<body> 
-<!-- The body tag contains the elements that visitors to our page will see. -->
-    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        Zeytuna Sultanzade
-    </h1>
-    <p style="margin-top: 0px; color: darkblue; font-family: 'Roboto', sans-serif;">
-        <!-- we're setting the margin to 0px so the header and authour name are close together -->
-        Zeytuna S | <a href="https://uk.linkedin.com/in/zeytuna-sultanzade-075abb20b/">LinkedIn</a> | <a
-            href="https://github.com/Zeytuna936">GitHub</a> | <a 
-            href="https://zeytuna936.github.io/Project">Project</a>
-    </p>
+<body id="top">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="wordmark">ZEYTUNA SULTANZADE</div>
+      <nav class="topnav" aria-label="Portfolio navigation">
+        <a href="#overview">Overview</a>
+        <a href="#work">Selected Work</a>
+        <a href="#methods">Methods</a>
+        <a class="project-nav" href="https://zeytuna936.github.io/Project">Final Project</a>
+      </nav>
+    </div>
+  </header>
 
-    <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-       Welcome to my realm of creativity! 
+  <section class="hero" aria-labelledby="portfolio-title">
+    <div class="hero-inner">
+      <p class="eyebrow">Data · Policy · Strategy</p>
+      <h1 id="portfolio-title">Analytical Portfolio</h1>
+      <p class="hero-lead">
+        Selected data-visualisation and applied research work exploring economic,
+        policy and sustainability questions through structured evidence, comparative
+        analysis and interactive visualisation.
+      </p>
+      <div class="hero-tags" aria-label="Methods">
+        <span>Vega-Lite</span>
+        <span>Python &amp; Colab</span>
+        <span>Data Visualisation</span>
+        <span>Web Scraping</span>
+        <span>Interactive Analysis</span>
+      </div>
+      <div class="hero-actions">
+        <a class="button button-primary" href="https://zeytuna936.github.io/Project">View Final Project</a>
+        <a class="button button-secondary" href="https://uk.linkedin.com/in/zeytuna-sultanzade-075abb20b/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="button button-secondary" href="https://github.com/Zeytuna936" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
-    
-    <section>
-        <div class="chart-description">
-            <h2> CC1: Chart 1</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                
+  <main class="page">
+    <section id="overview" class="overview">
+      <div class="overview-main">
+        <span class="kicker">Portfolio overview</span>
+        <h2>From raw data to decision-relevant visual evidence</h2>
+        <p>
+          This portfolio brings together work in comparative visualisation, data extraction,
+          dashboards, spatial analysis, large datasets and interactive charts. The emphasis is
+          on making complex information easier to interpret and communicate.
+        </p>
+      </div>
+      <div class="overview-card">
+        <span class="kicker">01</span>
+        <h3>Evidence</h3>
+        <p>Transform public datasets into clear, structured visual outputs.</p>
+      </div>
+      <div class="overview-card" id="methods">
+        <span class="kicker">02</span>
+        <h3>Methods</h3>
+        <p>Vega-Lite, Python/Colab, scraping, dashboards and interactive visualisation.</p>
+      </div>
+      <div class="overview-card">
+        <span class="kicker">03</span>
+        <h3>Application</h3>
+        <p>Economic, policy, sustainability, tourism and spatial-analysis questions.</p>
+      </div>
+    </section>
 
+    <div id="work"></div>
 
-                </p>
+    <section class="section">
+      <div class="section-head">
+        <span class="cc">CC1</span>
+        <div>
+          <h2>Foundational Data Visualisation</h2>
+          <p>Early exercises focused on translating structured data into clear visual outputs.</p>
         </div>
-       
-        <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+      </div>
+      <div class="content-grid">
+        <article class="chart-card">
+          <h3>Chart 1</h3>
+          <figure id="Location2" aria-label="CC1 Chart 1"></figure>
+        </article>
+        <article class="chart-card">
+          <h3>Chart 2</h3>
+          <figure id="Location3" aria-label="CC1 Chart 2"></figure>
+        </article>
+      </div>
+    </section>
 
-    <section>
-        <div class="chart-description">
-                <h2> CC1: Chart 2</h2>
-                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                   
-                    </p>
-         </div>
-            <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    
-            <section>
-                <div class="chart-description">
-                    <h2> CC2: Chart 3 </h2>
-                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                       
-                    </p>
-                </div>
-                <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                <section>
-                    <div class="chart-description">
-                        <h2> CC2: Chart 4 </h2>
-                        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                            
+    <section class="section">
+      <div class="section-head">
+        <span class="cc">CC2</span>
+        <div>
+          <h2>Comparative Visualisation</h2>
+          <p>Further work developing chart selection and comparative presentation techniques.</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <article class="chart-card">
+          <h3>Chart 3</h3>
+          <figure id="Location4" aria-label="CC2 Chart 3"></figure>
+        </article>
+        <article class="chart-card">
+          <h3>Chart 4</h3>
+          <figure id="Location5" aria-label="CC2 Chart 4"></figure>
+        </article>
+      </div>
+    </section>
 
-  
-                        </p>
-                    </div>
-                    <figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-            </section>  
-                <div class="chart-description">
-                    <h2> CC3: Chart 5 and 6 related to the topic discussed in Festival of Economics   </h2>
-                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                        The figure demonstrates that there is a positive trend for the use of renewables in the UK despite a sharp decline in 2020. 
+    <section class="section">
+      <div class="section-head">
+        <span class="cc">CC3</span>
+        <div>
+          <h2>Energy Trends and Economic Context</h2>
+          <p>Charts developed around themes discussed in the Festival of Economics.</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <article class="chart-card">
+          <h3>Renewable energy</h3>
+          <p>The figure demonstrates a positive trend in the use of renewables in the UK despite a sharp decline in 2020.</p>
+          <figure id="Location7" aria-label="CC3 renewable energy chart"></figure>
+        </article>
+        <article class="chart-card">
+          <h3>Electricity production</h3>
+          <p>Although the long-run trend in electricity production was positive, output began to decline after 2010, potentially reflecting shifts towards renewables.</p>
+          <figure id="Location8" aria-label="CC3 electricity production chart"></figure>
+        </article>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="section-head">
+        <span class="cc">CC4</span>
+        <div>
+          <h2>Replication, Recreation and Improvement</h2>
+          <p>Reproducing an existing chart and then improving its visual presentation.</p>
+        </div>
+      </div>
+      <div class="content-grid single">
+        <article class="chart-card">
+          <h3>New York Times engagement-ring chart</h3>
+          <p>The original bar chart illustrates how much Americans spend on engagement rings.</p>
+          <img class="reference-image" src="screenshot.png" alt="New York Times chart used as the replication reference" />
+          <h3>Replicated version</h3>
+          <figure id="Location9" aria-label="Replicated engagement ring chart"></figure>
+          <h3 style="margin-top:18px;">Improved version</h3>
+          <p>The improved version revises the colour treatment and the presentation of the x- and y-axis metrics.</p>
+          <figure id="Location10" aria-label="Improved engagement ring chart"></figure>
+        </article>
+      </div>
+    </section>
 
-                    </p>
-                </div>
-                <figure id="Location7"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    Although the trend for electricity production was positive, the output started to decline after 2010 probably due to shifts toward renewables. 
+    <section class="section">
+      <div class="section-head">
+        <span class="cc">CC5</span>
+        <div>
+          <h2>Web Scraping and Tourism Data</h2>
+          <p>Implementing a data scraper to analyse international tourist arrivals across the Americas.</p>
+        </div>
+      </div>
+      <div class="content-grid single">
+        <article class="chart-card">
+          <p>
+            Tourism was selected as the analytical topic, with the Americas compared using international tourist arrivals.
+            <a href="https://colab.research.google.com/drive/1GT_DCxKxVitwetNdN_bnbifqZmY4zImq?usp=sharing" target="_blank" rel="noopener">View Colab notebook</a>.
+          </p>
+          <figure id="Location11" aria-label="Tourism ranking chart"></figure>
+        </article>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="section-head">
+        <span class="cc">CC6</span>
+        <div>
+          <h2>Programmatic Dashboard</h2>
+          <p>
+            A multi-chart dashboard generated from ONS data using loops.
+            <a href="https://colab.research.google.com/drive/1jgvqHduneGnxojbuLorl-xBIra3b5Iqx?usp=sharing" target="_blank" rel="noopener">View Colab notebook</a>.
+          </p>
+        </div>
+      </div>
+      <div class="dashboard-grid">
+        <article class="chart-card"><figure id="Location12" aria-label="Dashboard chart 1"></figure></article>
+        <article class="chart-card"><figure id="Location13" aria-label="Dashboard chart 2"></figure></article>
+        <article class="chart-card"><figure id="Location14" aria-label="Dashboard chart 3"></figure></article>
+        <article class="chart-card"><figure id="Location15" aria-label="Dashboard chart 4"></figure></article>
+        <article class="chart-card"><figure id="Location16" aria-label="Dashboard chart 5"></figure></article>
+        <article class="chart-card"><figure id="Location17" aria-label="Dashboard chart 6"></figure></article>
+        <article class="chart-card"><figure id="Location18" aria-label="Dashboard chart 7"></figure></article>
+        <article class="chart-card"><figure id="Location19" aria-label="Dashboard chart 8"></figure></article>
+        <article class="chart-card"><figure id="Location20" aria-label="Dashboard chart 9"></figure></article>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="section-head">
+        <span class="cc">CC7</span>
+        <div>
+          <h2>Spatial Analysis and Choropleths</h2>
+          <p>The first map presents Istanbul and its districts; the second visualises population across districts.</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <article class="chart-card"><figure id="Location21" aria-label="Istanbul base map"></figure></article>
+        <article class="chart-card"><figure id="Location22" aria-label="Istanbul district population map"></figure></article>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="section-head">
+        <span class="cc">CC8</span>
+        <div>
+          <h2>Big Data: Extracting a Story from Millions of Prices</h2>
+          <p>Filtering and aggregating a large price dataset to identify interpretable trends in British chicken-product prices.</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <article class="chart-card">
+          <p>
+            Monthly price trends for different chicken products in Britain. Data by Davies and McEvoy (2014) were filtered to chicken products and aggregated by month to calculate average prices.
+            <a href="https://colab.research.google.com/drive/16PKNtLH8_Ib8RQLaXAF7zp2WcE-OzeSA?usp=sharing" target="_blank" rel="noopener">View Colab notebook</a>.
+          </p>
+          <figure id="Location23" aria-label="Monthly chicken price trends"></figure>
+        </article>
+        <article class="chart-card">
+          <p>
+            Initial prices of different chicken products, filtered using <code>cpi_name</code>.
+            <a href="https://colab.research.google.com/drive/1OF2-doELq1-nk2F5bZBaRGd4lYMkLsct?usp=sharing" target="_blank" rel="noopener">View Colab notebook</a>.
+          </p>
+          <figure id="Location24" aria-label="Initial chicken product prices"></figure>
+        </article>
+      </div>
+    </section>
 
-                </p>
-            </div>
-            <figure id="Location8"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    <section class="section">
+      <div class="section-head">
+        <span class="cc">CC9</span>
+        <div>
+          <h2>Analytical Charts</h2>
+          <p>Exercises focused on using visual structure to support analytical interpretation.</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <article class="chart-card"><figure id="Location25" aria-label="CC9 analytical chart 1"></figure></article>
+        <article class="chart-card"><figure id="Location26" aria-label="CC9 analytical chart 2"></figure></article>
+      </div>
+    </section>
 
-            <section>
-                <div class="chart-description">
-                        <h2> CC4: Replication- Recreation and Improvement of the Chart</h2>
-                        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                                        The bar chart published by the New York Times demonstrates how mych Americans spend on engagement rings. 
-                                    </p>
-                                </div>
-                                <img src="screenshot.png" alt="The New York Times Statistics" style="width: 350px;">
-                                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                                    Replicated version of the chart:
-                                </p>
-                                <figure id="Location9"></figure>
-                                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                                    Improved version of the chart where I changed the color and metrics of Y-axis and X-axis:
-                                </p>
-                                <figure id="Location10"></figure>
-                        
-                            </section>
-                 </div>
-                    <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-            
-                    <section>
-                        <div class="chart-description">
-                            <h2> CC5: Scraper. Implementing a data scraper  </h2>
-                            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                              Since tourism is one of the popular topics, I have chosen it to analyze the Americas based on international tourist arrivals. 
-                              <a href="https://colab.research.google.com/drive/1GT_DCxKxVitwetNdN_bnbifqZmY4zImq?usp=sharing"style="color: black;">Colab link</a>
-                            </p>
-                        </div>
-                        <figure id="Location11"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    <section class="section">
+      <div class="section-head">
+        <span class="cc">CC10</span>
+        <div>
+          <h2>Interactive Visualisation</h2>
+          <p>Interactive charts designed to let the user explore the underlying information directly.</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <article class="chart-card"><figure id="Location27" aria-label="CC10 interactive chart 1"></figure></article>
+        <article class="chart-card"><figure id="Location28" aria-label="CC10 interactive chart 2"></figure></article>
+      </div>
+    </section>
 
-                        <section>
-                            <div class="chart-description">
-                                <h2> CC6: Loops. Building a dashboard </h2>
-                                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                                    Data is retrieved from ONS.
-                                    <a href="https://colab.research.google.com/drive/1jgvqHduneGnxojbuLorl-xBIra3b5Iqx?usp=sharing"style="color: black;">Colab link</a> 
-                                </p>
-                            </div>
-                            <figure id="Location12"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                            <figure id="Location13"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                            <figure id="Location14"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                            <figure id="Location15"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                            <figure id="Location16"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                            <figure id="Location17"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                            <figure id="Location18"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                            <figure id="Location19"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                            <figure id="Location20"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    <section class="final-project">
+      <div>
+        <span class="kicker" style="color:#d8c49f;">Final project</span>
+        <h2>Conflict Legacy: Impact of the Yugoslav Wars on Post-Conflict Development</h2>
+        <p>
+          A comparative data-visualisation project examining economic, institutional and social development outcomes across former Yugoslav republics.
+        </p>
+      </div>
+      <a class="button button-primary" href="https://zeytuna936.github.io/Project">Open Project</a>
+    </section>
+  </main>
 
-                            <section>
-                                <div class="chart-description">
-                                    <h2> CC7. Maps. Base maps and choropleths  </h2>
-                                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                                 The base map demonstrates Istanbul with its distcricts, while the latter one shows the population in each district.   
-                                    </p>
-                                </div>
-                                <figure id="Location21"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                                <figure id="Location22"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+  <footer>
+    <span>© <span id="year"></span> Zeytuna Sultanzade</span>
+    <span>Data visualisation · Applied analysis · Policy research</span>
+  </footer>
 
-                                <section>
-                                    <div class="chart-description">
-                                            <h2> CC8. Big Data. Extracting a story from millions of prices</h2>
-                                                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                                                        The chart demonstrates monthly price trends for different chicken products in Britain. The data, by Davies and McEvoy (2014), was filtered to only include chicken products and aggregated by month to get average prices. 
-                                                        <a href="https://colab.research.google.com/drive/16PKNtLH8_Ib8RQLaXAF7zp2WcE-OzeSA?usp=sharing"style="color: black;">Colab link</a>
-                                                    </p>
-                                                    <figure id="Location23"></figure>
-                                                    <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                                                        Here we can see initial prices of different chicken products. The dataset was filtered using cpi_name.
-                                                        <a href="https://colab.research.google.com/drive/1OF2-doELq1-nk2F5bZBaRGd4lYMkLsct?usp=sharing"style="color: black;">Colab link</a>
-                                                    <figure id="Location24"></figure>
-                            
-                                <section>
-                                    <div class="chart-description">
-                                            <h2> CC9. Analytics Charts</h2>
-                                            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                                                </p>
-                                     </div>
-                                        <figure id="Location25"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                                        <figure id="Location26"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+  <script>
+    const specs = {
+      Location2: "wk1_chart3.json",
+      Location3: "wk1_chart4.json",
+      Location4: "week2_new.json",
+      Location5: "week2_lecture2.json",
+      Location7: "wk3_ch7.json",
+      Location8: "wk3_ch8.json",
+      Location9: "Recreated_draft.json",
+      Location10: "Improved.json",
+      Location11: "Tourism_ranking.json",
+      Location12: "CH6_1.json",
+      Location13: "CH6_2.json",
+      Location14: "CH6_3.json",
+      Location15: "CH6_4.json",
+      Location16: "CH6_5.json",
+      Location17: "CH6_6.json",
+      Location18: "CH6_7.json",
+      Location19: "CH6_8.json",
+      Location20: "CH6_9.json",
+      Location21: "Base_map.json",
+      Location22: "District_Population.json",
+      Location23: "Week8_ch1.json",
+      Location24: "Week8_ch2.json",
+      Location25: "week9_1.json",
+      Location26: "week9_2.json",
+      Location27: "Week10_1.json",
+      Location28: "Week10_2.json"
+    };
 
-                                    <section>
-                                    <div class="chart-description">
-                                        <h2> CC10. Interactive Charts  </h2>
-                                        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->   
-                                        </p>
-                                    </div>
-                                    <figure id="Location27"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                                    <figure id="Location28"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-                                   
+    const embedOptions = {
+      actions: false,
+      renderer: "svg"
+    };
 
-    
-            
-    <script>
-        // This is a comment in JavaScript - it's a different language to HTML and CSS
+    Object.entries(specs).forEach(([id, spec]) => {
+      const target = document.getElementById(id);
+      if (target) {
+        vegaEmbed("#" + id, spec, embedOptions).catch((error) => {
+          console.error("Could not load " + spec, error);
+        });
+      }
+    });
 
-         let figure_1_spec= "wk1_chart3.json"
-         let figure_2_spec= "wk1_chart3.json"                                                                                                     // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
-         let figure_3_spec= "wk1_chart4.json" 
-         let figure_4_spec= "week2_new.json"
-         let figure_5_spec= "week2_lecture2.json"
-         let figure_6_spec= "week2_seminar.json"
-         let figure_7_spec= "wk3_ch7.json"
-         let figure_8_spec= "wk3_ch8.json"
-         let figure_9_spec= "Recreated_draft.json"
-         let figure_10_spec= "Improved.json"
-         let figure_11_spec= "Tourism_ranking.json"
-         let figure_12_spec= "CH6_1.json"
-         let figure_13_spec= "CH6_2.json"
-         let figure_14_spec= "CH6_3.json"
-         let figure_15_spec= "CH6_4.json"
-         let figure_16_spec= "CH6_5.json"
-         let figure_17_spec= "CH6_6.json"
-         let figure_18_spec= "CH6_7.json"
-         let figure_19_spec= "CH6_8.json"
-         let figure_20_spec= "CH6_9.json"
-         let figure_21_spec= "Base_map.json"
-         let figure_22_spec= "District_Population.json"
-         let figure_23_spec= "Week8_ch1.json"
-         let figure_24_spec= "Week8_ch2.json"
-         let figure_25_spec= "week9_1.json"
-         let figure_26_spec= "week9_2.json"
-         let figure_27_spec= "Week10_1.json"
-         let figure_28_spec= "Week10_2.json"
-         
-
-        vegaEmbed("#Location1", figure_1_spec) 
-        // We're using the vegaEmbed function to put a graph in the element with id figure_1
-        // Do you want to add more graphs?
-        // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
-        // e.g. 
-        // let figure_3_spec = ...
-        // vegaEmbed('#Location3', figure_3_spec)
-
-vegaEmbed ("#Location2", figure_2_spec)
-vegaEmbed ("#Location3", figure_3_spec)
-vegaEmbed ("#Location4", figure_4_spec) 
-vegaEmbed ("#Location5", figure_5_spec)
-vegaEmbed ("#Location6", figure_6_spec)
-vegaEmbed ("#Location7", figure_7_spec)
-vegaEmbed ("#Location8", figure_8_spec)
-vegaEmbed ("#Location9", figure_9_spec)
-vegaEmbed ("#Location10", figure_10_spec)
-vegaEmbed ("#Location11", figure_11_spec)
-vegaEmbed ("#Location12", figure_12_spec)
-vegaEmbed ("#Location13", figure_13_spec)
-vegaEmbed ("#Location14", figure_14_spec)
-vegaEmbed ("#Location15", figure_15_spec)
-vegaEmbed ("#Location16", figure_16_spec)
-vegaEmbed ("#Location17", figure_17_spec)
-vegaEmbed ("#Location18", figure_18_spec)
-vegaEmbed ("#Location19", figure_19_spec)
-vegaEmbed ("#Location20", figure_20_spec)
-vegaEmbed ("#Location21", figure_21_spec)
-vegaEmbed ("#Location22", figure_22_spec)
-vegaEmbed ("#Location23", figure_23_spec)
-vegaEmbed ("#Location24", figure_24_spec)
-vegaEmbed ("#Location25", figure_25_spec)
-vegaEmbed ("#Location26", figure_26_spec)
-vegaEmbed ("#Location27", figure_27_spec)
-vegaEmbed ("#Location28", figure_28_spec)
-
-    </script>
-
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
-    
 </html>
